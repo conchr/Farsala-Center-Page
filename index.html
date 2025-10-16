@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Φάρσαλα: Ταξίδι στην Ιστορία - Αρχική Σελίδα</title>
+    <meta name="description" content="Εξερευνήστε την πλούσια ιστορία των Φαρσάλων, από τον Αχιλλέα έως τη Μάχη των Κυνός Κεφαλών">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome για εικονίδια -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* Στυλ για φόντο χειροποίητου χαρτιού */
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            background-color: #f5f0e6;
+            background-image: 
+                linear-gradient(rgba(245, 240, 230, 0.8) 2px, transparent 2px),
+                linear-gradient(90deg, rgba(245, 240, 230, 0.8) 2px, transparent 2px),
+                linear-gradient(rgba(245, 240, 230, 0.6) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(245, 240, 230, 0.6) 1px, transparent 1px),
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d4c4a8' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+            background-size: 
+                100px 100px,
+                100px 100px,
+                20px 20px,
+                20px 20px,
+                100px 100px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        /* Εφέ σκιάς για να μοιάζει με πραγματικό χαρτί */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(180, 160, 120, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(150, 130, 100, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(160, 140, 110, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Στυλ για το κεντρικό πλαίσιο */
+        .card {
+            background-color: #fffef7;
+            border-radius: 8px;
+            box-shadow: 
+                0 4px 20px rgba(0, 0, 0, 0.08),
+                0 0 0 1px rgba(160, 140, 110, 0.2),
+                inset 0 0 30px rgba(160, 140, 110, 0.1);
+            max-width: 800px;
+            padding: 2.5rem;
+            border: 1px solid #e0d8c8;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Εφέ για να μοιάζει με πραγματικό χαρτί */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(90deg, transparent 98%, rgba(0,0,0,0.03) 100%),
+                linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);
+            background-size: 100% 24px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #8b5cf6, #d4af37, #dc2626);
+            border-radius: 8px 8px 0 0;
+        }
+
+        /* Βεβαιωθείτε ότι το περιεχόμενο είναι πάνω από το γραμμωτό pattern */
+        .card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Στυλ για το κείμενο τίτλου */
+        .title-text {
+            color: #5d4037;
+            line-height: 1.2;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.05);
+        }
+
+        /* Στυλ για τα κουμπιά */
+        .action-button {
+            padding: 1.5rem 2rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        /* Εφέ hover για τα κουμπιά */
+        .action-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Εικονίδιο βέλους */
+        .arrow-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .action-button:hover .arrow-icon {
+            transform: translateX(5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 640px) {
+            .card {
+                padding: 1.5rem;
+                width: 100%;
+                margin: 10px;
+            }
+            .title-text {
+                font-size: 1.875rem;
+            }
+            .action-button {
+                font-size: 1.1rem;
+                padding: 1.25rem 1.5rem;
+            }
+            .button-container {
+                gap: 1rem;
+            }
+        }
+
+        /* Animation για το κύριο κείμενο */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card w-full fade-in-up">
+        <div class="text-center mb-10">
+            <!-- Κύριος Τίτλος -->
+            <h1 class="title-text text-4xl sm:text-5xl font-extrabold mb-4">
+                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
+            </h1>
+            
+            <!-- Επεξηγηματικό Κείμενο -->
+            <div class="space-y-4">
+                <p class="text-xl sm:text-2xl text-gray-800 leading-relaxed max-w-2xl mx-auto">
+                    Ξεκινήστε ένα μοναδικό ταξίδι. Ο Δήμος Φαρσάλων σάς προσκαλεί να περιηγηθείτε σε μια ιστορία που ξεκινά από τον μύθο του <strong class="text-indigo-700">Αχιλλέα</strong> και εκτείνεται χιλιετίες. 
+                </p>
+                <p class="text-2xl sm:text-3xl font-bold text-red-700 mt-6">
+                    Είστε έτοιμοι για τη βύθιση στους αιώνες;
+                </p>
+            </div>
+        </div>
+
+        <!-- Κουμπιά Δράσης (Links) -->
+        <div class="button-container flex flex-col gap-6">
+
+            <!-- Κουμπί 1: Αχιλλέας -->
+            <a href="https://github.com/conchr/Achilles-Presentation/blob/main/index.html" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="action-button bg-indigo-500 text-white hover:bg-indigo-600">
+                <span class="flex items-center">
+                    <i class="fas fa-helmet-safety mr-4 text-xl"></i> 
+                    Τα Φάρσαλα κι ο Αχιλλέας
+                </span>
+                <i class="fas fa-arrow-right arrow-icon"></i>
+            </a>
+
+            <!-- Κουμπί 2: Ακρόπολη -->
+            <a href="https://github.com/conchr/Acropolis-Presentation/blob/main/index.html" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="action-button bg-yellow-600 text-white hover:bg-yellow-700">
+                <span class="flex items-center">
+                    <i class="fas fa-city mr-4 text-xl"></i> 
+                    Η Ακρόπολη των Φαρσάλων
+                </span>
+                <i class="fas fa-arrow-right arrow-icon"></i>
+            </a>
+
+            <!-- Κουμπί 3: Μάχη -->
+            <a href="https://github.com/conchr/Kynos-Presentation/blob/main/index.html" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="action-button bg-red-600 text-white hover:bg-red-700">
+                <span class="flex items-center">
+                    <i class="fas fa-flag mr-4 text-xl"></i> 
+                    Η Μάχη των Κυνός Κεφαλαί
+                </span>
+                <i class="fas fa-arrow-right arrow-icon"></i>
+            </a>
+
+        </div>
+
+        <!-- Footer με πληροφορίες -->
+        <div class="text-center mt-8 pt-6 border-t border-gray-300">
+            <p class="text-sm text-gray-600">
+                <i class="fas fa-external-link-alt mr-2"></i> 
+                Όλοι οι σύνδεσμοι ανοίγουν σε νέα καρτέλα.
+            </p>
+            <p class="text-xs text-gray-500 mt-2">
+                © 2024 Δήμος Φαρσάλων - Με την τεχνική υποστήριξη της τοπικής κοινότητας
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
