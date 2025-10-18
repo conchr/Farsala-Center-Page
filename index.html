@@ -118,18 +118,42 @@
             z-index: 1;
         }
 
-        /* Στυλ για το κείμενο τίτλου */
+        /* Πλήρως responsive γραμματοσειρά με viewport units */
         .title-text {
             color: #5d4037;
             line-height: 1.1;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.08);
             font-weight: 800;
+            font-size: clamp(2rem, 6vw, 5rem);
+        }
+
+        .subtitle-text {
+            color: #2d3748;
+            line-height: 1.4;
+            font-size: clamp(1rem, 3vw, 2.5rem);
+        }
+
+        .highlight-text {
+            color: #dc2626;
+            font-weight: 700;
+            font-size: clamp(1.25rem, 3.5vw, 3rem);
+        }
+
+        .button-text {
+            font-size: clamp(0.875rem, 2vw, 1.5rem);
+        }
+
+        .footer-text {
+            font-size: clamp(0.75rem, 1.5vw, 1.125rem);
+        }
+
+        .small-text {
+            font-size: clamp(0.625rem, 1.25vw, 0.875rem);
         }
 
         /* Στυλ για τα κουμπιά */
         .action-button {
-            padding: 1.75rem 2.25rem;
-            font-size: 1.375rem;
+            padding: clamp(1rem, 3vw, 2rem) clamp(1.25rem, 4vw, 2.5rem);
             font-weight: 700;
             border-radius: 12px;
             transition: all 0.3s ease;
@@ -142,7 +166,7 @@
             justify-content: space-between;
             border: 2px solid rgba(0,0,0,0.08);
             height: 100%;
-            min-height: 100px;
+            min-height: clamp(70px, 15vh, 120px);
         }
 
         /* Εφέ hover και focus για τα κουμπιά */
@@ -155,9 +179,9 @@
 
         /* Εικονίδιο βέλους */
         .arrow-icon {
-            font-size: 1.75rem;
             transition: transform 0.3s ease;
             font-weight: bold;
+            font-size: clamp(1.25rem, 3vw, 2rem);
         }
 
         .action-button:hover .arrow-icon,
@@ -169,7 +193,7 @@
         .button-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1.75rem;
+            gap: clamp(1rem, 3vw, 2rem);
         }
 
         /* Animations για σταδιακή εμφάνιση */
@@ -217,135 +241,117 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            gap: clamp(1rem, 4vh, 3rem);
         }
 
         /* ===== MOBILE FIRST ===== */
-        @media (max-width: 640px) {
+        @media (max-width: 480px) {
             body {
                 padding: 10px;
                 height: 100vh;
             }
             
             .card {
-                padding: 1.25rem;
-                border-radius: 10px;
+                padding: clamp(1rem, 3vw, 1.5rem);
+                border-radius: 12px;
                 max-height: 98vh;
-            }
-            
-            .title-text {
-                font-size: 1.75rem;
-                margin-bottom: 0.75rem;
             }
             
             .button-grid {
                 grid-template-columns: 1fr;
-                gap: 0.875rem;
+                gap: clamp(0.75rem, 2vw, 1rem);
             }
             
             .action-button {
-                padding: 1rem 1.25rem;
-                font-size: 1rem;
-                min-height: 70px;
-                border-radius: 8px;
-            }
-            
-            .arrow-icon {
-                font-size: 1.25rem;
+                border-radius: 10px;
             }
         }
 
-        /* ===== TABLET ===== */
-        @media (min-width: 641px) and (max-width: 1023px) {
+        /* ===== SMALL TABLETS ===== */
+        @media (min-width: 481px) and (max-width: 768px) {
             body {
                 padding: 15px;
-                height: 100vh;
             }
             
             .card {
-                padding: 2rem;
-                max-width: 900px;
+                padding: clamp(1.5rem, 4vw, 2rem);
                 border-radius: 14px;
-                max-height: 96vh;
-            }
-            
-            .title-text {
-                font-size: 3rem;
-            }
-            
-            .action-button {
-                padding: 1.5rem 2rem;
-                font-size: 1.25rem;
-                min-height: 90px;
-            }
-            
-            .button-grid {
-                gap: 1.5rem;
             }
         }
 
-        /* ===== LAPTOP (1024px - 1439px) ===== */
-        @media (min-width: 1024px) and (max-width: 1439px) {
+        /* ===== LAPTOP (769px - 1200px) ===== */
+        @media (min-width: 769px) and (max-width: 1200px) {
             body {
                 padding: 20px;
-                height: 100vh;
             }
             
             .card {
-                padding: 3rem;
-                max-width: 1100px;
-                border-radius: 18px;
-                max-height: 95vh;
-            }
-            
-            .title-text {
-                font-size: 3.75rem;
-                margin-bottom: 2rem;
-            }
-            
-            .action-button {
-                padding: 2rem 2.5rem;
-                font-size: 1.5rem;
-                min-height: 110px;
-                border-radius: 14px;
-            }
-            
-            .button-grid {
-                gap: 2rem;
-            }
-            
-            .arrow-icon {
-                font-size: 2rem;
+                padding: clamp(2rem, 5vw, 3rem);
+                border-radius: 16px;
             }
         }
 
-        /* ===== DESKTOP (1440px+) ===== */
-        @media (min-width: 1440px) {
+        /* ===== DESKTOP (1201px - 1920px) ===== */
+        @media (min-width: 1201px) and (max-width: 1920px) {
             body {
-                padding: 20px;
-                height: 100vh;
+                padding: 25px;
             }
             
             .card {
-                padding: 3rem;
-                max-width: 1200px;
-                max-height: 95vh;
+                padding: clamp(2.5rem, 6vw, 3.5rem);
+                max-width: 1400px;
+            }
+        }
+
+        /* ===== LARGE DESKTOP & SMART TV (1921px - 2560px) ===== */
+        @media (min-width: 1921px) and (max-width: 2560px) {
+            body {
+                padding: 30px;
+            }
+            
+            .card {
+                padding: clamp(3rem, 7vw, 4rem);
+                max-width: 1600px;
+                max-height: 90vh;
+            }
+        }
+
+        /* ===== 4K SCREENS (2561px+) ===== */
+        @media (min-width: 2561px) {
+            body {
+                padding: 40px;
+            }
+            
+            .card {
+                padding: clamp(4rem, 8vw, 5rem);
+                max-width: 2000px;
+                max-height: 85vh;
             }
             
             .title-text {
-                font-size: 4rem;
+                font-size: clamp(3rem, 8vw, 6rem);
             }
             
-            .action-button {
-                padding: 2rem 2.5rem;
-                font-size: 1.5rem;
-                min-height: 110px;
+            .subtitle-text {
+                font-size: clamp(1.5rem, 4vw, 3rem);
+            }
+            
+            .highlight-text {
+                font-size: clamp(1.75rem, 4.5vw, 3.5rem);
+            }
+        }
+
+        /* Ultra-wide screens */
+        @media (min-width: 3440px) {
+            .card {
+                max-width: 2400px;
             }
         }
 
         /* Better touch targets for mobile */
         @media (hover: none) and (pointer: coarse) {
             .action-button {
-                min-height: 60px;
+                min-height: clamp(60px, 12vh, 100px);
             }
             
             .action-button:hover {
@@ -371,9 +377,21 @@
             outline-offset: 2px;
         }
 
-        /* Βελτίωση ανάγνωσης από απόσταση */
-        .text-high-contrast {
-            color: #2d3748;
+        /* Landscape orientation optimization */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .card {
+                max-height: 98vh;
+                padding: clamp(1rem, 2vh, 1.5rem);
+            }
+            
+            .main-content {
+                gap: clamp(0.5rem, 2vh, 1rem);
+            }
+            
+            .action-button {
+                min-height: clamp(50px, 10vh, 80px);
+                padding: clamp(0.75rem, 2vh, 1rem) clamp(1rem, 3vh, 1.5rem);
+            }
         }
     </style>
 </head>
@@ -382,27 +400,27 @@
     <div class="card">
         <div class="main-content text-center">
             <!-- Κύριος Τίτλος -->
-            <h1 class="title-text text-4xl md:text-5xl lg:text-6xl font-black mb-6 lg:mb-8 fade-in delay-0 hidden-initially">
+            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
                 Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
             </h1>
             
             <!-- Επεξηγηματικό Κείμενο -->
-            <div class="space-y-4 lg:space-y-6">
-                <p class="text-xl md:text-2xl lg:text-3xl text-high-contrast leading-relaxed max-w-4xl mx-auto px-2 lg:px-4 fade-in delay-2 hidden-initially">
+            <div class="space-y-4">
+                <p class="subtitle-text leading-relaxed max-w-6xl mx-auto px-4 fade-in delay-2 hidden-initially">
                     Ξεκινήστε ένα μοναδικό ταξίδι. Ο Δήμος Φαρσάλων σάς προσκαλεί να περιηγηθείτε σε μια ιστορία που ξεκινά από τον μύθο του <strong class="text-indigo-700">Αχιλλέα</strong> και εκτείνεται χιλιετίες. 
                 </p>
-                <p class="text-2xl md:text-3xl lg:text-4xl font-bold text-red-700 mt-6 lg:mt-8 tracking-wide fade-in delay-4 hidden-initially">
+                <p class="highlight-text mt-4 tracking-wide fade-in delay-4 hidden-initially">
                     Είστε έτοιμοι για τη βύθιση στους αιώνες;
                 </p>
             </div>
 
             <!-- Κουμπιά Δράσης (Links) σε grid 2x2 -->
-            <div class="button-grid mt-8 lg:mt-12 fade-in delay-6 hidden-initially">
+            <div class="button-grid mt-8 fade-in delay-6 hidden-initially">
                 <!-- Κουμπί 1: Αχιλλέας -->
                 <a href="https://conchr.github.io/Achilles-Presentation/" 
                    rel="noopener noreferrer"
                    class="action-button bg-indigo-500 text-white hover:bg-indigo-600 focus:bg-indigo-600 transition-all duration-300">
-                    <span class="flex-1">Τα Φάρσαλα κι ο Αχιλλέας</span>
+                    <span class="flex-1 button-text">Τα Φάρσαλα κι ο Αχιλλέας</span>
                     <span class="arrow-icon">→</span>
                 </a>
 
@@ -410,7 +428,7 @@
                 <a href="https://conchr.github.io/Acropolis-Presentation/" 
                    rel="noopener noreferrer"
                    class="action-button bg-yellow-600 text-white hover:bg-yellow-700 focus:bg-yellow-700 transition-all duration-300">
-                    <span class="flex-1">Η Ακρόπολη των Φαρσάλων</span>
+                    <span class="flex-1 button-text">Η Ακρόπολη των Φαρσάλων</span>
                     <span class="arrow-icon">→</span>
                 </a>
 
@@ -418,7 +436,7 @@
                 <a href="https://conchr.github.io/Kynos-Presentation/" 
                    rel="noopener noreferrer"
                    class="action-button bg-red-600 text-white hover:bg-red-700 focus:bg-red-700 transition-all duration-300">
-                    <span class="flex-1">Η Μάχη των Κυνός Κεφαλαί</span>
+                    <span class="flex-1 button-text">Η Μάχη των Κυνός Κεφαλαί</span>
                     <span class="arrow-icon">→</span>
                 </a>
 
@@ -426,18 +444,18 @@
                 <a href="https://conchr.github.io/Karamichos-Tower/" 
                    rel="noopener noreferrer"
                    class="action-button bg-green-600 text-white hover:bg-green-700 focus:bg-green-700 transition-all duration-300">
-                    <span class="flex-1">Ο Πύργος Καραμίχου</span>
+                    <span class="flex-1 button-text">Ο Πύργος Καραμίχου</span>
                     <span class="arrow-icon">→</span>
                 </a>
             </div>
         </div>
 
         <!-- Footer με πληροφορίες -->
-        <div class="text-center mt-6 lg:mt-8 pt-4 lg:pt-6 border-t border-gray-300">
-            <p class="text-sm sm:text-base lg:text-lg text-gray-600">
+        <div class="text-center mt-6 pt-4 border-t border-gray-300">
+            <p class="footer-text text-gray-600">
                 Όλοι οι σύνδεσμοι ανοίγουν στην ίδια καρτέλα.
             </p>
-            <p class="text-xs sm:text-sm text-gray-500 mt-1">
+            <p class="small-text text-gray-500 mt-1">
                 © 2025 Δήμος Φαρσάλων
             </p>
         </div>
