@@ -34,11 +34,11 @@
             min-height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Αλλαγή από center σε flex-start για scroll */
+            align-items: flex-start;
             padding: 20px;
             line-height: 1.6;
             position: relative;
-            overflow-y: auto; /* Ενεργοποίηση scroll */
+            overflow-y: auto;
         }
 
         /* Εφέ για ρεαλιστικό πάπυρο */
@@ -73,11 +73,11 @@
                 inset 0 0 40px rgba(160, 140, 110, 0.08);
             width: 95%;
             max-width: 1200px;
-            min-height: auto; /* Αφαίρεση fixed height */
+            min-height: auto;
             padding: 2.5rem;
             border: 2px solid #e0d8c8;
             position: relative;
-            margin: 20px auto; /* Margin για scroll */
+            margin: 20px auto;
             display: flex;
             flex-direction: column;
             z-index: 2;
@@ -217,15 +217,15 @@
         }
         
         .delay-2 {
-            animation-delay: 2s;
+            animation-delay: 1s;
         }
         
         .delay-4 {
-            animation-delay: 4s;
+            animation-delay: 2s;
         }
         
         .delay-6 {
-            animation-delay: 6s;
+            animation-delay: 3s;
         }
 
         /* Αρχικά κρυμμένα στοιχεία */
@@ -238,9 +238,34 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* Αλλαγή για scroll */
+            justify-content: flex-start;
             gap: clamp(1rem, 4vh, 3rem);
-            min-height: min-content; /* Επιτρέπει στο περιεχόμενο να καθορίσει το ύψος */
+            min-height: min-content;
+        }
+
+        /* Κουμπί ελέγχου ήχου */
+        .sound-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .sound-control:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.1);
         }
 
         /* Scroll indicator για μικρές οθόνες */
@@ -264,6 +289,47 @@
             opacity: 1;
         }
 
+        /* Μήνυμα σφάλματος ήχου */
+        .audio-error {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(220, 38, 38, 0.9);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            max-width: 90%;
+            text-align: center;
+        }
+
+        .audio-error.show {
+            opacity: 1;
+        }
+
+        /* Loading indicator */
+        .loading-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #8b5cf6, #d4af37, #dc2626);
+            z-index: 1001;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .loading-indicator.loading {
+            transform: scaleX(1);
+        }
+
         /* ===== MOBILE FIRST ===== */
         @media (max-width: 480px) {
             body {
@@ -283,6 +349,13 @@
             
             .action-button {
                 border-radius: 10px;
+            }
+
+            .sound-control {
+                width: 45px;
+                height: 45px;
+                bottom: 15px;
+                right: 15px;
             }
         }
 
@@ -418,6 +491,14 @@
                 min-height: clamp(50px, 8vh, 80px);
                 padding: clamp(0.75rem, 2vh, 1rem) clamp(1rem, 3vh, 1.5rem);
             }
+            
+            .title-text {
+                font-size: clamp(1.5rem, 4vw, 3rem);
+            }
+            
+            .subtitle-text {
+                font-size: clamp(0.875rem, 2vw, 1.5rem);
+            }
         }
 
         /* Very small screens - extra precautions */
@@ -429,6 +510,22 @@
     </style>
 </head>
 <body>
+
+    <!-- Audio element για το background music -->
+    <audio id="backgroundMusic" loop>
+        <source src="https://github.com/conchr/Farsala-Center-Page/raw/main/The%20Arrow%20of%20Eros%20loop1.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Loading indicator -->
+    <div class="loading-indicator" id="loadingIndicator"></div>
+
+    <!-- Κουμπί ελέγχου ήχου -->
+    <button class="sound-control" id="soundControl" aria-label="Έλεγχος ήχου">🔊</button>
+
+    <!-- Μήνυμα σφάλματος ήχου -->
+    <div class="audio-error" id="audioError">
+        Ο ήχος δεν μπορεί να αναπαραχθεί αυτόματα. Πατήστε το κουμπί 🔊 για ενεργοποίηση.
+    </div>
 
     <!-- Scroll indicator για μικρές οθόνες -->
     <div class="scroll-indicator" id="scrollIndicator">
@@ -457,33 +554,37 @@
                 <!-- Κουμπί 1: Αχιλλέας -->
                 <a href="https://conchr.github.io/Achilles-Presentation/" 
                    rel="noopener noreferrer"
-                   class="action-button bg-indigo-500 text-white hover:bg-indigo-600 focus:bg-indigo-600 transition-all duration-300">
+                   class="action-button bg-indigo-500 text-white hover:bg-indigo-600 focus:bg-indigo-600 transition-all duration-300 sound-link"
+                   aria-label="Τα Φάρσαλα κι ο Αχιλλέας">
                     <span class="flex-1 button-text">Τα Φάρσαλα κι ο Αχιλλέας</span>
-                    <span class="arrow-icon">→</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
 
                 <!-- Κουμπί 2: Ακρόπολη -->
                 <a href="https://conchr.github.io/Acropolis-Presentation/" 
                    rel="noopener noreferrer"
-                   class="action-button bg-yellow-600 text-white hover:bg-yellow-700 focus:bg-yellow-700 transition-all duration-300">
+                   class="action-button bg-yellow-600 text-white hover:bg-yellow-700 focus:bg-yellow-700 transition-all duration-300 sound-link"
+                   aria-label="Η Ακρόπολη των Φαρσάλων">
                     <span class="flex-1 button-text">Η Ακρόπολη των Φαρσάλων</span>
-                    <span class="arrow-icon">→</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
 
                 <!-- Κουμπί 3: Μάχη -->
                 <a href="https://conchr.github.io/Kynos-Presentation/" 
                    rel="noopener noreferrer"
-                   class="action-button bg-red-600 text-white hover:bg-red-700 focus:bg-red-700 transition-all duration-300">
+                   class="action-button bg-red-600 text-white hover:bg-red-700 focus:bg-red-700 transition-all duration-300 sound-link"
+                   aria-label="Η Μάχη των Κυνός Κεφαλαί">
                     <span class="flex-1 button-text">Η Μάχη των Κυνός Κεφαλαί</span>
-                    <span class="arrow-icon">→</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
 
                 <!-- Κουμπί 4: Πύργος Καραμίχου -->
                 <a href="https://conchr.github.io/Karamichos-Tower/" 
                    rel="noopener noreferrer"
-                   class="action-button bg-green-600 text-white hover:bg-green-700 focus:bg-green-700 transition-all duration-300">
+                   class="action-button bg-green-600 text-white hover:bg-green-700 focus:bg-green-700 transition-all duration-300 sound-link"
+                   aria-label="Ο Πύργος Καραμίχου">
                     <span class="flex-1 button-text">Ο Πύργος Καραμίχου</span>
-                    <span class="arrow-icon">→</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
             </div>
         </div>
@@ -503,25 +604,124 @@
         // Αρχικά εμφανίζεται μόνο το background
         // Τα υπόλοιπα στοιχεία εμφανίζονται σταδιακά με JavaScript
         document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('backgroundMusic');
+            const soundControl = document.getElementById('soundControl');
+            const audioError = document.getElementById('audioError');
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            let isMuted = false;
+            let audioPlayAttempted = false;
+
+            // Ρύθμιση έντασης στο 30%
+            audio.volume = 0.3;
+            
+            // Προσθήκη loading indicator
+            loadingIndicator.classList.add('loading');
+            
+            // Αυτόματη αναπαραγωγή όταν φορτώσει η σελίδα
+            window.addEventListener('load', function() {
+                setTimeout(() => {
+                    audio.play().then(() => {
+                        // Η αναπαραγωγή ήταν επιτυχής
+                        audioPlayAttempted = true;
+                        loadingIndicator.classList.remove('loading');
+                    }).catch(function(error) {
+                        console.log('Αυτόματη αναπαραγωγή απέτυχε: ', error);
+                        // Εμφάνιση μηνύματος για τον χρήστη
+                        soundControl.textContent = '🔇';
+                        soundControl.title = 'Κάντε κλικ για ενεργοποίηση ήχου';
+                        audioError.classList.add('show');
+                        
+                        // Απόκρυψη του μηνύματος μετά από 5 δευτερόλεπτα
+                        setTimeout(() => {
+                            audioError.classList.remove('show');
+                        }, 5000);
+                        
+                        loadingIndicator.classList.remove('loading');
+                    });
+                }, 500);
+            });
+
+            // Λειτουργία σίγασης
+            soundControl.addEventListener('click', function() {
+                if (!audioPlayAttempted) {
+                    // Προσπάθεια αναπαραγωγής όταν ο χρήστης κάνει κλικ για πρώτη φορά
+                    audio.play().then(() => {
+                        audioPlayAttempted = true;
+                        isMuted = !isMuted;
+                        audio.muted = isMuted;
+                        soundControl.textContent = isMuted ? '🔇' : '🔊';
+                        soundControl.title = isMuted ? 'Κάντε κλικ για ενεργοποίηση ήχου' : 'Κάντε κλικ για σίγαση';
+                    }).catch(function(error) {
+                        console.log('Αναπαραγωγή με χειροκίνητο κλικ απέτυχε: ', error);
+                        audioError.classList.add('show');
+                        setTimeout(() => {
+                            audioError.classList.remove('show');
+                        }, 5000);
+                    });
+                } else {
+                    isMuted = !isMuted;
+                    audio.muted = isMuted;
+                    soundControl.textContent = isMuted ? '🔇' : '🔊';
+                    soundControl.title = isMuted ? 'Κάντε κλικ για ενεργοποίηση ήχου' : 'Κάντε κλικ για σίγαση';
+                }
+            });
+
+            // Fade out και πλοήγηση για τα κουμπιά
+            const soundLinks = document.querySelectorAll('.sound-link');
+            let isFadingOut = false;
+
+            soundLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (isFadingOut) {
+                        e.preventDefault();
+                        return;
+                    }
+
+                    e.preventDefault();
+                    isFadingOut = true;
+
+                    const targetUrl = this.href;
+                    
+                    // Εμφάνιση loading indicator
+                    loadingIndicator.classList.add('loading');
+                    
+                    // Fade out του ήχου για 1.5 δευτερόλεπτα (γρηγορότερο για mobile)
+                    const fadeOutInterval = setInterval(() => {
+                        if (audio.volume > 0.01) {
+                            audio.volume -= 0.02;
+                        } else {
+                            audio.volume = 0;
+                            clearInterval(fadeOutInterval);
+                            
+                            // Μετά το fade out, πλοήγηση στο link
+                            setTimeout(() => {
+                                window.location.href = targetUrl;
+                            }, 100);
+                        }
+                    }, 30); // 30ms * 50 = 1500ms (1.5 δευτερόλεπτα)
+                });
+            });
+
             // Τίτλος εμφανίζεται αμέσως
             setTimeout(() => {
                 document.querySelector('.delay-0').classList.remove('hidden-initially');
             }, 0);
 
-            // Περιγραφή εμφανίζεται μετά από 2 δευτερόλεπτα
+            // Περιγραφή εμφανίζεται μετά από 1 δευτερόλεπτο
             setTimeout(() => {
                 document.querySelector('.delay-2').classList.remove('hidden-initially');
-            }, 2000);
+            }, 1000);
 
-            // Επικεφαλίδα εμφανίζεται μετά από 4 δευτερόλεπτα
+            // Επικεφαλίδα εμφανίζεται μετά από 2 δευτερόλεπτα
             setTimeout(() => {
                 document.querySelector('.delay-4').classList.remove('hidden-initially');
-            }, 4000);
+            }, 2000);
 
-            // Κουμπιά εμφανίζονται μετά από 6 δευτερόλεπτα
+            // Κουμπιά εμφανίζονται μετά από 3 δευτερόλεπτα
             setTimeout(() => {
                 document.querySelector('.delay-6').classList.remove('hidden-initially');
-            }, 6000);
+                loadingIndicator.classList.remove('loading');
+            }, 3000);
 
             // Έλεγχος αν χρειάζεται scroll και εμφάνιση indicator
             const checkScrollNeeded = () => {
@@ -547,6 +747,9 @@
                 const scrollIndicator = document.getElementById('scrollIndicator');
                 scrollIndicator.classList.remove('show');
             });
+            
+            // Βελτιστοποίηση για touch events
+            document.addEventListener('touchstart', function() {}, {passive: true});
         });
     </script>
 
