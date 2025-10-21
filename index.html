@@ -194,6 +194,11 @@
             gap: clamp(1rem, 3vw, 2rem);
         }
 
+        /* Κουμπί που καταλαμβάνει πλήρες πλάτος */
+        .full-width-button {
+            grid-column: 1 / -1;
+        }
+
         /* Animations για σταδιακή εμφάνιση */
         .fade-in {
             opacity: 0;
@@ -301,6 +306,10 @@
             
             .action-button {
                 border-radius: 10px;
+            }
+            
+            .full-width-button {
+                grid-column: 1;
             }
         }
 
@@ -481,8 +490,17 @@
                 </p>
             </div>
 
-            <!-- Κουμπιά Δράσης (Links) σε grid 2x3 -->
+            <!-- Κουμπιά Δράσης (Links) σε grid 2x4 -->
             <div class="button-grid mt-8 fade-in delay-6 hidden-initially">
+                <!-- Κουμπί Αρχαιολογικές Τοποθεσίες (Πλήρες Πλάτος) -->
+                <a href="https://conchr.github.io/Sites-Farsala/" 
+                   rel="noopener noreferrer"
+                   class="action-button bg-teal-600 text-white hover:bg-teal-700 focus:bg-teal-700 transition-all duration-300 full-width-button"
+                   aria-label="Αρχαιολογικές Τοποθεσίες στα Φάρσαλα">
+                    <span class="flex-1 button-text text-center">Αρχαιολογικές Τοποθεσίες στα Φάρσαλα</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+
                 <!-- Κουμπί 1: Αχιλλέας -->
                 <a href="https://conchr.github.io/Achilles-Presentation/" 
                    rel="noopener noreferrer"
