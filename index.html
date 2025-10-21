@@ -190,7 +190,7 @@
         /* Grid layout για τα κουμπιά */
         .button-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, 1fr);
             gap: clamp(1rem, 3vw, 2rem);
         }
 
@@ -481,7 +481,7 @@
                 </p>
             </div>
 
-            <!-- Κουμπιά Δράσης (Links) σε grid 2x2 -->
+            <!-- Κουμπιά Δράσης (Links) σε grid 2x3 -->
             <div class="button-grid mt-8 fade-in delay-6 hidden-initially">
                 <!-- Κουμπί 1: Αχιλλέας -->
                 <a href="https://conchr.github.io/Achilles-Presentation/" 
@@ -516,6 +516,24 @@
                    class="action-button bg-green-600 text-white hover:bg-green-700 focus:bg-green-700 transition-all duration-300"
                    aria-label="Ο Πύργος Καραμίχου">
                     <span class="flex-1 button-text">Ο Πύργος Καραμίχου</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+
+                <!-- Κουμπί 5: Κάστρο Καλλιθέας -->
+                <a href="https://conchr.github.io/Kastro-Kallitheas/" 
+                   rel="noopener noreferrer"
+                   class="action-button bg-blue-600 text-white hover:bg-blue-700 focus:bg-blue-700 transition-all duration-300"
+                   aria-label="Κάστρο Καλλιθέας">
+                    <span class="flex-1 button-text">Κάστρο Καλλιθέας</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+
+                <!-- Κουμπί 6: Γέφυρα Πασσά -->
+                <a href="https://conchr.github.io/Passa-Presentation/" 
+                   rel="noopener noreferrer"
+                   class="action-button bg-purple-600 text-white hover:bg-purple-700 focus:bg-purple-700 transition-all duration-300"
+                   aria-label="Γέφυρα Πασσά">
+                    <span class="flex-1 button-text">Γέφυρα Πασσά</span>
                     <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
             </div>
