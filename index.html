@@ -426,7 +426,7 @@
             outline-offset: 2px;
         }
 
-        /* Landscape orientation optimization */
+        /* ===== LANDSCAPE OPTIMIZATIONS ===== */
         @media (max-height: 600px) and (orientation: landscape) {
             body {
                 padding: 10px;
@@ -434,24 +434,93 @@
             
             .card {
                 margin: 10px auto;
-                padding: clamp(1rem, 2vh, 1.5rem);
+                padding: clamp(0.75rem, 1.5vh, 1rem);
             }
             
             .main-content {
-                gap: clamp(0.5rem, 2vh, 1rem);
+                gap: clamp(0.5rem, 1.5vh, 1rem);
             }
             
             .action-button {
-                min-height: clamp(50px, 8vh, 80px);
-                padding: clamp(0.75rem, 2vh, 1rem) clamp(1rem, 3vh, 1.5rem);
+                min-height: clamp(40px, 6vh, 60px);
+                padding: clamp(0.5rem, 1.5vh, 0.75rem) clamp(0.75rem, 2vh, 1rem);
             }
             
             .title-text {
-                font-size: clamp(1.5rem, 4vw, 3rem);
+                font-size: clamp(1.25rem, 3vw, 2rem);
+                margin-bottom: 0.5rem;
             }
             
             .subtitle-text {
-                font-size: clamp(0.875rem, 2vw, 1.5rem);
+                font-size: clamp(0.75rem, 1.5vw, 1rem);
+            }
+            
+            .highlight-text {
+                font-size: clamp(0.875rem, 2vw, 1.25rem);
+                margin-top: 0.5rem;
+            }
+            
+            .button-text {
+                font-size: clamp(0.7rem, 1.5vw, 1rem);
+            }
+            
+            .arrow-icon {
+                font-size: clamp(1rem, 2vw, 1.5rem);
+            }
+            
+            .button-grid {
+                gap: clamp(0.5rem, 1.5vw, 1rem);
+            }
+            
+            .footer-text {
+                font-size: clamp(0.65rem, 1.2vw, 0.85rem);
+            }
+            
+            .small-text {
+                font-size: clamp(0.55rem, 1vw, 0.7rem);
+            }
+        }
+
+        /* Extra small landscape screens */
+        @media (max-height: 400px) and (orientation: landscape) {
+            body {
+                padding: 5px;
+            }
+            
+            .card {
+                margin: 5px auto;
+                padding: clamp(0.5rem, 1vh, 0.75rem);
+            }
+            
+            .action-button {
+                min-height: clamp(35px, 5vh, 45px);
+                padding: clamp(0.4rem, 1vh, 0.6rem) clamp(0.6rem, 1.5vh, 0.8rem);
+            }
+            
+            .title-text {
+                font-size: clamp(1rem, 2.5vw, 1.5rem);
+                margin-bottom: 0.25rem;
+            }
+            
+            .subtitle-text {
+                font-size: clamp(0.65rem, 1.2vw, 0.8rem);
+            }
+            
+            .highlight-text {
+                font-size: clamp(0.75rem, 1.5vw, 1rem);
+                margin-top: 0.25rem;
+            }
+            
+            .button-text {
+                font-size: clamp(0.6rem, 1.2vw, 0.8rem);
+            }
+            
+            .arrow-icon {
+                font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+            }
+            
+            .button-grid {
+                gap: clamp(0.4rem, 1vh, 0.6rem);
             }
         }
 
