@@ -125,10 +125,15 @@
             font-size: clamp(2rem, 6vw, 5rem);
         }
 
-        .subtitle-text {
-            color: #2d3748;
+        .section-subtitle {
+            color: #1e293b;
             line-height: 1.4;
-            font-size: clamp(1rem, 3vw, 2.5rem);
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
 
         .highlight-text {
@@ -202,7 +207,7 @@
         /* Animations για σταδιακή εμφάνιση */
         .fade-in {
             opacity: 0;
-            animation: fadeIn 2s ease-in-out forwards;
+            animation: fadeIn 1.5s ease-in-out forwards;
         }
 
         @keyframes fadeIn {
@@ -218,19 +223,19 @@
 
         /* Κλάσεις για καθυστέρηση */
         .delay-0 {
-            animation-delay: 0s;
+            animation-delay: 0.2s;
         }
         
         .delay-2 {
-            animation-delay: 1s;
+            animation-delay: 0.5s;
         }
         
         .delay-4 {
-            animation-delay: 2s;
+            animation-delay: 0.8s;
         }
         
         .delay-6 {
-            animation-delay: 3s;
+            animation-delay: 1.1s;
         }
 
         /* Αρχικά κρυμμένα στοιχεία */
@@ -246,27 +251,6 @@
             justify-content: flex-start;
             gap: clamp(1rem, 4vh, 3rem);
             min-height: min-content;
-        }
-
-        /* Scroll indicator για μικρές οθόνες */
-        .scroll-indicator {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.875rem;
-            z-index: 1000;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-
-        .scroll-indicator.show {
-            opacity: 1;
         }
 
         /* Loading indicator */
@@ -285,6 +269,70 @@
 
         .loading-indicator.loading {
             transform: scaleX(1);
+        }
+
+        /* Σελίδα 2 - Ιστορικές Μάχες */
+        .battles-page,
+        .ottoman-page {
+            display: none;
+        }
+
+        /* Βελτιωμένα μεγέθη γραμματοσειράς για σελίδες 2 και 3 */
+        .content-text {
+            color: #2d3748;
+            line-height: 1.7;
+            font-size: clamp(1.25rem, 2.8vw, 1.65rem);
+            text-align: left;
+            margin-bottom: 1.5rem;
+            text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.05);
+        }
+
+        .content-text-bold {
+            font-weight: 700;
+            color: #1e293b;
+            background: linear-gradient(135deg, #fef3c7, #fed7aa);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .content-list {
+            list-style-type: none;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-list li {
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .content-list li:before {
+            content: "•";
+            color: #dc2626;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+        }
+
+        .content-subtitle {
+            color: #1e293b;
+            line-height: 1.4;
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 800;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, #fef3c7, #fed7aa);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            border-left: 5px solid #dc2626;
         }
 
         /* ===== SMALL SMARTPHONES (Portrait) ===== */
@@ -318,12 +366,16 @@
                 font-size: 1.75rem;
             }
             
-            .subtitle-text {
-                font-size: 0.9rem;
+            .section-subtitle {
+                font-size: 1.25rem;
             }
             
             .highlight-text {
                 font-size: 1.1rem;
+            }
+
+            .content-text {
+                font-size: 1rem;
             }
         }
 
@@ -350,6 +402,10 @@
             
             .full-width-button {
                 grid-column: 1;
+            }
+
+            .content-text {
+                font-size: 1.1rem;
             }
         }
 
@@ -378,8 +434,9 @@
                 margin-bottom: 0.5rem;
             }
             
-            .subtitle-text {
-                font-size: clamp(0.75rem, 1.5vw, 1rem);
+            .section-subtitle {
+                font-size: clamp(1.1rem, 2.5vw, 1.75rem);
+                margin-bottom: 1.5rem;
             }
             
             .highlight-text {
@@ -406,6 +463,10 @@
             .small-text {
                 font-size: clamp(0.55rem, 1vw, 0.7rem);
             }
+
+            .content-text {
+                font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+            }
         }
 
         /* ===== SMALL TABLETS ===== */
@@ -423,6 +484,10 @@
             .button-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .content-text {
+                font-size: 1.25rem;
+            }
         }
 
         /* ===== TABLETS (Landscape) ===== */
@@ -439,6 +504,10 @@
             .action-button {
                 min-height: clamp(60px, 8vh, 80px);
             }
+
+            .content-text {
+                font-size: 1.3rem;
+            }
         }
 
         /* ===== LAPTOP (769px - 1200px) ===== */
@@ -452,6 +521,10 @@
                 border-radius: 16px;
                 margin: 20px auto;
             }
+
+            .content-text {
+                font-size: 1.4rem;
+            }
         }
 
         /* ===== DESKTOP (1201px - 1920px) ===== */
@@ -464,6 +537,10 @@
                 padding: clamp(2.5rem, 6vw, 3.5rem);
                 max-width: 1400px;
                 margin: 25px auto;
+            }
+
+            .content-text {
+                font-size: 1.5rem;
             }
         }
 
@@ -483,8 +560,8 @@
                 font-size: clamp(3rem, 8vw, 6rem);
             }
             
-            .subtitle-text {
-                font-size: clamp(1.5rem, 4vw, 3rem);
+            .section-subtitle {
+                font-size: clamp(1.75rem, 5vw, 3.5rem);
             }
             
             .highlight-text {
@@ -493,6 +570,10 @@
             
             .action-button {
                 min-height: clamp(80px, 10vh, 140px);
+            }
+
+            .content-text {
+                font-size: 1.7rem;
             }
         }
 
@@ -512,8 +593,8 @@
                 font-size: clamp(3rem, 8vw, 6rem);
             }
             
-            .subtitle-text {
-                font-size: clamp(1.5rem, 4vw, 3rem);
+            .section-subtitle {
+                font-size: clamp(2rem, 5.5vw, 4rem);
             }
             
             .highlight-text {
@@ -531,6 +612,10 @@
             
             .arrow-icon {
                 font-size: clamp(1.75rem, 4vw, 2.5rem);
+            }
+
+            .content-text {
+                font-size: 1.9rem;
             }
         }
 
@@ -591,8 +676,9 @@
                 margin-bottom: 0.25rem;
             }
             
-            .subtitle-text {
-                font-size: clamp(0.65rem, 1.2vw, 0.8rem);
+            .section-subtitle {
+                font-size: clamp(0.9rem, 2vw, 1.25rem);
+                margin-bottom: 1rem;
             }
             
             .highlight-text {
@@ -610,6 +696,10 @@
             
             .button-grid {
                 gap: clamp(0.4rem, 1vh, 0.6rem);
+            }
+
+            .content-text {
+                font-size: clamp(0.8rem, 1.5vw, 1rem);
             }
         }
 
@@ -633,6 +723,10 @@
             .arrow-icon {
                 font-size: 2rem;
             }
+
+            .content-text {
+                font-size: 1.9rem;
+            }
         }
     </style>
 </head>
@@ -641,12 +735,8 @@
     <!-- Loading indicator -->
     <div class="loading-indicator" id="loadingIndicator"></div>
 
-    <!-- Scroll indicator για μικρές οθόνες -->
-    <div class="scroll-indicator" id="scrollIndicator">
-        Κύλιση προς τα κάτω ↓
-    </div>
-
-    <div class="card">
+    <!-- Σελίδα 1: Αρχική Σελίδα -->
+    <div class="card main-page">
         <div class="main-content text-center">
             <!-- Κύριος Τίτλος -->
             <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
@@ -655,7 +745,7 @@
             
             <!-- Επεξηγηματικό Κείμενο -->
             <div class="space-y-4">
-                <p class="subtitle-text leading-relaxed max-w-6xl mx-auto px-4 fade-in delay-2 hidden-initially">
+                <p class="content-text leading-relaxed max-w-6xl mx-auto px-4 fade-in delay-2 hidden-initially">
                     Ξεκινήστε ένα μοναδικό ταξίδι. Ο Δήμος Φαρσάλων σάς προσκαλεί να περιηγηθείτε σε μια ιστορία που ξεκινά από τον μύθο του <strong class="text-indigo-700">Αχιλλέα</strong> και εκτείνεται χιλιετίες. 
                 </p>
                 <p class="highlight-text mt-4 tracking-wide fade-in delay-4 hidden-initially">
@@ -674,16 +764,16 @@
                     <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
 
-                <!-- Κουμπί 1: Αχιλλέας -->
+                <!-- Κουμπί Τα Φάρσαλα κι ο Αχιλλέας (Πλήρες Πλάτος) -->
                 <a href="https://conchr.github.io/Achilles-Presentation/" 
                    rel="noopener noreferrer"
-                   class="action-button bg-indigo-500 text-white hover:bg-indigo-600 focus:bg-indigo-600 transition-all duration-300"
+                   class="action-button bg-indigo-500 text-white hover:bg-indigo-600 focus:bg-indigo-600 transition-all duration-300 full-width-button"
                    aria-label="Τα Φάρσαλα κι ο Αχιλλέας">
-                    <span class="flex-1 button-text">Τα Φάρσαλα κι ο Αχιλλέας</span>
+                    <span class="flex-1 button-text text-center">Τα Φάρσαλα κι ο Αχιλλέας</span>
                     <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
 
-                <!-- Κουμπί 2: Ακρόπολη -->
+                <!-- Κουμπί 1: Ακρόπολη -->
                 <a href="https://conchr.github.io/Acropolis-Presentation/" 
                    rel="noopener noreferrer"
                    class="action-button bg-yellow-600 text-white hover:bg-yellow-700 focus:bg-yellow-700 transition-all duration-300"
@@ -692,25 +782,7 @@
                     <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
 
-                <!-- Κουμπί 3: Μάχη -->
-                <a href="https://conchr.github.io/Kynos-Presentation/" 
-                   rel="noopener noreferrer"
-                   class="action-button bg-red-600 text-white hover:bg-red-700 focus:bg-red-700 transition-all duration-300"
-                   aria-label="Η Μάχη των Κυνός Κεφαλαί">
-                    <span class="flex-1 button-text">Η Μάχη των Κυνός Κεφαλαί</span>
-                    <span class="arrow-icon" aria-hidden="true">→</span>
-                </a>
-
-                <!-- Κουμπί 4: Πύργος Καραμίχου -->
-                <a href="https://conchr.github.io/Karamichos-Tower/" 
-                   rel="noopener noreferrer"
-                   class="action-button bg-green-600 text-white hover:bg-green-700 focus:bg-green-700 transition-all duration-300"
-                   aria-label="Ο Πύργος Καραμίχου">
-                    <span class="flex-1 button-text">Ο Πύργος Καραμίχου</span>
-                    <span class="arrow-icon" aria-hidden="true">→</span>
-                </a>
-
-                <!-- Κουμπί 5: Κάστρο Καλλιθέας -->
+                <!-- Κουμπί 2: Κάστρο Καλλιθέας -->
                 <a href="https://conchr.github.io/Kastro-Kallitheas/" 
                    rel="noopener noreferrer"
                    class="action-button bg-blue-600 text-white hover:bg-blue-700 focus:bg-blue-700 transition-all duration-300"
@@ -719,12 +791,21 @@
                     <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
 
-                <!-- Κουμπί 6: Γέφυρα Πασσά -->
-                <a href="https://conchr.github.io/Passa-Presentation/" 
-                   rel="noopener noreferrer"
-                   class="action-button bg-purple-600 text-white hover:bg-purple-700 focus:bg-purple-700 transition-all duration-300"
-                   aria-label="Γέφυρα Πασσά">
-                    <span class="flex-1 button-text">Γέφυρα Πασσά</span>
+                <!-- Κουμπί 3: Ιστορικές Μάχες -->
+                <a href="#" 
+                   onclick="showBattlesPage()"
+                   class="action-button bg-red-600 text-white hover:bg-red-700 focus:bg-red-700 transition-all duration-300"
+                   aria-label="Ιστορικές Μάχες στα Φάρσαλα">
+                    <span class="flex-1 button-text">Ιστορικές Μάχες στα Φάρσαλα</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+
+                <!-- Κουμπί 4: Τουρκοκρατία -->
+                <a href="#" 
+                   onclick="showOttomanPage()"
+                   class="action-button bg-green-600 text-white hover:bg-green-700 focus:bg-green-700 transition-all duration-300"
+                   aria-label="Τουρκοκρατία στα Φάρσαλα">
+                    <span class="flex-1 button-text">Τουρκοκρατία</span>
                     <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
             </div>
@@ -732,6 +813,189 @@
 
         <!-- Footer με πληροφορίες -->
         <div class="text-center mt-6 pt-4 border-t border-gray-300">
+            <p class="footer-text text-gray-600">
+                Όλοι οι σύνδεσμοι ανοίγουν στην ίδια καρτέλα.
+            </p>
+            <p class="small-text text-gray-500 mt-1">
+                © 2025 Δήμος Φαρσάλων
+            </p>
+        </div>
+    </div>
+
+    <!-- Σελίδα 2: Ιστορικές Μάχες -->
+    <div class="card battles-page">
+        <div class="main-content text-center">
+            <!-- Κύριος Τίτλος -->
+            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
+                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
+            </h1>
+            
+            <!-- Υπότιτλος -->
+            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
+                Μεγάλες μάχες στην Περιοχή των Φαρσάλων
+            </h2>
+
+            <!-- Επεξηγηματικό Κείμενο -->
+            <div class="space-y-4">
+                <p class="content-text fade-in delay-4 hidden-initially">
+                    Η περιοχή των Φαρσάλων στη Θεσσαλία υπήρξε θέατρο πολλών μαχών ανά τους αιώνες, κυρίως λόγω της <span class="content-text-bold">στρατηγικής της γεωγραφικής θέσης</span>.
+                </p>
+                <p class="content-text fade-in delay-6 hidden-initially">
+                    Τα Φάρσαλα βρίσκονται σε ένα φυσικό πέρασμα που συνδέει τη Θεσσαλία (τον μεγαλύτερο κάμπο της Ελλάδας) με τη νότια Ελλάδα. Αυτή η θέση τα καθιστούσε <span class="content-text-bold">Κεντρικό Διάδρομο Μετακίνησης</span> και ο έλεγχος των Φαρσάλων και της πεδιάδας τους ήταν ζωτικής σημασίας για την εξασφάλιση της διέλευσης και του ελέγχου της κεντρικής Ελλάδας.
+                </p>
+                <p class="content-text fade-in delay-8 hidden-initially">
+                    Επίσης η εκτεταμένη πεδιάδα των Φαρσάλων ήταν ιδανική για τη διεξαγωγή μεγάλων, παρατεταμένων συγκρούσεων με τη συμμετοχή μεγάλου αριθμού στρατευμάτων, ειδικά ιππικού, που χαρακτήριζε τις μάχες στην αρχαιότητα και τους νεότερους χρόνους.
+                </p>
+            </div>
+
+            <!-- Κουμπιά Μάχες -->
+            <div class="button-grid mt-8 fade-in delay-10 hidden-initially">
+                <!-- Κουμπί 1: Κυνός Κεφαλαί -->
+                <a href="#" 
+                   class="action-button bg-amber-600 text-white hover:bg-amber-700 focus:bg-amber-700 transition-all duration-300"
+                   aria-label="Κυνός Κεφαλαί 197 π.χ.">
+                    <span class="flex-1 button-text">Κυνός Κεφαλαί 197 π.χ.<br><small class="text-xs">(Η μάχη που άλλαξε τη ροή της ιστορίας)</small></span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+
+                <!-- Κουμπί 2: Μάχη των Φαρσάλων 48 π.χ. -->
+                <a href="https://conchr.github.io/48-BC-Presentation/" 
+                   rel="noopener noreferrer"
+                   class="action-button bg-orange-600 text-white hover:bg-orange-700 focus:bg-orange-700 transition-all duration-300"
+                   aria-label="Η Μάχη των Φαρσάλων 48 π.χ.">
+                    <span class="flex-1 button-text">Η Μάχη των Φαρσάλων 48 π.χ.<br><small class="text-xs">(Ρωμαϊκός Εμφύλιος)</small></span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+
+                <!-- Κουμπί 3: Μάχη των Φαρσάλων 1277 μ.χ. -->
+                <a href="https://conchr.github.io/1277-Presentation/" 
+                   rel="noopener noreferrer"
+                   class="action-button bg-rose-600 text-white hover:bg-rose-700 focus:bg-rose-700 transition-all duration-300"
+                   aria-label="Η Μάχη των Φαρσάλων 1277 μ.χ.">
+                    <span class="flex-1 button-text">Η Μάχη των Φαρσάλων 1277 μ.χ.<br><small class="text-xs">(Βυζαντινός Στρατός εναντίον Ιωάννη Α΄ Δούκα)</small></span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+
+                <!-- Κουμπί 4: Ατυχής Πόλεμος 1897 μ.χ. -->
+                <a href="https://conchr.github.io/1897-Present/" 
+                   rel="noopener noreferrer"
+                   class="action-button bg-cyan-600 text-white hover:bg-cyan-700 focus:bg-cyan-700 transition-all duration-300"
+                   aria-label="Ατυχής Πόλεμος 1897 μ.χ.">
+                    <span class="flex-1 button-text">Ατυχής Πόλεμος 1897 μ.χ.<br><small class="text-xs">(Έλληνες εναντίον Οθωμανών)</small></span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer με πληροφορίες -->
+        <div class="text-center mt-6 pt-4 border-t border-gray-300">
+            <div class="mb-4">
+                <a href="#" 
+                   onclick="showMainPage()"
+                   class="action-button bg-gray-600 text-white hover:bg-gray-700 focus:bg-gray-700 transition-all duration-300"
+                   style="max-width: 300px; margin: 0 auto;"
+                   aria-label="Κεντρική Σελίδα">
+                    <span class="flex-1 button-text">Κεντρική Σελίδα</span>
+                    <span class="arrow-icon" aria-hidden="true">←</span>
+                </a>
+            </div>
+            <p class="footer-text text-gray-600">
+                Όλοι οι σύνδεσμοι ανοίγουν στην ίδια καρτέλα.
+            </p>
+            <p class="small-text text-gray-500 mt-1">
+                © 2025 Δήμος Φαρσάλων
+            </p>
+        </div>
+    </div>
+
+    <!-- Σελίδα 3: Τουρκοκρατία -->
+    <div class="card ottoman-page">
+        <div class="main-content text-center">
+            <!-- Κύριος Τίτλος -->
+            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
+                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
+            </h1>
+
+            <!-- Επεξηγηματικό Κείμενο -->
+            <div class="space-y-4 mt-6">
+                <h3 class="content-subtitle fade-in delay-2 hidden-initially">🏰 Κτίσματα και Μνημεία της Τουρκοκρατίας</h3>
+                
+                <ul class="content-list fade-in delay-4 hidden-initially">
+                    <li>
+                        <span class="content-text-bold">Γέφυρα του Ενιпέα ("Γεφύρι του Πασά"):</span>
+                        <br>
+                        Πρόκειται για ένα από τα πιο σημαντικά αρχιτεκτονικά μνημεία της περιόδου.
+                        Είναι ένα τεράστιο πέτρινο γεφύρι (μήκους 110 μέτρων) με επτά τόξα, που οικοδομήθηκε το 1752.
+                        Βρίσκεται βόρεια της πόλης, δίπλα στον δρόμο από τη Λάρισα, και έχει ανακηρυχθεί διατηρητέο μνημείο.
+                    </li>
+                    
+                    <li>
+                        <span class="content-text-bold">Κονάκια (Τσιφλικόσπιτα):</span>
+                        <br>
+                        Στην ευρύτερη περιοχή των Φαρσάλων σώζονται κονάκια (τα σπίτια των τσιφλικάδων) που μαρτυρούν την κοινωνική δομή της εποχής των τσιφλικιών, η οποία διαμορφώθηκε κατά την Τουρκοκρατία και διατηρήθηκε ως την απελευθέρωση της Θεσσαλίας.
+                        Δύο γνωστά είναι το <span class="content-text-bold">Κονάκι Χαροκόπου</span> (στο Πολυνέρι, σε καλή κατάσταση) και το <span class="content-text-bold">Κονάκι Βασιλείου</span> (στον Παλαιόμυλο).
+                    </li>
+                    
+                    <li>
+                        <span class="content-text-bold">Τεκές των Μπεκτασήδων Δερβίσηδων:</span>
+                        <br>
+                        Στην περιοχή (κοντά στην Ασπρόγεια) σώζεται ο Τεκές (μουσουλμανικό μοναστήρι-ερημητήριο) των Μπεκτασήδων Δερβίσηδων, ένα ιδιαίτερο θρησκευτικό μνημείο που αντικατοπτρίζει την πολυπολιτισμική παρουσία στην περιοχή κατά την Οθωμανική περίοδο.
+                    </li>
+                    
+                    <li>
+                        <span class="content-text-bold">Παλιά Πόλη (Βαρούσι):</span>
+                        <br>
+                        Η ρυμοτομία της σημερινής πόλης εξακολουθεί να έχει ίχνη από την παλιά πόλη της Τουρκοκρατίας, ειδικά στη συνοικία Βαρούσι, όπου έχουν βρεθεί και νεότερα αρχαιολογικά ευρήματα (όχι μόνο αρχαία).
+                    </li>
+                </ul>
+                
+                <p class="content-text fade-in delay-6 hidden-initially">
+                    Συνοψίζοντας, τα ευρήματα της Τουρκοκρατίας στα Φάρσαλα αφορούν κυρίως κτηριακά και αρχιτεκτονικά μνημεία (γέφυρες, οικίες, θρησκευτικά κτίσματα) που δείχνουν τη ζωή και την οργάνωση της πόλης κατά τη νεότερη περίοδο.
+                </p>
+            </div>
+
+            <!-- Κουμπιά Τουρκοκρατίας -->
+            <div class="button-grid mt-8 fade-in delay-8 hidden-initially">
+                <!-- Κουμπί 1: Πύργος Καραμίχου -->
+                <a href="https://conchr.github.io/Karamichos-Tower/" 
+                   rel="noopener noreferrer"
+                   class="action-button bg-green-600 text-white hover:bg-green-700 focus:bg-green-700 transition-all duration-300"
+                   aria-label="Ο Πύργος Καραμίχου">
+                    <span class="flex-1 button-text">Ο Πύργος Καραμίχου</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+
+                <!-- Κουμπί 2: Γέφυρα Πασσά -->
+                <a href="https://conchr.github.io/Passa-Presentation/" 
+                   rel="noopener noreferrer"
+                   class="action-button bg-purple-600 text-white hover:bg-purple-700 focus:bg-purple-700 transition-all duration-300"
+                   aria-label="Γέφυρα Πασσά">
+                    <span class="flex-1 button-text">Γέφυρα Πασσά</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+
+                <!-- Κουμπί 3: Ιστορικά Μνημεία Τουρκοκρατίας -->
+                <a href="#" 
+                   class="action-button bg-amber-600 text-white hover:bg-amber-700 focus:bg-amber-700 transition-all duration-300 full-width-button"
+                   aria-label="Ιστορικά Μνημεία Τουρκοκρατίας">
+                    <span class="flex-1 button-text text-center">Ιστορικά Μνημεία Τουρκοκρατίας</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer με πληροφορίες -->
+        <div class="text-center mt-6 pt-4 border-t border-gray-300">
+            <div class="mb-4">
+                <a href="#" 
+                   onclick="showMainPage()"
+                   class="action-button bg-gray-600 text-white hover:bg-gray-700 focus:bg-gray-700 transition-all duration-300"
+                   style="max-width: 300px; margin: 0 auto;"
+                   aria-label="Κεντρική Σελίδα">
+                    <span class="flex-1 button-text">Κεντρική Σελίδα</span>
+                    <span class="arrow-icon" aria-hidden="true">←</span>
+                </a>
+            </div>
             <p class="footer-text text-gray-600">
                 Όλοι οι σύνδεσμοι ανοίγουν στην ίδια καρτέλα.
             </p>
@@ -755,47 +1019,22 @@
                 document.querySelector('.delay-0').classList.remove('hidden-initially');
             }, 0);
 
-            // Περιγραφή εμφανίζεται μετά από 1 δευτερόλεπτο
+            // Περιγραφή εμφανίζεται μετά από 0.5 δευτερόλεπτα
             setTimeout(() => {
                 document.querySelector('.delay-2').classList.remove('hidden-initially');
-            }, 1000);
+            }, 500);
 
-            // Επικεφαλίδα εμφανίζεται μετά από 2 δευτερόλεπτα
+            // Επικεφαλίδα εμφανίζεται μετά από 1 δευτερόλεπτο
             setTimeout(() => {
                 document.querySelector('.delay-4').classList.remove('hidden-initially');
-            }, 2000);
+            }, 1000);
 
-            // Κουμπιά εμφανίζονται μετά από 3 δευτερόλεπτα
+            // Κουμπιά εμφανίζονται μετά από 1.5 δευτερόλεπτα
             setTimeout(() => {
                 document.querySelector('.delay-6').classList.remove('hidden-initially');
                 loadingIndicator.classList.remove('loading');
-            }, 3000);
+            }, 1500);
 
-            // Έλεγχος αν χρειάζεται scroll και εμφάνιση indicator
-            const checkScrollNeeded = () => {
-                const card = document.querySelector('.card');
-                const scrollIndicator = document.getElementById('scrollIndicator');
-                
-                if (card.scrollHeight > window.innerHeight) {
-                    scrollIndicator.classList.add('show');
-                    
-                    // Αυτόματο απόκρυψη του indicator μετά από 3 δευτερόλεπτα
-                    setTimeout(() => {
-                        scrollIndicator.classList.remove('show');
-                    }, 3000);
-                }
-            };
-
-            // Έλεγχος κατά το load και κατά το resize
-            window.addEventListener('load', checkScrollNeeded);
-            window.addEventListener('resize', checkScrollNeeded);
-
-            // Απόκρυψη indicator όταν ο χρήστης κάνει scroll
-            window.addEventListener('scroll', () => {
-                const scrollIndicator = document.getElementById('scrollIndicator');
-                scrollIndicator.classList.remove('show');
-            });
-            
             // Βελτιστοποίηση για touch events
             document.addEventListener('touchstart', function() {}, {passive: true});
             
@@ -809,6 +1048,35 @@
                 }
             });
         });
+
+        // Συναρτήσεις για εναλλαγή σελίδων
+        function showBattlesPage() {
+            document.querySelector('.main-page').style.display = 'none';
+            document.querySelector('.ottoman-page').style.display = 'none';
+            document.querySelector('.battles-page').style.display = 'flex';
+            
+            // Επαναφορά animations για τη δεύτερη σελίδα
+            document.querySelectorAll('.battles-page .hidden-initially').forEach(el => {
+                el.classList.remove('hidden-initially');
+            });
+        }
+
+        function showOttomanPage() {
+            document.querySelector('.main-page').style.display = 'none';
+            document.querySelector('.battles-page').style.display = 'none';
+            document.querySelector('.ottoman-page').style.display = 'flex';
+            
+            // Επαναφορά animations για την τρίτη σελίδα
+            document.querySelectorAll('.ottoman-page .hidden-initially').forEach(el => {
+                el.classList.remove('hidden-initially');
+            });
+        }
+
+        function showMainPage() {
+            document.querySelector('.battles-page').style.display = 'none';
+            document.querySelector('.ottoman-page').style.display = 'none';
+            document.querySelector('.main-page').style.display = 'flex';
+        }
     </script>
 
 </body>
