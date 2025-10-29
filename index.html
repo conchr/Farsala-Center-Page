@@ -271,9 +271,15 @@
             transform: scaleX(1);
         }
 
-        /* Σελίδα 2 - Ιστορικές Μάχες */
-        .battles-page,
-        .ottoman-page {
+        /* Σελίδες Ιστορικών Μαχών */
+        .battles-intro-page,
+        .battles-buttons-page,
+        /* Σελίδες Τουρκοκρατίας */
+        .ottoman-bridge-page,
+        .ottoman-konakia-page,
+        .ottoman-tekes-page,
+        .ottoman-old-city-page,
+        .ottoman-summary-page {
             display: none;
         }
 
@@ -333,6 +339,21 @@
             padding: 1rem 2rem;
             border-radius: 12px;
             border-left: 5px solid #dc2626;
+        }
+
+        /* Navigation buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            gap: 1rem;
+        }
+
+        .nav-button {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
 
         /* ===== SMALL SMARTPHONES (Portrait) ===== */
@@ -793,7 +814,7 @@
 
                 <!-- Κουμπί 3: Ιστορικές Μάχες -->
                 <a href="#" 
-                   onclick="showBattlesPage()"
+                   onclick="showBattlesIntroPage()"
                    class="action-button bg-red-600 text-white hover:bg-red-700 focus:bg-red-700 transition-all duration-300"
                    aria-label="Ιστορικές Μάχες στα Φάρσαλα">
                     <span class="flex-1 button-text">Ιστορικές Μάχες στα Φάρσαλα</span>
@@ -802,7 +823,7 @@
 
                 <!-- Κουμπί 4: Τουρκοκρατία -->
                 <a href="#" 
-                   onclick="showOttomanPage()"
+                   onclick="showOttomanBridgePage()"
                    class="action-button bg-green-600 text-white hover:bg-green-700 focus:bg-green-700 transition-all duration-300"
                    aria-label="Τουρκοκρατία στα Φάρσαλα">
                     <span class="flex-1 button-text">Τουρκοκρατία</span>
@@ -822,8 +843,8 @@
         </div>
     </div>
 
-    <!-- Σελίδα 2: Ιστορικές Μάχες -->
-    <div class="card battles-page">
+    <!-- Σελίδα 2α: Ιστορικές Μάχες - Εισαγωγή -->
+    <div class="card battles-intro-page">
         <div class="main-content text-center">
             <!-- Κύριος Τίτλος -->
             <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
@@ -848,8 +869,33 @@
                 </p>
             </div>
 
+            <!-- Navigation buttons -->
+            <div class="nav-buttons mt-8 fade-in delay-10 hidden-initially">
+                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                    Κεντρική Σελίδα
+                </button>
+                <button onclick="showBattlesButtonsPage()" class="nav-button bg-red-600 text-white hover:bg-red-700">
+                    Επόμενο →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Σελίδα 2β: Ιστορικές Μάχες - Κουμπιά -->
+    <div class="card battles-buttons-page">
+        <div class="main-content text-center">
+            <!-- Κύριος Τίτλος -->
+            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
+                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
+            </h1>
+            
+            <!-- Υπότιτλος -->
+            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
+                Μεγάλες μάχες στην Περιοχή των Φαρσάλων
+            </h2>
+
             <!-- Κουμπιά Μάχες -->
-            <div class="button-grid mt-8 fade-in delay-10 hidden-initially">
+            <div class="button-grid mt-8 fade-in delay-4 hidden-initially">
                 <!-- Κουμπί 1: Κυνός Κεφαλαί -->
                 <a href="#" 
                    class="action-button bg-amber-600 text-white hover:bg-amber-700 focus:bg-amber-700 transition-all duration-300"
@@ -885,77 +931,185 @@
                     <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
             </div>
-        </div>
 
-        <!-- Footer με πληροφορίες -->
-        <div class="text-center mt-6 pt-4 border-t border-gray-300">
-            <div class="mb-4">
-                <a href="#" 
-                   onclick="showMainPage()"
-                   class="action-button bg-gray-600 text-white hover:bg-gray-700 focus:bg-gray-700 transition-all duration-300"
-                   style="max-width: 300px; margin: 0 auto;"
-                   aria-label="Κεντρική Σελίδα">
-                    <span class="flex-1 button-text">Κεντρική Σελίδα</span>
-                    <span class="arrow-icon" aria-hidden="true">←</span>
-                </a>
+            <!-- Navigation buttons -->
+            <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
+                <button onclick="showBattlesIntroPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                    ← Προηγούμενο
+                </button>
+                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                    Κεντρική Σελίδα
+                </button>
             </div>
-            <p class="footer-text text-gray-600">
-                Όλοι οι σύνδεσμοι ανοίγουν στην ίδια καρτέλα.
-            </p>
-            <p class="small-text text-gray-500 mt-1">
-                © 2025 Δήμος Φαρσάλων
-            </p>
         </div>
     </div>
 
-    <!-- Σελίδα 3: Τουρκοκρατία -->
-    <div class="card ottoman-page">
+    <!-- Σελίδα 3α: Τουρκοκρατία - Γέφυρα του Ενιπέα -->
+    <div class="card ottoman-bridge-page">
         <div class="main-content text-center">
             <!-- Κύριος Τίτλος -->
             <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
                 Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
             </h1>
 
-            <!-- Επεξηγηματικό Κείμενο -->
-            <div class="space-y-4 mt-6">
-                <h3 class="content-subtitle fade-in delay-2 hidden-initially">🏰 Κτίσματα και Μνημεία της Τουρκοκρατίας</h3>
-                
-                <ul class="content-list fade-in delay-4 hidden-initially">
-                    <li>
-                        <span class="content-text-bold">Γέφυρα του Ενιпέα ("Γεφύρι του Πασά"):</span>
-                        <br>
-                        Πρόκειται για ένα από τα πιο σημαντικά αρχιτεκτονικά μνημεία της περιόδου.
-                        Είναι ένα τεράστιο πέτρινο γεφύρι (μήκους 110 μέτρων) με επτά τόξα, που οικοδομήθηκε το 1752.
-                        Βρίσκεται βόρεια της πόλης, δίπλα στον δρόμο από τη Λάρισα, και έχει ανακηρυχθεί διατηρητέο μνημείο.
-                    </li>
-                    
-                    <li>
-                        <span class="content-text-bold">Κονάκια (Τσιφλικόσπιτα):</span>
-                        <br>
-                        Στην ευρύτερη περιοχή των Φαρσάλων σώζονται κονάκια (τα σπίτια των τσιφλικάδων) που μαρτυρούν την κοινωνική δομή της εποχής των τσιφλικιών, η οποία διαμορφώθηκε κατά την Τουρκοκρατία και διατηρήθηκε ως την απελευθέρωση της Θεσσαλίας.
-                        Δύο γνωστά είναι το <span class="content-text-bold">Κονάκι Χαροκόπου</span> (στο Πολυνέρι, σε καλή κατάσταση) και το <span class="content-text-bold">Κονάκι Βασιλείου</span> (στον Παλαιόμυλο).
-                    </li>
-                    
-                    <li>
-                        <span class="content-text-bold">Τεκές των Μπεκτασήδων Δερβίσηδων:</span>
-                        <br>
-                        Στην περιοχή (κοντά στην Ασπρόγεια) σώζεται ο Τεκές (μουσουλμανικό μοναστήρι-ερημητήριο) των Μπεκτασήδων Δερβίσηδων, ένα ιδιαίτερο θρησκευτικό μνημείο που αντικατοπτρίζει την πολυπολιτισμική παρουσία στην περιοχή κατά την Οθωμανική περίοδο.
-                    </li>
-                    
-                    <li>
-                        <span class="content-text-bold">Παλιά Πόλη (Βαρούσι):</span>
-                        <br>
-                        Η ρυμοτομία της σημερινής πόλης εξακολουθεί να έχει ίχνη από την παλιά πόλη της Τουρκοκρατίας, ειδικά στη συνοικία Βαρούσι, όπου έχουν βρεθεί και νεότερα αρχαιολογικά ευρήματα (όχι μόνο αρχαία).
-                    </li>
-                </ul>
-                
-                <p class="content-text fade-in delay-6 hidden-initially">
+            <!-- Υπότιτλος -->
+            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
+                Κτίσματα και Μνημεία της Τουρκοκρατίας
+            </h2>
+
+            <!-- Περιεχόμενο -->
+            <div class="space-y-4 fade-in delay-4 hidden-initially">
+                <h3 class="content-subtitle">Γέφυρα του Ενιπέα ("Γεφύρι του Πασά")</h3>
+                <p class="content-text">
+                    Πρόκειται για ένα από τα πιο σημαντικά αρχιτεκτονικά μνημεία της περιόδου.
+                    Είναι ένα τεράστιο πέτρινο γεφύρι (μήκους 110 μέτρων) με επτά τόξα, που οικοδομήθηκε το 1752.
+                    Βρίσκεται βόρεια της πόλης, δίπλα στον δρόμο από τη Λάρισα, και έχει ανακηρυχθεί διατηρητέο μνημείο.
+                </p>
+            </div>
+
+            <!-- Navigation buttons -->
+            <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
+                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                    Κεντρική Σελίδα
+                </button>
+                <button onclick="showOttomanKonakiaPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                    Επόμενο →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Σελίδα 3β: Τουρκοκρατία - Κονάκια -->
+    <div class="card ottoman-konakia-page">
+        <div class="main-content text-center">
+            <!-- Κύριος Τίτλος -->
+            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
+                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
+            </h1>
+
+            <!-- Υπότιτλος -->
+            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
+                Κτίσματα και Μνημεία της Τουρκοκρατίας
+            </h2>
+
+            <!-- Περιεχόμενο -->
+            <div class="space-y-4 fade-in delay-4 hidden-initially">
+                <h3 class="content-subtitle">Κονάκια (Τσιφλικόσπιτα)</h3>
+                <p class="content-text">
+                    Στην ευρύτερη περιοχή των Φαρσάλων σώζονται κονάκια (τα σπίτια των τσιφλικάδων) που μαρτυρούν την κοινωνική δομή της εποχής των τσιφλικιών, η οποία διαμορφώθηκε κατά την Τουρκοκρατία και διατηρήθηκε ως την απελευθέρωση της Θεσσαλίας.
+                    Δύο γνωστά είναι το <span class="content-text-bold">Κονάκι Χαροκόπου</span> (στο Πολυνέρι, σε καλή κατάσταση) και το <span class="content-text-bold">Κονάκι Βασιλείου</span> (στον Παλαιόμυλο).
+                </p>
+            </div>
+
+            <!-- Navigation buttons -->
+            <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
+                <button onclick="showOttomanBridgePage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                    ← Προηγούμενο
+                </button>
+                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                    Κεντρική Σελίδα
+                </button>
+                <button onclick="showOttomanTekesPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                    Επόμενο →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Σελίδα 3γ: Τουρκοκρατία - Τεκές -->
+    <div class="card ottoman-tekes-page">
+        <div class="main-content text-center">
+            <!-- Κύριος Τίτλος -->
+            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
+                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
+            </h1>
+
+            <!-- Υπότιτλος -->
+            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
+                Κτίσματα και Μνημεία της Τουρκοκρατίας
+            </h2>
+
+            <!-- Περιεχόμενο -->
+            <div class="space-y-4 fade-in delay-4 hidden-initially">
+                <h3 class="content-subtitle">Τεκές των Μπεκτασήδων Δερβίσηδων</h3>
+                <p class="content-text">
+                    Στην περιοχή (κοντά στην Ασπρόγεια) σώζεται ο Τεκές (μουσουλμανικό μοναστήρι-ερημητήριο) των Μπεκτασήδων Δερβίσηδων, ένα ιδιαίτερο θρησκευτικό μνημείο που αντικατοπτρίζει την πολυπολιτισμική παρουσία στην περιοχή κατά την Οθωμανική περίοδο.
+                </p>
+            </div>
+
+            <!-- Navigation buttons -->
+            <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
+                <button onclick="showOttomanKonakiaPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                    ← Προηγούμενο
+                </button>
+                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                    Κεντρική Σελίδα
+                </button>
+                <button onclick="showOttomanOldCityPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                    Επόμενο →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Σελίδα 3δ: Τουρκοκρατία - Παλιά Πόλη -->
+    <div class="card ottoman-old-city-page">
+        <div class="main-content text-center">
+            <!-- Κύριος Τίτλος -->
+            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
+                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
+            </h1>
+
+            <!-- Υπότιτλος -->
+            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
+                Κτίσματα και Μνημεία της Τουρκοκρατίας
+            </h2>
+
+            <!-- Περιεχόμενο -->
+            <div class="space-y-4 fade-in delay-4 hidden-initially">
+                <h3 class="content-subtitle">Παλιά Πόλη (Βαρούσι)</h3>
+                <p class="content-text">
+                    Η ρυμοτομία της σημερινής πόλης εξακολουθεί να έχει ίχνη από την παλιά πόλη της Τουρκοκρατίας, ειδικά στη συνοικία Βαρούσι, όπου έχουν βρεθεί και νεότερα αρχαιολογικά ευρήματα (όχι μόνο αρχαία).
+                </p>
+            </div>
+
+            <!-- Navigation buttons -->
+            <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
+                <button onclick="showOttomanTekesPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                    ← Προηγούμενο
+                </button>
+                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                    Κεντρική Σελίδα
+                </button>
+                <button onclick="showOttomanSummaryPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                    Επόμενο →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Σελίδα 3ε: Τουρκοκρατία - Σύνοψη και Κουμπιά -->
+    <div class="card ottoman-summary-page">
+        <div class="main-content text-center">
+            <!-- Κύριος Τίτλος -->
+            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
+                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
+            </h1>
+
+            <!-- Υπότιτλος -->
+            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
+                Κτίσματα και Μνημεία της Τουρκοκρατίας
+            </h2>
+
+            <!-- Περιεχόμενο -->
+            <div class="space-y-4 fade-in delay-4 hidden-initially">
+                <p class="content-text">
                     Συνοψίζοντας, τα ευρήματα της Τουρκοκρατίας στα Φάρσαλα αφορούν κυρίως κτηριακά και αρχιτεκτονικά μνημεία (γέφυρες, οικίες, θρησκευτικά κτίσματα) που δείχνουν τη ζωή και την οργάνωση της πόλης κατά τη νεότερη περίοδο.
                 </p>
             </div>
 
             <!-- Κουμπιά Τουρκοκρατίας -->
-            <div class="button-grid mt-8 fade-in delay-8 hidden-initially">
+            <div class="button-grid mt-8 fade-in delay-6 hidden-initially">
                 <!-- Κουμπί 1: Πύργος Καραμίχου -->
                 <a href="https://conchr.github.io/Karamichos-Tower/" 
                    rel="noopener noreferrer"
@@ -982,26 +1136,16 @@
                     <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
             </div>
-        </div>
 
-        <!-- Footer με πληροφορίες -->
-        <div class="text-center mt-6 pt-4 border-t border-gray-300">
-            <div class="mb-4">
-                <a href="#" 
-                   onclick="showMainPage()"
-                   class="action-button bg-gray-600 text-white hover:bg-gray-700 focus:bg-gray-700 transition-all duration-300"
-                   style="max-width: 300px; margin: 0 auto;"
-                   aria-label="Κεντρική Σελίδα">
-                    <span class="flex-1 button-text">Κεντρική Σελίδα</span>
-                    <span class="arrow-icon" aria-hidden="true">←</span>
-                </a>
+            <!-- Navigation buttons -->
+            <div class="nav-buttons mt-8 fade-in delay-8 hidden-initially">
+                <button onclick="showOttomanOldCityPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                    ← Προηγούμενο
+                </button>
+                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                    Κεντρική Σελίδα
+                </button>
             </div>
-            <p class="footer-text text-gray-600">
-                Όλοι οι σύνδεσμοι ανοίγουν στην ίδια καρτέλα.
-            </p>
-            <p class="small-text text-gray-500 mt-1">
-                © 2025 Δήμος Φαρσάλων
-            </p>
         </div>
     </div>
 
@@ -1050,32 +1194,68 @@
         });
 
         // Συναρτήσεις για εναλλαγή σελίδων
-        function showBattlesPage() {
-            document.querySelector('.main-page').style.display = 'none';
-            document.querySelector('.ottoman-page').style.display = 'none';
-            document.querySelector('.battles-page').style.display = 'flex';
-            
-            // Επαναφορά animations για τη δεύτερη σελίδα
-            document.querySelectorAll('.battles-page .hidden-initially').forEach(el => {
-                el.classList.remove('hidden-initially');
-            });
-        }
-
-        function showOttomanPage() {
-            document.querySelector('.main-page').style.display = 'none';
-            document.querySelector('.battles-page').style.display = 'none';
-            document.querySelector('.ottoman-page').style.display = 'flex';
-            
-            // Επαναφορά animations για την τρίτη σελίδα
-            document.querySelectorAll('.ottoman-page .hidden-initially').forEach(el => {
-                el.classList.remove('hidden-initially');
-            });
-        }
-
         function showMainPage() {
-            document.querySelector('.battles-page').style.display = 'none';
-            document.querySelector('.ottoman-page').style.display = 'none';
+            hideAllPages();
             document.querySelector('.main-page').style.display = 'flex';
+        }
+
+        // Συναρτήσεις για Ιστορικές Μάχες
+        function showBattlesIntroPage() {
+            hideAllPages();
+            document.querySelector('.battles-intro-page').style.display = 'flex';
+            resetAnimations('.battles-intro-page');
+        }
+
+        function showBattlesButtonsPage() {
+            hideAllPages();
+            document.querySelector('.battles-buttons-page').style.display = 'flex';
+            resetAnimations('.battles-buttons-page');
+        }
+
+        // Συναρτήσεις για Τουρκοκρατία
+        function showOttomanBridgePage() {
+            hideAllPages();
+            document.querySelector('.ottoman-bridge-page').style.display = 'flex';
+            resetAnimations('.ottoman-bridge-page');
+        }
+
+        function showOttomanKonakiaPage() {
+            hideAllPages();
+            document.querySelector('.ottoman-konakia-page').style.display = 'flex';
+            resetAnimations('.ottoman-konakia-page');
+        }
+
+        function showOttomanTekesPage() {
+            hideAllPages();
+            document.querySelector('.ottoman-tekes-page').style.display = 'flex';
+            resetAnimations('.ottoman-tekes-page');
+        }
+
+        function showOttomanOldCityPage() {
+            hideAllPages();
+            document.querySelector('.ottoman-old-city-page').style.display = 'flex';
+            resetAnimations('.ottoman-old-city-page');
+        }
+
+        function showOttomanSummaryPage() {
+            hideAllPages();
+            document.querySelector('.ottoman-summary-page').style.display = 'flex';
+            resetAnimations('.ottoman-summary-page');
+        }
+
+        // Βοηθητικές συναρτήσεις
+        function hideAllPages() {
+            const pages = document.querySelectorAll('.card');
+            pages.forEach(page => {
+                page.style.display = 'none';
+            });
+        }
+
+        function resetAnimations(pageClass) {
+            const elements = document.querySelectorAll(`${pageClass} .hidden-initially`);
+            elements.forEach(el => {
+                el.classList.remove('hidden-initially');
+            });
         }
     </script>
 
