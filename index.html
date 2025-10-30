@@ -41,6 +41,33 @@
             overflow-y: auto;
         }
 
+        /* Background images for specific pages */
+        body.main-page-bg {
+            background: 
+                linear-gradient(rgba(244, 233, 216, 0.85), rgba(232, 220, 201, 0.85)),
+                url('https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/D-Farsala-(1).jpg') center/cover,
+                linear-gradient(135deg, #f4e9d8 0%, #e8dcc9 50%, #dcc9a8 100%),
+                url("data:image/svg+xml,%3Csvg width='400' height='400' viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E"),
+                radial-gradient(circle at 15% 25%, rgba(180, 150, 100, 0.2) 0%, transparent 25%),
+                radial-gradient(circle at 85% 75%, rgba(160, 130, 90, 0.15) 0%, transparent 30%),
+                radial-gradient(circle at 45% 85%, rgba(140, 110, 80, 0.18) 0%, transparent 35%),
+                radial-gradient(circle at 75% 15%, rgba(150, 120, 85, 0.12) 0%, transparent 28%);
+            background-size: cover, cover, 300px 300px, cover, cover, cover, cover;
+        }
+
+        body.battles-page-bg {
+            background: 
+                linear-gradient(rgba(244, 233, 216, 0.85), rgba(232, 220, 201, 0.85)),
+                url('https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%99%CE%BF%CF%85%CE%BB%CE%B9%CE%BF%CF%82%CE%9A%CE%B1%CE%B9%CF%83%CE%B1%CF%81%CE%B1%CF%82.jpg') center/cover,
+                linear-gradient(135deg, #f4e9d8 0%, #e8dcc9 50%, #dcc9a8 100%),
+                url("data:image/svg+xml,%3Csvg width='400' height='400' viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E"),
+                radial-gradient(circle at 15% 25%, rgba(180, 150, 100, 0.2) 0%, transparent 25%),
+                radial-gradient(circle at 85% 75%, rgba(160, 130, 90, 0.15) 0%, transparent 30%),
+                radial-gradient(circle at 45% 85%, rgba(140, 110, 80, 0.18) 0%, transparent 35%),
+                radial-gradient(circle at 75% 15%, rgba(150, 120, 85, 0.12) 0%, transparent 28%);
+            background-size: cover, cover, 300px 300px, cover, cover, cover, cover;
+        }
+
         /* Εφέ για ρεαλιστικό πάπυρο */
         body::before {
             content: '';
@@ -131,7 +158,7 @@
             font-size: clamp(1.5rem, 4vw, 3rem);
             font-weight: 800;
             margin-top: 1rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             text-align: center;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
@@ -276,6 +303,7 @@
         .battles-buttons-page,
         /* Σελίδες Τουρκοκρατίας */
         .ottoman-bridge-page,
+        .ottoman-karamichos-page,
         .ottoman-konakia-page,
         .ottoman-tekes-page,
         .ottoman-old-city-page,
@@ -331,7 +359,7 @@
             line-height: 1.4;
             font-size: clamp(1.75rem, 4vw, 2.5rem);
             font-weight: 800;
-            margin-top: 2.5rem;
+            margin-top: 1rem;
             margin-bottom: 1.5rem;
             text-align: center;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
@@ -354,6 +382,115 @@
             border-radius: 8px;
             font-weight: 600;
             transition: all 0.3s ease;
+        }
+
+        /* Battle buttons text size adjustments */
+        .battle-main-text {
+            font-size: clamp(1.1rem, 2.5vw, 1.8rem) !important;
+            font-weight: 700;
+            display: block;
+            line-height: 1.3;
+        }
+
+        .battle-sub-text {
+            font-size: clamp(0.75rem, 1.5vw, 1rem) !important;
+            display: block;
+            line-height: 1.2;
+            opacity: 0.9;
+        }
+
+        /* Bridge title formatting */
+        .bridge-title-main {
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            display: block;
+            font-weight: 700;
+        }
+
+        .bridge-title-sub {
+            font-size: clamp(1.1rem, 3vw, 1.6rem);
+            display: block;
+            opacity: 0.8;
+        }
+
+        /* Thumbnail styling */
+        .image-thumbnail {
+            width: 50%;
+            max-width: 300px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            border: 2px solid #e0d8c8;
+            border-radius: 8px;
+            margin: 1rem auto;
+            display: block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .image-thumbnail-small {
+            width: 50%;
+            max-width: 250px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            border: 2px solid #e0d8c8;
+            border-radius: 8px;
+            margin: 1rem;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .image-thumbnail-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .image-thumbnail:hover,
+        .image-thumbnail-small:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        /* Modal for full-size image */
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            cursor: pointer;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 8px;
+            box-shadow: 0 0 40px rgba(0,0,0,0.5);
+        }
+
+        /* Specific styles for Ottoman pages */
+        .ottoman-karamichos-page .image-thumbnail {
+            width: 25%;
+            max-width: 150px;
+        }
+
+        .ottoman-konakia-page .image-thumbnail-small {
+            width: 40%;
+            max-width: 200px;
+        }
+
+        .ottoman-tekes-page .image-thumbnail-small {
+            width: 28%;
+            max-width: 180px;
         }
 
         /* ===== SMALL SMARTPHONES (Portrait) ===== */
@@ -398,6 +535,35 @@
             .content-text {
                 font-size: 1rem;
             }
+            
+            .image-thumbnail {
+                width: 80%;
+            }
+            
+            .image-thumbnail-small {
+                width: 80%;
+                margin: 0.5rem auto;
+            }
+            
+            .image-thumbnail-row {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .ottoman-karamichos-page .image-thumbnail {
+                width: 60%;
+                max-width: 120px;
+            }
+
+            .ottoman-konakia-page .image-thumbnail-small {
+                width: 70%;
+                max-width: 150px;
+            }
+
+            .ottoman-tekes-page .image-thumbnail-small {
+                width: 70%;
+                max-width: 140px;
+            }
         }
 
         /* ===== SMARTPHONES (Portrait) ===== */
@@ -427,6 +593,35 @@
 
             .content-text {
                 font-size: 1.1rem;
+            }
+            
+            .image-thumbnail {
+                width: 70%;
+            }
+            
+            .image-thumbnail-small {
+                width: 70%;
+                margin: 0.5rem auto;
+            }
+            
+            .image-thumbnail-row {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .ottoman-karamichos-page .image-thumbnail {
+                width: 40%;
+                max-width: 130px;
+            }
+
+            .ottoman-konakia-page .image-thumbnail-small {
+                width: 60%;
+                max-width: 170px;
+            }
+
+            .ottoman-tekes-page .image-thumbnail-small {
+                width: 50%;
+                max-width: 160px;
             }
         }
 
@@ -488,6 +683,29 @@
             .content-text {
                 font-size: clamp(0.9rem, 1.8vw, 1.2rem);
             }
+            
+            .image-thumbnail {
+                width: 60%;
+            }
+            
+            .image-thumbnail-small {
+                width: 45%;
+            }
+
+            .ottoman-karamichos-page .image-thumbnail {
+                width: 30%;
+                max-width: 120px;
+            }
+
+            .ottoman-konakia-page .image-thumbnail-small {
+                width: 40%;
+                max-width: 160px;
+            }
+
+            .ottoman-tekes-page .image-thumbnail-small {
+                width: 35%;
+                max-width: 150px;
+            }
         }
 
         /* ===== SMALL TABLETS ===== */
@@ -509,6 +727,25 @@
             .content-text {
                 font-size: 1.25rem;
             }
+            
+            .image-thumbnail-small {
+                width: 45%;
+            }
+
+            .ottoman-karamichos-page .image-thumbnail {
+                width: 30%;
+                max-width: 140px;
+            }
+
+            .ottoman-konakia-page .image-thumbnail-small {
+                width: 45%;
+                max-width: 180px;
+            }
+
+            .ottoman-tekes-page .image-thumbnail-small {
+                width: 40%;
+                max-width: 170px;
+            }
         }
 
         /* ===== TABLETS (Landscape) ===== */
@@ -529,6 +766,25 @@
             .content-text {
                 font-size: 1.3rem;
             }
+            
+            .image-thumbnail-small {
+                width: 30%;
+            }
+
+            .ottoman-karamichos-page .image-thumbnail {
+                width: 25%;
+                max-width: 140px;
+            }
+
+            .ottoman-konakia-page .image-thumbnail-small {
+                width: 35%;
+                max-width: 190px;
+            }
+
+            .ottoman-tekes-page .image-thumbnail-small {
+                width: 30%;
+                max-width: 180px;
+            }
         }
 
         /* ===== LAPTOP (769px - 1200px) ===== */
@@ -546,6 +802,25 @@
             .content-text {
                 font-size: 1.4rem;
             }
+            
+            .image-thumbnail-small {
+                width: 30%;
+            }
+
+            .ottoman-karamichos-page .image-thumbnail {
+                width: 20%;
+                max-width: 140px;
+            }
+
+            .ottoman-konakia-page .image-thumbnail-small {
+                width: 30%;
+                max-width: 200px;
+            }
+
+            .ottoman-tekes-page .image-thumbnail-small {
+                width: 25%;
+                max-width: 190px;
+            }
         }
 
         /* ===== DESKTOP (1201px - 1920px) ===== */
@@ -562,6 +837,25 @@
 
             .content-text {
                 font-size: 1.5rem;
+            }
+            
+            .image-thumbnail-small {
+                width: 30%;
+            }
+
+            .ottoman-karamichos-page .image-thumbnail {
+                width: 15%;
+                max-width: 150px;
+            }
+
+            .ottoman-konakia-page .image-thumbnail-small {
+                width: 25%;
+                max-width: 210px;
+            }
+
+            .ottoman-tekes-page .image-thumbnail-small {
+                width: 20%;
+                max-width: 200px;
             }
         }
 
@@ -595,6 +889,25 @@
 
             .content-text {
                 font-size: 1.7rem;
+            }
+            
+            .image-thumbnail-small {
+                width: 25%;
+            }
+
+            .ottoman-karamichos-page .image-thumbnail {
+                width: 12%;
+                max-width: 160px;
+            }
+
+            .ottoman-konakia-page .image-thumbnail-small {
+                width: 20%;
+                max-width: 220px;
+            }
+
+            .ottoman-tekes-page .image-thumbnail-small {
+                width: 18%;
+                max-width: 210px;
             }
         }
 
@@ -637,6 +950,25 @@
 
             .content-text {
                 font-size: 1.9rem;
+            }
+            
+            .image-thumbnail-small {
+                width: 20%;
+            }
+
+            .ottoman-karamichos-page .image-thumbnail {
+                width: 10%;
+                max-width: 170px;
+            }
+
+            .ottoman-konakia-page .image-thumbnail-small {
+                width: 18%;
+                max-width: 230px;
+            }
+
+            .ottoman-tekes-page .image-thumbnail-small {
+                width: 15%;
+                max-width: 220px;
             }
         }
 
@@ -722,6 +1054,21 @@
             .content-text {
                 font-size: clamp(0.8rem, 1.5vw, 1rem);
             }
+
+            .ottoman-karamichos-page .image-thumbnail {
+                width: 40%;
+                max-width: 100px;
+            }
+
+            .ottoman-konakia-page .image-thumbnail-small {
+                width: 60%;
+                max-width: 140px;
+            }
+
+            .ottoman-tekes-page .image-thumbnail-small {
+                width: 50%;
+                max-width: 130px;
+            }
         }
 
         /* Very small screens - extra precautions */
@@ -748,13 +1095,33 @@
             .content-text {
                 font-size: 1.9rem;
             }
+
+            .ottoman-karamichos-page .image-thumbnail {
+                width: 12%;
+                max-width: 160px;
+            }
+
+            .ottoman-konakia-page .image-thumbnail-small {
+                width: 20%;
+                max-width: 220px;
+            }
+
+            .ottoman-tekes-page .image-thumbnail-small {
+                width: 18%;
+                max-width: 210px;
+            }
         }
     </style>
 </head>
-<body>
+<body class="main-page-bg">
 
     <!-- Loading indicator -->
     <div class="loading-indicator" id="loadingIndicator"></div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <img id="modalImage" class="modal-content">
+    </div>
 
     <!-- Σελίδα 1: Αρχική Σελίδα -->
     <div class="card main-page">
@@ -900,7 +1267,10 @@
                 <a href="#" 
                    class="action-button bg-amber-600 text-white hover:bg-amber-700 focus:bg-amber-700 transition-all duration-300"
                    aria-label="Κυνός Κεφαλαί 197 π.χ.">
-                    <span class="flex-1 button-text">Κυνός Κεφαλαί 197 π.χ.<br><small class="text-xs">(Η μάχη που άλλαξε τη ροή της ιστορίας)</small></span>
+                    <span class="flex-1 button-text">
+                        <span class="battle-main-text">Κυνός Κεφαλαί 197 π.χ.</span>
+                        <span class="battle-sub-text">(Η μάχη που άλλαξε τη ροή της ιστορίας)</span>
+                    </span>
                     <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
 
@@ -909,7 +1279,10 @@
                    rel="noopener noreferrer"
                    class="action-button bg-orange-600 text-white hover:bg-orange-700 focus:bg-orange-700 transition-all duration-300"
                    aria-label="Η Μάχη των Φαρσάλων 48 π.χ.">
-                    <span class="flex-1 button-text">Η Μάχη των Φαρσάλων 48 π.χ.<br><small class="text-xs">(Ρωμαϊκός Εμφύλιος)</small></span>
+                    <span class="flex-1 button-text">
+                        <span class="battle-main-text">Η Μάχη των Φαρσάλων 48 π.χ.</span>
+                        <span class="battle-sub-text">(Ρωμαϊκός Εμφύλιος)</span>
+                    </span>
                     <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
 
@@ -918,7 +1291,10 @@
                    rel="noopener noreferrer"
                    class="action-button bg-rose-600 text-white hover:bg-rose-700 focus:bg-rose-700 transition-all duration-300"
                    aria-label="Η Μάχη των Φαρσάλων 1277 μ.χ.">
-                    <span class="flex-1 button-text">Η Μάχη των Φαρσάλων 1277 μ.χ.<br><small class="text-xs">(Βυζαντινός Στρατός εναντίον Ιωάννη Α΄ Δούκα)</small></span>
+                    <span class="flex-1 button-text">
+                        <span class="battle-main-text">Η Μάχη των Φαρσάλων 1277 μ.χ.</span>
+                        <span class="battle-sub-text">(Βυζαντινός Στρατός εναντίον Ιωάννη Α΄ Δούκα)</span>
+                    </span>
                     <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
 
@@ -927,7 +1303,10 @@
                    rel="noopener noreferrer"
                    class="action-button bg-cyan-600 text-white hover:bg-cyan-700 focus:bg-cyan-700 transition-all duration-300"
                    aria-label="Ατυχής Πόλεμος 1897 μ.χ.">
-                    <span class="flex-1 button-text">Ατυχής Πόλεμος 1897 μ.χ.<br><small class="text-xs">(Έλληνες εναντίον Οθωμανών)</small></span>
+                    <span class="flex-1 button-text">
+                        <span class="battle-main-text">Ατυχής Πόλεμος 1897 μ.χ.</span>
+                        <span class="battle-sub-text">(Έλληνες εναντίον Οθωμανών)</span>
+                    </span>
                     <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
             </div>
@@ -959,7 +1338,17 @@
 
             <!-- Περιεχόμενο -->
             <div class="space-y-4 fade-in delay-4 hidden-initially">
-                <h3 class="content-subtitle">Γέφυρα του Ενιπέα ("Γεφύρι του Πασά")</h3>
+                <h3 class="content-subtitle">
+                    <span class="bridge-title-main">Γέφυρα του Ενιπέα</span>
+                    <span class="bridge-title-sub">("Γεφύρι του Πασά")</span>
+                </h3>
+                
+                <!-- Thumbnail Image -->
+                <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%A0%CE%B1%CF%83%CF%83%CE%B1.jpg" 
+                     alt="Γέφυρα του Ενιπέα (Γεφύρι του Πασά)"
+                     class="image-thumbnail"
+                     onclick="toggleImage(this)">
+                
                 <p class="content-text">
                     Πρόκειται για ένα από τα πιο σημαντικά αρχιτεκτονικά μνημεία της περιόδου.
                     Είναι ένα τεράστιο πέτρινο γεφύρι (μήκους 110 μέτρων) με επτά τόξα, που οικοδομήθηκε το 1752.
@@ -969,6 +1358,61 @@
 
             <!-- Navigation buttons -->
             <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
+                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                    Κεντρική Σελίδα
+                </button>
+                <button onclick="showOttomanKaramichosPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                    Επόμενο →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Σελίδα 3στ: Τουρκοκρατία - Πύργος Καραμίχου -->
+    <div class="card ottoman-karamichos-page">
+        <div class="main-content text-center">
+            <!-- Κύριος Τίτλος -->
+            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
+                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
+            </h1>
+
+            <!-- Υπότιτλος -->
+            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
+                Κτίσματα και Μνημεία της Τουρκοκρατίας
+            </h2>
+
+            <!-- Περιεχόμενο -->
+            <div class="space-y-4 fade-in delay-4 hidden-initially">
+                <h3 class="content-subtitle">Ο Πύργος του Καραμίχου</h3>
+                
+                <!-- Thumbnail Image -->
+                <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/Karamichos.jpg" 
+                     alt="Ο Πύργος Καραμίχου στα Φάρσαλα"
+                     class="image-thumbnail"
+                     onclick="toggleImage(this)">
+                
+                <p class="content-text">
+                    Ο Πύργος Καραμίχου είναι ένα αξιόλογο πυργόσπιτο της Όψιμης Οθωμανικής περιόδου στα Φάρσαλα.
+                </p>
+                
+                <p class="content-text">
+                    <strong>Χρονολογία:</strong> Χρονολογείται από τον 18ο αιώνα (αρχές), καθιστώντας τον το παλαιότερο σωζόμενο αρχιτεκτόνημα της πόλης.
+                </p>
+                
+                <p class="content-text">
+                    <strong>Αρχιτεκτονική:</strong> Αποτελεί ένα σπάνιο δείγμα της κοσμικής αρχιτεκτονικής της Οθωμανικής περιόδου στην περιοχή.
+                </p>
+                
+                <p class="content-text">
+                    <strong>Τοποθεσία:</strong> Βρίσκεται στην παλιά οθωμανική συνοικία "Μοιροχώρι" ή "Εμιροχώρι".
+                </p>
+            </div>
+
+            <!-- Navigation buttons -->
+            <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
+                <button onclick="showOttomanBridgePage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                    ← Προηγούμενο
+                </button>
                 <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
                     Κεντρική Σελίδα
                 </button>
@@ -995,15 +1439,28 @@
             <!-- Περιεχόμενο -->
             <div class="space-y-4 fade-in delay-4 hidden-initially">
                 <h3 class="content-subtitle">Κονάκια (Τσιφλικόσπιτα)</h3>
+                
                 <p class="content-text">
                     Στην ευρύτερη περιοχή των Φαρσάλων σώζονται κονάκια (τα σπίτια των τσιφλικάδων) που μαρτυρούν την κοινωνική δομή της εποχής των τσιφλικιών, η οποία διαμορφώθηκε κατά την Τουρκοκρατία και διατηρήθηκε ως την απελευθέρωση της Θεσσαλίας.
                     Δύο γνωστά είναι το <span class="content-text-bold">Κονάκι Χαροκόπου</span> (στο Πολυνέρι, σε καλή κατάσταση) και το <span class="content-text-bold">Κονάκι Βασιλείου</span> (στον Παλαιόμυλο).
                 </p>
+                
+                <!-- Two thumbnails side by side -->
+                <div class="image-thumbnail-row">
+                    <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%9A%CE%BF%CE%BD%CE%B1%CE%BA%CE%B9%CE%9A%CF%85%CE%B6%CE%B5%CF%81%CE%B9%CE%B4%CE%B72.jpg" 
+                         alt="Κονάκι Κυζερίδου"
+                         class="image-thumbnail-small"
+                         onclick="toggleImage(this)">
+                    <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%9A%CE%BF%CE%BD%CE%B1%CE%BA%CE%B9%CE%92%CE%B1%CF%83%CE%B9%CE%BB%CE%B5%CE%B9%CE%BF%CF%852.jpg" 
+                         alt="Κονάκι Βασιλείου"
+                         class="image-thumbnail-small"
+                         onclick="toggleImage(this)">
+                </div>
             </div>
 
             <!-- Navigation buttons -->
             <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
-                <button onclick="showOttomanBridgePage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                <button onclick="showOttomanKaramichosPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
                     ← Προηγούμενο
                 </button>
                 <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
@@ -1032,9 +1489,26 @@
             <!-- Περιεχόμενο -->
             <div class="space-y-4 fade-in delay-4 hidden-initially">
                 <h3 class="content-subtitle">Τεκές των Μπεκτασήδων Δερβίσηδων</h3>
+                
                 <p class="content-text">
                     Στην περιοχή (κοντά στην Ασπρόγεια) σώζεται ο Τεκές (μουσουλμανικό μοναστήρι-ερημητήριο) των Μπεκτασήδων Δερβίσηδων, ένα ιδιαίτερο θρησκευτικό μνημείο που αντικατοπτρίζει την πολυπολιτισμική παρουσία στην περιοχή κατά την Οθωμανική περίοδο.
                 </p>
+                
+                <!-- Three thumbnails in a row -->
+                <div class="image-thumbnail-row">
+                    <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%A4%CE%B5%CE%BA%CE%B5%CF%821.jpg" 
+                         alt="Τεκές 1"
+                         class="image-thumbnail-small"
+                         onclick="toggleImage(this)">
+                    <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%A4%CE%B5%CE%BA%CE%B5%CF%822.jpg" 
+                         alt="Τεκές 2"
+                         class="image-thumbnail-small"
+                         onclick="toggleImage(this)">
+                    <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%A4%CE%B5%CE%BA%CE%B5%CF%823.jpg" 
+                         alt="Τεκές 3"
+                         class="image-thumbnail-small"
+                         onclick="toggleImage(this)">
+                </div>
             </div>
 
             <!-- Navigation buttons -->
@@ -1068,9 +1542,16 @@
             <!-- Περιεχόμενο -->
             <div class="space-y-4 fade-in delay-4 hidden-initially">
                 <h3 class="content-subtitle">Παλιά Πόλη (Βαρούσι)</h3>
+                
                 <p class="content-text">
                     Η ρυμοτομία της σημερινής πόλης εξακολουθεί να έχει ίχνη από την παλιά πόλη της Τουρκοκρατίας, ειδικά στη συνοικία Βαρούσι, όπου έχουν βρεθεί και νεότερα αρχαιολογικά ευρήματα (όχι μόνο αρχαία).
                 </p>
+                
+                <!-- Single thumbnail -->
+                <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%94%CE%B5%CE%BE%CE%B1%CE%BC%CE%B5%CE%BD%CE%B7.jpg" 
+                     alt="Δεξαμενη"
+                     class="image-thumbnail"
+                     onclick="toggleImage(this)">
             </div>
 
             <!-- Navigation buttons -->
@@ -1129,7 +1610,8 @@
                 </a>
 
                 <!-- Κουμπί 3: Ιστορικά Μνημεία Τουρκοκρατίας -->
-                <a href="#" 
+                <a href="https://conchr.github.io/Tourkokratia/" 
+                   rel="noopener noreferrer"
                    class="action-button bg-amber-600 text-white hover:bg-amber-700 focus:bg-amber-700 transition-all duration-300 full-width-button"
                    aria-label="Ιστορικά Μνημεία Τουρκοκρατίας">
                     <span class="flex-1 button-text text-center">Ιστορικά Μνημεία Τουρκοκρατίας</span>
@@ -1193,21 +1675,38 @@
             });
         });
 
+        // Image modal functionality
+        function toggleImage(imgElement) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            
+            modal.style.display = 'block';
+            modalImg.src = imgElement.src;
+        }
+
+        // Close modal when clicking on it
+        document.getElementById('imageModal').addEventListener('click', function() {
+            this.style.display = 'none';
+        });
+
         // Συναρτήσεις για εναλλαγή σελίδων
         function showMainPage() {
             hideAllPages();
+            document.body.className = 'main-page-bg';
             document.querySelector('.main-page').style.display = 'flex';
         }
 
         // Συναρτήσεις για Ιστορικές Μάχες
         function showBattlesIntroPage() {
             hideAllPages();
+            document.body.className = 'battles-page-bg';
             document.querySelector('.battles-intro-page').style.display = 'flex';
             resetAnimations('.battles-intro-page');
         }
 
         function showBattlesButtonsPage() {
             hideAllPages();
+            document.body.className = 'battles-page-bg';
             document.querySelector('.battles-buttons-page').style.display = 'flex';
             resetAnimations('.battles-buttons-page');
         }
@@ -1215,30 +1714,42 @@
         // Συναρτήσεις για Τουρκοκρατία
         function showOttomanBridgePage() {
             hideAllPages();
+            document.body.className = '';
             document.querySelector('.ottoman-bridge-page').style.display = 'flex';
             resetAnimations('.ottoman-bridge-page');
         }
 
+        function showOttomanKaramichosPage() {
+            hideAllPages();
+            document.body.className = '';
+            document.querySelector('.ottoman-karamichos-page').style.display = 'flex';
+            resetAnimations('.ottoman-karamichos-page');
+        }
+
         function showOttomanKonakiaPage() {
             hideAllPages();
+            document.body.className = '';
             document.querySelector('.ottoman-konakia-page').style.display = 'flex';
             resetAnimations('.ottoman-konakia-page');
         }
 
         function showOttomanTekesPage() {
             hideAllPages();
+            document.body.className = '';
             document.querySelector('.ottoman-tekes-page').style.display = 'flex';
             resetAnimations('.ottoman-tekes-page');
         }
 
         function showOttomanOldCityPage() {
             hideAllPages();
+            document.body.className = '';
             document.querySelector('.ottoman-old-city-page').style.display = 'flex';
             resetAnimations('.ottoman-old-city-page');
         }
 
         function showOttomanSummaryPage() {
             hideAllPages();
+            document.body.className = '';
             document.querySelector('.ottoman-summary-page').style.display = 'flex';
             resetAnimations('.ottoman-summary-page');
         }
