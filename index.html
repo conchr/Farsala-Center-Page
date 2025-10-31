@@ -307,7 +307,10 @@
         .ottoman-konakia-page,
         .ottoman-tekes-page,
         .ottoman-old-city-page,
-        .ottoman-summary-page {
+        .ottoman-summary-page,
+        /* New duplicated pages */
+        .main-page-2,
+        .main-page-3 {
             display: none;
         }
 
@@ -467,6 +470,110 @@
             box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
         }
 
+        /* Μουσικό κουμπί */
+        .music-button {
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+            color: white;
+            border: 3px dotted #ffd93d;
+            animation: musicPulse 2s infinite;
+            font-weight: 800;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .music-button::before {
+            content: '♪ ♫ ♬';
+            position: absolute;
+            top: -10px;
+            left: 0;
+            right: 0;
+            font-size: 1.5rem;
+            opacity: 0.3;
+            animation: floatNotes 3s infinite linear;
+        }
+
+        .music-button:hover {
+            transform: scale(1.05) rotate(1deg);
+            animation: none;
+            box-shadow: 0 10px 30px rgba(78, 205, 196, 0.4);
+        }
+
+        /* Navigation emphasis buttons */
+        .nav-emphasis-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: 3px solid #4c51bf;
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            position: relative;
+            overflow: hidden;
+            font-weight: 800;
+        }
+
+        .nav-emphasis-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .nav-emphasis-button:hover::before {
+            left: 100%;
+        }
+
+        .nav-emphasis-button::after {
+            content: '🔍 Περισσότερες Επιλογές';
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+            font-size: 0.7rem;
+            opacity: 0.8;
+            font-weight: 600;
+        }
+
+        .nav-emphasis-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.6);
+        }
+
+        .nav-emphasis-button .arrow-icon {
+            font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+            animation: pulseArrow 1.5s infinite;
+        }
+
+        @keyframes pulseArrow {
+            0%, 100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateX(4px);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes musicPulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+        }
+
+        @keyframes floatNotes {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
         @keyframes bounce {
             0%, 100% {
                 transform: translateY(0);
@@ -477,6 +584,11 @@
         }
 
         .kids-icon {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            margin-right: 0.5rem;
+        }
+
+        .music-icon {
             font-size: clamp(1.5rem, 4vw, 2.5rem);
             margin-right: 0.5rem;
         }
@@ -598,6 +710,16 @@
             .kids-button {
                 min-height: 70px;
             }
+
+            .music-button {
+                min-height: 70px;
+            }
+
+            .nav-emphasis-button::after {
+                font-size: 0.6rem;
+                bottom: 3px;
+                right: 5px;
+            }
         }
 
         /* ===== SMARTPHONES (Portrait) ===== */
@@ -660,6 +782,14 @@
 
             .kids-button {
                 min-height: 80px;
+            }
+
+            .music-button {
+                min-height: 80px;
+            }
+
+            .nav-emphasis-button::after {
+                font-size: 0.65rem;
             }
         }
 
@@ -748,6 +878,14 @@
             .kids-button {
                 min-height: clamp(50px, 7vh, 70px);
             }
+
+            .music-button {
+                min-height: clamp(50px, 7vh, 70px);
+            }
+
+            .nav-emphasis-button::after {
+                font-size: 0.6rem;
+            }
         }
 
         /* ===== SMALL TABLETS ===== */
@@ -790,6 +928,10 @@
             }
 
             .kids-button {
+                min-height: 90px;
+            }
+
+            .music-button {
                 min-height: 90px;
             }
         }
@@ -835,6 +977,10 @@
             .kids-button {
                 min-height: clamp(70px, 9vh, 90px);
             }
+
+            .music-button {
+                min-height: clamp(70px, 9vh, 90px);
+            }
         }
 
         /* ===== LAPTOP (769px - 1200px) ===== */
@@ -875,6 +1021,10 @@
             .kids-button {
                 min-height: 100px;
             }
+
+            .music-button {
+                min-height: 100px;
+            }
         }
 
         /* ===== DESKTOP (1201px - 1920px) ===== */
@@ -913,6 +1063,10 @@
             }
 
             .kids-button {
+                min-height: 110px;
+            }
+
+            .music-button {
                 min-height: 110px;
             }
         }
@@ -969,6 +1123,10 @@
             }
 
             .kids-button {
+                min-height: 130px;
+            }
+
+            .music-button {
                 min-height: 130px;
             }
         }
@@ -1036,6 +1194,10 @@
             .kids-button {
                 min-height: 150px;
             }
+
+            .music-button {
+                min-height: 150px;
+            }
         }
 
         /* Ultra-wide screens */
@@ -1065,6 +1227,22 @@
             
             .kids-button:active {
                 transform: scale(0.98);
+            }
+
+            .music-button:hover {
+                transform: none;
+            }
+            
+            .music-button:active {
+                transform: scale(0.98);
+            }
+
+            .nav-emphasis-button:hover {
+                transform: none;
+            }
+            
+            .nav-emphasis-button:active {
+                transform: translateY(2px);
             }
         }
 
@@ -1147,6 +1325,16 @@
             .kids-button {
                 min-height: clamp(40px, 6vh, 50px);
             }
+
+            .music-button {
+                min-height: clamp(40px, 6vh, 50px);
+            }
+
+            .nav-emphasis-button::after {
+                font-size: 0.5rem;
+                bottom: 2px;
+                right: 3px;
+            }
         }
 
         /* Very small screens - extra precautions */
@@ -1192,6 +1380,10 @@
             .kids-button {
                 min-height: 140px;
             }
+
+            .music-button {
+                min-height: 140px;
+            }
         }
     </style>
 </head>
@@ -1216,10 +1408,170 @@
             <!-- Επεξηγηματικό Κείμενο -->
             <div class="space-y-4">
                 <p class="content-text leading-relaxed max-w-6xl mx-auto px-4 fade-in delay-2 hidden-initially">
-                    Ξεκινήστε ένα μοναδικό ταξίδι. Ο Δήμος Φαρσάλων σάς προσκαλεί να περιηγηθείτε σε μια ιστορία που ξεκινά από τον μύθο του <strong class="text-indigo-700">Αχιλλέα</strong> και εκτείνεται χιλιετίες. 
+                    <strong>Ο Δήμος Φαρσάλων: Ιστορία και Εκπαίδευση</strong>
                 </p>
-                <p class="highlight-text mt-4 tracking-wide fade-in delay-4 hidden-initially">
-                    Είστε έτοιμοι για τη βύθιση στους αιώνες;
+                
+                <p class="content-text leading-relaxed max-w-6xl mx-auto px-4 fade-in delay-2 hidden-initially">
+                    Ο Δήμος Φαρσάλων αποτελεί κοιτίδα αρχαίου πολιτισμού. Στο επίκεντρο του ενδιαφέροντος βρίσκεται η Αρχαιολογική Συλλογή για το Κάστρο Καλλιθέας, αναδεικνύοντας την ιστορική συνέχεια της περιοχής.
+                </p>
+                
+                <p class="content-text leading-relaxed max-w-6xl mx-auto px-4 fade-in delay-2 hidden-initially">
+                    Ο Δήμος δίνει έμφαση στην εκπαίδευση, με ενδιαφέροντα προγράμματα για όλες τις ηλικίες. Ξεχωρίζουν τα προγράμματα για τους «μικρούς ιστορικούς», που φέρνουν τα παιδιά κοντά στην ιστορία, και οι δράσεις γνωριμίας με τα μουσικά όργανα, καλλιεργώντας τη δημιουργικότητα και την παράδοση.
+                </p>
+            </div>
+
+            <!-- Κουμπιά Δράσης (Links) σε grid 2x4 -->
+            <div class="button-grid mt-8 fade-in delay-6 hidden-initially">
+                <!-- Κουμπί 1: Κάστρο Καλλιθέας (Πλήρες Πλάτος) -->
+                <a href="https://conchr.github.io/Kastro-Kallitheas/" 
+                   rel="noopener noreferrer"
+                   class="action-button bg-blue-600 text-white hover:bg-blue-700 focus:bg-blue-700 transition-all duration-300 full-width-button"
+                   aria-label="Κάστρο Καλλιθέας, Ματιές σε μια Αρχαία Πόλη">
+                    <span class="flex-1 button-text text-center">Κάστρο Καλλιθέας, Ματιές σε μια Αρχαία Πόλη</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+
+                <!-- Κουμπί 2: Τα Φάρσαλα από τα βάθη των αιώνων -->
+                <a href="#" 
+                   onclick="showMainPage2()"
+                   class="action-button nav-emphasis-button full-width-button"
+                   aria-label="Τα Φάρσαλα από τα βάθη των αιώνων">
+                    <span class="flex-1 button-text text-center">Τα Φάρσαλα από τα βάθη των αιώνων</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+
+                <!-- Κουμπί 3: Γνωριμία με τα Μουσικά Οργανα -->
+                <a href="https://conchr.github.io/Musical-Instruments/" 
+                   rel="noopener noreferrer"
+                   class="action-button music-button full-width-button"
+                   aria-label="Γνωριμία με τα Μουσικά Οργανα">
+                    <span class="flex-1 button-text text-center">
+                        <span class="music-icon">🎵</span>
+                        Γνωριμία με τα Μουσικά Οργανα
+                    </span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+
+                <!-- Κουμπί για παιδιά -->
+                <a href="https://conchr.github.io/Ancient-Quiz-for-kids/" 
+                   rel="noopener noreferrer"
+                   class="action-button kids-button full-width-button"
+                   aria-label="Ιστορίες για μικρούς Αρχαιολόγους">
+                    <span class="flex-1 button-text text-center">
+                        <span class="kids-icon">🧐</span>
+                        Ιστορίες για μικρούς Αρχαιολόγους
+                    </span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer με πληροφορίες -->
+        <div class="text-center mt-6 pt-4 border-t border-gray-300">
+            <p class="footer-text text-gray-600">
+                Όλοι οι σύνδεσμοι ανοίγουν στην ίδια καρτέλα.
+            </p>
+            <p class="small-text text-gray-500 mt-1">
+                © 2025 Δήμος Φαρσάλων
+            </p>
+        </div>
+    </div>
+
+    <!-- Σελίδα 2: Αρχική Σελίδα (Αντίγραφο 1) -->
+    <div class="card main-page-2">
+        <div class="main-content text-center">
+            <!-- Κύριος Τίτλος -->
+            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
+                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
+            </h1>
+            
+            <!-- Επεξηγηματικό Κείμενο -->
+            <div class="space-y-4">
+                <p class="content-text leading-relaxed max-w-6xl mx-auto px-4 fade-in delay-2 hidden-initially">
+                    ✨ <strong>Φάρσαλα: Η Πόλη του Αχιλλέα και των Μεγάλων Μαχών</strong>
+                </p>
+                
+                <p class="content-text leading-relaxed max-w-6xl mx-auto px-4 fade-in delay-2 hidden-initially">
+                    Τα Φάρσαλα, χτισμένα στη στρατηγική «πύλη» της Θεσσαλίας, έχουν ιστορία χιλιάδων ετών. Θεωρούνται η αρχαία Φθία, πατρίδα του μυθικού Αχιλλέα και των Μυρμιδόνων.
+                </p>
+                
+                <p class="content-text leading-relaxed max-w-6xl mx-auto px-4 fade-in delay-2 hidden-initially">
+                    Στην αρχαιότητα, υπήρξαν σημαντική πόλη-κράτος. Το 48 π.Χ. αποτέλεσαν το πεδίο της περίφημης Μάχης των Φαρσάλων, όπου ο Ιούλιος Καίσαρας νίκησε τον Πομπήιο.
+                </p>
+                
+                <p class="content-text leading-relaxed max-w-6xl mx-auto px-4 fade-in delay-2 hidden-initially">
+                    Μετά τη Ρωμαϊκή και Βυζαντινή εποχή, πέρασαν στην Οθωμανική κυριαρχία και απελευθερώθηκαν το 1881. Σήμερα, είναι γνωστά ως αγροτικό κέντρο και για τον παραδοσιακό Φαρσαλινό Χαλβά.
+                </p>
+            </div>
+
+            <!-- Κουμπιά Δράσης (Links) σε grid 2x4 -->
+            <div class="button-grid mt-8 fade-in delay-6 hidden-initially">
+                <!-- Κουμπί Τα Φάρσαλα κι ο Αχιλλέας (Πλήρες Πλάτος) -->
+                <a href="https://conchr.github.io/Achilles-Presentation/" 
+                   rel="noopener noreferrer"
+                   class="action-button bg-indigo-500 text-white hover:bg-indigo-600 focus:bg-indigo-600 transition-all duration-300 full-width-button"
+                   aria-label="Τα Φάρσαλα κι ο Αχιλλέας">
+                    <span class="flex-1 button-text text-center">Τα Φάρσαλα κι ο Αχιλλέας</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+
+                <!-- Κουμπί Η Ακρόπολη των Φαρσάλων (Πλήρες Πλάτος) -->
+                <a href="https://conchr.github.io/Acropolis-Presentation/" 
+                   rel="noopener noreferrer"
+                   class="action-button bg-yellow-600 text-white hover:bg-yellow-700 focus:bg-yellow-700 transition-all duration-300 full-width-button"
+                   aria-label="Η Ακρόπολη των Φαρσάλων">
+                    <span class="flex-1 button-text text-center">Η Ακρόπολη των Φαρσάλων</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+
+                <!-- Κουμπί Ιστορικές Μάχες (Πλήρες Πλάτος) -->
+                <a href="#" 
+                   onclick="showBattlesIntroPage()"
+                   class="action-button nav-emphasis-button full-width-button"
+                   aria-label="Ιστορικές Μάχες στα Φάρσαλα">
+                    <span class="flex-1 button-text text-center">Ιστορικές Μάχες στα Φάρσαλα</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+
+                <!-- Κουμπί Από την Τουρκοκρατία μέχρι σήμερα -->
+                <a href="#" 
+                   onclick="showMainPage3()"
+                   class="action-button nav-emphasis-button full-width-button"
+                   aria-label="Από την Τουρκοκρατία μέχρι σήμερα">
+                    <span class="flex-1 button-text text-center">Από την Τουρκοκρατία μέχρι σήμερα</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+            </div>
+
+            <!-- Navigation buttons -->
+            <div class="nav-buttons mt-8 fade-in delay-8 hidden-initially">
+                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                    ← Πίσω στην Αρχική
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Σελίδα 3: Αρχική Σελίδα (Αντίγραφο 2) -->
+    <div class="card main-page-3">
+        <div class="main-content text-center">
+            <!-- Κύριος Τίτλος -->
+            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
+                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
+            </h1>
+            
+            <!-- Επεξηγηματικό Κείμενο -->
+            <div class="space-y-4">
+                <p class="content-text leading-relaxed max-w-6xl mx-auto px-4 fade-in delay-2 hidden-initially">
+                    Κατά την Τουρκοκρατία (Τσατάλτζα), τα Φάρσαλα ήταν στρατηγικό πέρασμα. Απελευθερώθηκαν το 1881, δοκιμάστηκαν όμως σκληρά στη Μάχη του 1897.
+                </p>
+                
+                <p class="content-text leading-relaxed max-w-6xl mx-auto px-4 fade-in delay-2 hidden-initially">
+                    Παρά τις καταστροφές του Β' Παγκοσμίου Πολέμου και τους σεισμούς του '50, εξελίχθηκαν σε εύρωστο αγροτικό κέντρο.
+                </p>
+                
+                <p class="content-text leading-relaxed max-w-6xl mx-auto px-4 fade-in delay-2 hidden-initially">
+                    Σήμερα, η πόλη συνδυάζει την πλούσια ιστορία της με τη φήμη του πασίγνωστου, παραδοσιακού «σαπουνέ» Χαλβά Φαρσάλων.
                 </p>
             </div>
 
@@ -1252,73 +1604,25 @@
                     <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
 
-                <!-- Κουμπί Τα Φάρσαλα κι ο Αχιλλέας (Πλήρες Πλάτος) -->
-                <a href="https://conchr.github.io/Achilles-Presentation/" 
-                   rel="noopener noreferrer"
-                   class="action-button bg-indigo-500 text-white hover:bg-indigo-600 focus:bg-indigo-600 transition-all duration-300 full-width-button"
-                   aria-label="Τα Φάρσαλα κι ο Αχιλλέας">
-                    <span class="flex-1 button-text text-center">Τα Φάρσαλα κι ο Αχιλλέας</span>
-                    <span class="arrow-icon" aria-hidden="true">→</span>
-                </a>
-
-                <!-- Κουμπί 1: Ακρόπολη -->
-                <a href="https://conchr.github.io/Acropolis-Presentation/" 
-                   rel="noopener noreferrer"
-                   class="action-button bg-yellow-600 text-white hover:bg-yellow-700 focus:bg-yellow-700 transition-all duration-300"
-                   aria-label="Η Ακρόπολη των Φαρσάλων">
-                    <span class="flex-1 button-text">Η Ακρόπολη των Φαρσάλων</span>
-                    <span class="arrow-icon" aria-hidden="true">→</span>
-                </a>
-
-                <!-- Κουμπί 2: Κάστρο Καλλιθέας -->
-                <a href="https://conchr.github.io/Kastro-Kallitheas/" 
-                   rel="noopener noreferrer"
-                   class="action-button bg-blue-600 text-white hover:bg-blue-700 focus:bg-blue-700 transition-all duration-300"
-                   aria-label="Κάστρο Καλλιθέας">
-                    <span class="flex-1 button-text">Κάστρο Καλλιθέας</span>
-                    <span class="arrow-icon" aria-hidden="true">→</span>
-                </a>
-
-                <!-- Κουμπί 3: Ιστορικές Μάχες -->
-                <a href="#" 
-                   onclick="showBattlesIntroPage()"
-                   class="action-button bg-red-600 text-white hover:bg-red-700 focus:bg-red-700 transition-all duration-300"
-                   aria-label="Ιστορικές Μάχες στα Φάρσαλα">
-                    <span class="flex-1 button-text">Ιστορικές Μάχες στα Φάρσαλα</span>
-                    <span class="arrow-icon" aria-hidden="true">→</span>
-                </a>
-
-                <!-- Κουμπί 4: Τουρκοκρατία -->
+                <!-- Κουμπί Τουρκοκρατία (Πλήρες Πλάτος) -->
                 <a href="#" 
                    onclick="showOttomanBridgePage()"
-                   class="action-button bg-green-600 text-white hover:bg-green-700 focus:bg-green-700 transition-all duration-300"
+                   class="action-button nav-emphasis-button full-width-button"
                    aria-label="Τουρκοκρατία στα Φάρσαλα">
-                    <span class="flex-1 button-text">Τουρκοκρατία</span>
-                    <span class="arrow-icon" aria-hidden="true">→</span>
-                </a>
-
-                <!-- Κουμπί για παιδιά -->
-             <a href="https://conchr.github.io/Ancient-Quiz-for-kids/" 
-   rel="noopener noreferrer"
-   class="action-button kids-button full-width-button"
-   aria-label="Ιστορίες για μικρούς Αρχαιολόγους">
-                    <span class="flex-1 button-text text-center">
-                        <span class="kids-icon">🧐</span>
-                        Ιστορίες για μικρούς Αρχαιολόγους
-                    </span>
+                    <span class="flex-1 button-text text-center">Τουρκοκρατία</span>
                     <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
             </div>
-        </div>
 
-        <!-- Footer με πληροφορίες -->
-        <div class="text-center mt-6 pt-4 border-t border-gray-300">
-            <p class="footer-text text-gray-600">
-                Όλοι οι σύνδεσμοι ανοίγουν στην ίδια καρτέλα.
-            </p>
-            <p class="small-text text-gray-500 mt-1">
-                © 2025 Δήμος Φαρσάλων
-            </p>
+            <!-- Navigation buttons -->
+            <div class="nav-buttons mt-8 fade-in delay-8 hidden-initially">
+                <button onclick="showMainPage2()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                    ← Πίσω στην Προηγούμενη Σελίδα
+                </button>
+                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                    Αρχική Σελίδα
+                </button>
+            </div>
         </div>
     </div>
 
@@ -1806,6 +2110,20 @@
             hideAllPages();
             document.body.className = 'main-page-bg';
             document.querySelector('.main-page').style.display = 'flex';
+        }
+
+        function showMainPage2() {
+            hideAllPages();
+            document.body.className = 'main-page-bg';
+            document.querySelector('.main-page-2').style.display = 'flex';
+            resetAnimations('.main-page-2');
+        }
+
+        function showMainPage3() {
+            hideAllPages();
+            document.body.className = 'main-page-bg';
+            document.querySelector('.main-page-3').style.display = 'flex';
+            resetAnimations('.main-page-3');
         }
 
         // Συναρτήσεις για Ιστορικές Μάχες
