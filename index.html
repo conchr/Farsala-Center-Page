@@ -197,6 +197,8 @@
             border: 2px solid rgba(0,0,0,0.08);
             height: 100%;
             min-height: clamp(70px, 12vh, 120px);
+            cursor: pointer;
+            width: 100%;
         }
 
         /* Εφέ hover και focus για τα κουμπιά */
@@ -385,6 +387,7 @@
             border-radius: 8px;
             font-weight: 600;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         /* Battle buttons text size adjustments */
@@ -633,6 +636,28 @@
         .ottoman-tekes-page .image-thumbnail-small {
             width: 28%;
             max-width: 180px;
+        }
+
+        /* Hidden file input */
+        #fileInput {
+            display: none;
+        }
+
+        /* ===== LARGE SCREENS PORTRAIT MODE - SCALE DOWN 35% ===== */
+        @media (min-width: 1024px) and (orientation: portrait) {
+            body {
+                transform: scale(0.65);
+                transform-origin: top center;
+                width: 153.84615%; /* 100 / 0.65 = 153.84615 */
+                overflow-x: hidden;
+                height: 100vh;
+                padding: 0;
+            }
+            
+            .card {
+                margin: 30px auto;
+                transform: scale(1); /* Reset scale for card to maintain proportions */
+            }
         }
 
         /* ===== SMALL SMARTPHONES (Portrait) ===== */
@@ -1397,6 +1422,9 @@
         <img id="modalImage" class="modal-content">
     </div>
 
+    <!-- Hidden file input -->
+    <input type="file" id="fileInput" accept=".pptx,.ppt,.pdf,.doc,.docx,.txt,.mp3,.mp4,.wav,.jpg,.jpeg,.png,.gif">
+
     <!-- Σελίδα 1: Αρχική Σελίδα -->
     <div class="card main-page">
         <div class="main-content text-center">
@@ -1441,16 +1469,15 @@
                 </a>
 
                 <!-- Κουμπί 3: Γνωριμία με τα Μουσικά Οργανα -->
-                <a href="https://conchr.github.io/Musical-Instruments/" 
-                   rel="noopener noreferrer"
-                   class="action-button music-button full-width-button"
-                   aria-label="Γνωριμία με τα Μουσικά Οργανα">
+                <button class="action-button music-button full-width-button"
+                        onclick="openFilePicker()"
+                        aria-label="Γνωριμία με τα Μουσικά Οργανα">
                     <span class="flex-1 button-text text-center">
                         <span class="music-icon">🎵</span>
                         Γνωριμία με τα Μουσικά Οργανα
                     </span>
                     <span class="arrow-icon" aria-hidden="true">→</span>
-                </a>
+                </button>
 
                 <!-- Κουμπί για παιδιά -->
                 <a href="https://conchr.github.io/Ancient-Quiz-for-kids/" 
@@ -2103,6 +2130,39 @@
         // Close modal when clicking on it
         document.getElementById('imageModal').addEventListener('click', function() {
             this.style.display = 'none';
+        });
+
+        // File picker functionality
+        function openFilePicker() {
+            document.getElementById('fileInput').click();
+        }
+
+        // Handle file selection
+        document.getElementById('fileInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                // Create a blob URL for the selected file
+                const blobUrl = URL.createObjectURL(file);
+                
+                // Create a temporary anchor element to download/open the file
+                const a = document.createElement('a');
+                a.href = blobUrl;
+                a.download = file.name;
+                a.target = '_blank';
+                
+                // Programmatically click the anchor to open the file
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                
+                // Clean up the blob URL after some time
+                setTimeout(() => {
+                    URL.revokeObjectURL(blobUrl);
+                }, 1000);
+            }
+            
+            // Reset the file input
+            event.target.value = '';
         });
 
         // Συναρτήσεις για εναλλαγή σελίδων
