@@ -643,6 +643,71 @@
             display: none;
         }
 
+        /* ===== LANDSCAPE MODE ADJUSTMENTS - 20% smaller text, 30% smaller buttons ===== */
+        @media (orientation: landscape) {
+            .title-text {
+                font-size: clamp(1.6rem, 4.8vw, 4rem); /* 20% smaller */
+            }
+            
+            .section-subtitle {
+                font-size: clamp(1.2rem, 3.2vw, 2.4rem); /* 20% smaller */
+            }
+            
+            .highlight-text {
+                font-size: clamp(1rem, 2.8vw, 2.4rem); /* 20% smaller */
+            }
+            
+            .content-text {
+                font-size: clamp(1rem, 2.24vw, 1.32rem); /* 20% smaller */
+            }
+            
+            .button-text {
+                font-size: clamp(0.7rem, 1.6vw, 1.2rem); /* 20% smaller */
+            }
+            
+            .footer-text {
+                font-size: clamp(0.6rem, 1.2vw, 0.9rem); /* 20% smaller */
+            }
+            
+            .small-text {
+                font-size: clamp(0.5rem, 1vw, 0.7rem); /* 20% smaller */
+            }
+            
+            .action-button {
+                padding: clamp(0.7rem, 2.1vw, 1.4rem) clamp(0.875rem, 2.8vw, 1.75rem); /* 30% smaller */
+                min-height: clamp(49px, 8.4vh, 84px); /* 30% smaller */
+            }
+            
+            .battle-main-text {
+                font-size: clamp(0.88rem, 2vw, 1.44rem) !important; /* 20% smaller */
+            }
+            
+            .battle-sub-text {
+                font-size: clamp(0.6rem, 1.2vw, 0.8rem) !important; /* 20% smaller */
+            }
+            
+            .bridge-title-main {
+                font-size: clamp(1.2rem, 3.2vw, 1.76rem); /* 20% smaller */
+            }
+            
+            .bridge-title-sub {
+                font-size: clamp(0.88rem, 2.4vw, 1.28rem); /* 20% smaller */
+            }
+            
+            .content-subtitle {
+                font-size: clamp(1.4rem, 3.2vw, 2rem); /* 20% smaller */
+            }
+            
+            .arrow-icon {
+                font-size: clamp(1rem, 2.4vw, 1.6rem); /* 20% smaller */
+            }
+            
+            .kids-icon,
+            .music-icon {
+                font-size: clamp(1.2rem, 3.2vw, 2rem); /* 20% smaller */
+            }
+        }
+
         /* ===== LARGE SCREENS PORTRAIT MODE - SCALE DOWN 35% ===== */
         @media (min-width: 1024px) and (orientation: portrait) {
             body {
@@ -1542,12 +1607,21 @@
                     <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
 
-                <!-- Κουμπί Η Ακρόπολη των Φαρσάλων (Πλήρες Πλάτος) -->
+                <!-- Κουμπί Η Ακρόπολη των Φαρσάλων -->
                 <a href="https://conchr.github.io/Acropolis-Presentation/" 
                    rel="noopener noreferrer"
-                   class="action-button bg-yellow-600 text-white hover:bg-yellow-700 focus:bg-yellow-700 transition-all duration-300 full-width-button"
+                   class="action-button bg-yellow-600 text-white hover:bg-yellow-700 focus:bg-yellow-700 transition-all duration-300"
                    aria-label="Η Ακρόπολη των Φαρσάλων">
                     <span class="flex-1 button-text text-center">Η Ακρόπολη των Φαρσάλων</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+
+                <!-- Νέο Κουμπί: Σπήλαιο των Νυμφών -->
+                <a href="https://conchr.github.io/Karapla-Cave/" 
+                   rel="noopener noreferrer"
+                   class="action-button bg-emerald-600 text-white hover:bg-emerald-700 focus:bg-emerald-700 transition-all duration-300"
+                   aria-label="Σπήλαιο των Νυμφών">
+                    <span class="flex-1 button-text text-center">Σπήλαιο των Νυμφών</span>
                     <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
 
@@ -2116,6 +2190,14 @@
                     }
                 }
             });
+
+            // Προσθήκη event listener για δεξί βέλος
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    navigateToNextPage();
+                }
+            });
         });
 
         // Image modal functionality
@@ -2170,6 +2252,7 @@
             hideAllPages();
             document.body.className = 'main-page-bg';
             document.querySelector('.main-page').style.display = 'flex';
+            scrollToTop();
         }
 
         function showMainPage2() {
@@ -2177,6 +2260,7 @@
             document.body.className = 'main-page-bg';
             document.querySelector('.main-page-2').style.display = 'flex';
             resetAnimations('.main-page-2');
+            scrollToTop();
         }
 
         function showMainPage3() {
@@ -2184,6 +2268,7 @@
             document.body.className = 'main-page-bg';
             document.querySelector('.main-page-3').style.display = 'flex';
             resetAnimations('.main-page-3');
+            scrollToTop();
         }
 
         // Συναρτήσεις για Ιστορικές Μάχες
@@ -2192,6 +2277,7 @@
             document.body.className = 'battles-page-bg';
             document.querySelector('.battles-intro-page').style.display = 'flex';
             resetAnimations('.battles-intro-page');
+            scrollToTop();
         }
 
         function showBattlesButtonsPage() {
@@ -2199,6 +2285,7 @@
             document.body.className = 'battles-page-bg';
             document.querySelector('.battles-buttons-page').style.display = 'flex';
             resetAnimations('.battles-buttons-page');
+            scrollToTop();
         }
 
         // Συναρτήσεις για Τουρκοκρατία
@@ -2207,6 +2294,7 @@
             document.body.className = '';
             document.querySelector('.ottoman-bridge-page').style.display = 'flex';
             resetAnimations('.ottoman-bridge-page');
+            scrollToTop();
         }
 
         function showOttomanKaramichosPage() {
@@ -2214,6 +2302,7 @@
             document.body.className = '';
             document.querySelector('.ottoman-karamichos-page').style.display = 'flex';
             resetAnimations('.ottoman-karamichos-page');
+            scrollToTop();
         }
 
         function showOttomanKonakiaPage() {
@@ -2221,6 +2310,7 @@
             document.body.className = '';
             document.querySelector('.ottoman-konakia-page').style.display = 'flex';
             resetAnimations('.ottoman-konakia-page');
+            scrollToTop();
         }
 
         function showOttomanTekesPage() {
@@ -2228,6 +2318,7 @@
             document.body.className = '';
             document.querySelector('.ottoman-tekes-page').style.display = 'flex';
             resetAnimations('.ottoman-tekes-page');
+            scrollToTop();
         }
 
         function showOttomanOldCityPage() {
@@ -2235,6 +2326,7 @@
             document.body.className = '';
             document.querySelector('.ottoman-old-city-page').style.display = 'flex';
             resetAnimations('.ottoman-old-city-page');
+            scrollToTop();
         }
 
         function showOttomanSummaryPage() {
@@ -2242,6 +2334,7 @@
             document.body.className = '';
             document.querySelector('.ottoman-summary-page').style.display = 'flex';
             resetAnimations('.ottoman-summary-page');
+            scrollToTop();
         }
 
         // Βοηθητικές συναρτήσεις
@@ -2257,6 +2350,55 @@
             elements.forEach(el => {
                 el.classList.remove('hidden-initially');
             });
+        }
+
+        // Συνάρτηση για scroll στην κορυφή
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Συνάρτηση για navigation με δεξί βέλος
+        function navigateToNextPage() {
+            const currentPage = getCurrentPage();
+            const nextPage = getNextPage(currentPage);
+            
+            if (nextPage) {
+                nextPage.showFunction();
+            }
+        }
+
+        // Λεξικό με τις σελίδες και τις αντίστοιχες συναρτήσεις
+        const pageNavigation = {
+            'main-page': { showFunction: showMainPage2, next: 'main-page-2' },
+            'main-page-2': { showFunction: showMainPage3, next: 'main-page-3' },
+            'main-page-3': { showFunction: showBattlesIntroPage, next: 'battles-intro-page' },
+            'battles-intro-page': { showFunction: showBattlesButtonsPage, next: 'battles-buttons-page' },
+            'battles-buttons-page': { showFunction: showOttomanBridgePage, next: 'ottoman-bridge-page' },
+            'ottoman-bridge-page': { showFunction: showOttomanKaramichosPage, next: 'ottoman-karamichos-page' },
+            'ottoman-karamichos-page': { showFunction: showOttomanKonakiaPage, next: 'ottoman-konakia-page' },
+            'ottoman-konakia-page': { showFunction: showOttomanTekesPage, next: 'ottoman-tekes-page' },
+            'ottoman-tekes-page': { showFunction: showOttomanOldCityPage, next: 'ottoman-old-city-page' },
+            'ottoman-old-city-page': { showFunction: showOttomanSummaryPage, next: 'ottoman-summary-page' },
+            'ottoman-summary-page': { showFunction: showMainPage, next: 'main-page' }
+        };
+
+        // Βρες την τρέχουσα σελίδα
+        function getCurrentPage() {
+            const pages = document.querySelectorAll('.card');
+            for (let page of pages) {
+                if (page.style.display === 'flex') {
+                    return page.classList[1]; // Η δεύτερη κλάση είναι το page identifier
+                }
+            }
+            return 'main-page';
+        }
+
+        // Βρες την επόμενη σελίδα
+        function getNextPage(currentPage) {
+            return pageNavigation[currentPage] || null;
         }
     </script>
 
