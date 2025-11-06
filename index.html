@@ -1542,12 +1542,21 @@
                     <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
 
-                <!-- Κουμπί Η Ακρόπολη των Φαρσάλων (Πλήρες Πλάτος) -->
+                <!-- Νέο κουμπί: Η Ακρόπολη των Φαρσάλων -->
                 <a href="https://conchr.github.io/Acropolis-Presentation/" 
                    rel="noopener noreferrer"
-                   class="action-button bg-yellow-600 text-white hover:bg-yellow-700 focus:bg-yellow-700 transition-all duration-300 full-width-button"
+                   class="action-button bg-yellow-600 text-white hover:bg-yellow-700 focus:bg-yellow-700 transition-all duration-300"
                    aria-label="Η Ακρόπολη των Φαρσάλων">
                     <span class="flex-1 button-text text-center">Η Ακρόπολη των Φαρσάλων</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+
+                <!-- Νέο κουμπί: Το Σπήλαιο των Νυμφών -->
+                <a href="https://conchr.github.io/Karapla-Cave/" 
+                   rel="noopener noreferrer"
+                   class="action-button bg-emerald-600 text-white hover:bg-emerald-700 focus:bg-emerald-700 transition-all duration-300"
+                   aria-label="Το Σπήλαιο των Νυμφών">
+                    <span class="flex-1 button-text text-center">Το Σπήλαιο των Νυμφών</span>
                     <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
 
@@ -2080,6 +2089,9 @@
         document.addEventListener('DOMContentLoaded', function() {
             const loadingIndicator = document.getElementById('loadingIndicator');
             
+            // Βεβαιωθείτε ότι η σελίδα ξεκινά από την κορυφή
+            window.scrollTo(0, 0);
+            
             // Προσθήκη loading indicator
             loadingIndicator.classList.add('loading');
             
@@ -2102,6 +2114,8 @@
             setTimeout(() => {
                 document.querySelector('.delay-6').classList.remove('hidden-initially');
                 loadingIndicator.classList.remove('loading');
+                // Επιπλέον scroll στην κορυφή μετά τη φόρτωση
+                window.scrollTo(0, 0);
             }, 1500);
 
             // Βελτιστοποίηση για touch events
@@ -2170,6 +2184,8 @@
             hideAllPages();
             document.body.className = 'main-page-bg';
             document.querySelector('.main-page').style.display = 'flex';
+            // Νέα γραμμή: scroll στην κορυφή
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function showMainPage2() {
@@ -2177,6 +2193,8 @@
             document.body.className = 'main-page-bg';
             document.querySelector('.main-page-2').style.display = 'flex';
             resetAnimations('.main-page-2');
+            // Νέα γραμμή: scroll στην κορυφή
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function showMainPage3() {
@@ -2184,6 +2202,8 @@
             document.body.className = 'main-page-bg';
             document.querySelector('.main-page-3').style.display = 'flex';
             resetAnimations('.main-page-3');
+            // Νέα γραμμή: scroll στην κορυφή
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         // Συναρτήσεις για Ιστορικές Μάχες
@@ -2192,6 +2212,8 @@
             document.body.className = 'battles-page-bg';
             document.querySelector('.battles-intro-page').style.display = 'flex';
             resetAnimations('.battles-intro-page');
+            // Νέα γραμμή: scroll στην κορυφή
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function showBattlesButtonsPage() {
@@ -2199,6 +2221,8 @@
             document.body.className = 'battles-page-bg';
             document.querySelector('.battles-buttons-page').style.display = 'flex';
             resetAnimations('.battles-buttons-page');
+            // Νέα γραμμή: scroll στην κορυφή
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         // Συναρτήσεις για Τουρκοκρατία
@@ -2207,6 +2231,8 @@
             document.body.className = '';
             document.querySelector('.ottoman-bridge-page').style.display = 'flex';
             resetAnimations('.ottoman-bridge-page');
+            // Νέα γραμμή: scroll στην κορυφή
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function showOttomanKaramichosPage() {
@@ -2214,6 +2240,8 @@
             document.body.className = '';
             document.querySelector('.ottoman-karamichos-page').style.display = 'flex';
             resetAnimations('.ottoman-karamichos-page');
+            // Νέα γραμμή: scroll στην κορυφή
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function showOttomanKonakiaPage() {
@@ -2221,6 +2249,8 @@
             document.body.className = '';
             document.querySelector('.ottoman-konakia-page').style.display = 'flex';
             resetAnimations('.ottoman-konakia-page');
+            // Νέα γραμμή: scroll στην κορυφή
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function showOttomanTekesPage() {
@@ -2228,6 +2258,8 @@
             document.body.className = '';
             document.querySelector('.ottoman-tekes-page').style.display = 'flex';
             resetAnimations('.ottoman-tekes-page');
+            // Νέα γραμμή: scroll στην κορυφή
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function showOttomanOldCityPage() {
@@ -2235,6 +2267,8 @@
             document.body.className = '';
             document.querySelector('.ottoman-old-city-page').style.display = 'flex';
             resetAnimations('.ottoman-old-city-page');
+            // Νέα γραμμή: scroll στην κορυφή
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function showOttomanSummaryPage() {
@@ -2242,6 +2276,8 @@
             document.body.className = '';
             document.querySelector('.ottoman-summary-page').style.display = 'flex';
             resetAnimations('.ottoman-summary-page');
+            // Νέα γραμμή: scroll στην κορυφή
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         // Βοηθητικές συναρτήσεις
@@ -2258,6 +2294,51 @@
                 el.classList.remove('hidden-initially');
             });
         }
+
+        // Συναρτήσεις για πλοήγηση με βέλη στις σελίδες Τουρκοκρατίας
+        function nextOttomanPage() {
+            const currentPage = document.querySelector('.card[style*="display: flex"]');
+            
+            if (currentPage.classList.contains('ottoman-bridge-page')) {
+                showOttomanKaramichosPage();
+            } else if (currentPage.classList.contains('ottoman-karamichos-page')) {
+                showOttomanKonakiaPage();
+            } else if (currentPage.classList.contains('ottoman-konakia-page')) {
+                showOttomanTekesPage();
+            } else if (currentPage.classList.contains('ottoman-tekes-page')) {
+                showOttomanOldCityPage();
+            } else if (currentPage.classList.contains('ottoman-old-city-page')) {
+                showOttomanSummaryPage();
+            }
+        }
+
+        function prevOttomanPage() {
+            const currentPage = document.querySelector('.card[style*="display: flex"]');
+            
+            if (currentPage.classList.contains('ottoman-summary-page')) {
+                showOttomanOldCityPage();
+            } else if (currentPage.classList.contains('ottoman-old-city-page')) {
+                showOttomanTekesPage();
+            } else if (currentPage.classList.contains('ottoman-tekes-page')) {
+                showOttomanKonakiaPage();
+            } else if (currentPage.classList.contains('ottoman-konakia-page')) {
+                showOttomanKaramichosPage();
+            } else if (currentPage.classList.contains('ottoman-karamichos-page')) {
+                showOttomanBridgePage();
+            }
+        }
+
+        // Keyboard navigation for Ottoman pages
+        document.addEventListener('keydown', function(e) {
+            const currentPage = document.querySelector('.card[style*="display: flex"]');
+            if (currentPage && currentPage.classList.contains('ottoman-')) {
+                if (e.key === 'ArrowRight') {
+                    nextOttomanPage();
+                } else if (e.key === 'ArrowLeft') {
+                    prevOttomanPage();
+                }
+            }
+        });
     </script>
 
 </body>
