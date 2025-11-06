@@ -143,19 +143,19 @@
             z-index: 1;
         }
 
-        /* ΜΕΙΩΜΕΝΑ ΚΕΙΜΕΝΑ ΚΑΤΑ 20% */
+        /* Πλήρως responsive γραμματοσειρά με viewport units */
         .title-text {
             color: #5d4037;
             line-height: 1.1;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.08);
             font-weight: 800;
-            font-size: clamp(1.6rem, 4.8vw, 4rem); /* 20% smaller */
+            font-size: clamp(2rem, 6vw, 5rem);
         }
 
         .section-subtitle {
             color: #1e293b;
             line-height: 1.4;
-            font-size: clamp(1.2rem, 3.2vw, 2.4rem); /* 20% smaller */
+            font-size: clamp(1.5rem, 4vw, 3rem);
             font-weight: 800;
             margin-top: 1rem;
             margin-bottom: 1rem;
@@ -166,24 +166,24 @@
         .highlight-text {
             color: #dc2626;
             font-weight: 700;
-            font-size: clamp(1rem, 2.8vw, 2.4rem); /* 20% smaller */
+            font-size: clamp(1.25rem, 3.5vw, 3rem);
         }
 
         .button-text {
-            font-size: clamp(0.7rem, 1.6vw, 1.2rem); /* 20% smaller */
+            font-size: clamp(0.875rem, 2vw, 1.5rem);
         }
 
         .footer-text {
-            font-size: clamp(0.6rem, 1.2vw, 0.9rem); /* 20% smaller */
+            font-size: clamp(0.75rem, 1.5vw, 1.125rem);
         }
 
         .small-text {
-            font-size: clamp(0.5rem, 1vw, 0.7rem); /* 20% smaller */
+            font-size: clamp(0.625rem, 1.25vw, 0.875rem);
         }
 
-        /* ΜΕΙΩΜΕΝΑ ΚΟΥΜΠΙΑ ΚΑΤΑ 30% */
+        /* Στυλ για τα κουμπιά */
         .action-button {
-            padding: clamp(0.7rem, 2.1vw, 1.4rem) clamp(0.875rem, 2.8vw, 1.75rem); /* 30% smaller */
+            padding: clamp(1rem, 3vw, 2rem) clamp(1.25rem, 4vw, 2.5rem);
             font-weight: 700;
             border-radius: 12px;
             transition: all 0.3s ease;
@@ -196,7 +196,7 @@
             justify-content: space-between;
             border: 2px solid rgba(0,0,0,0.08);
             height: 100%;
-            min-height: clamp(49px, 8.4vh, 84px); /* 30% smaller */
+            min-height: clamp(70px, 12vh, 120px);
             cursor: pointer;
             width: 100%;
         }
@@ -213,7 +213,7 @@
         .arrow-icon {
             transition: transform 0.3s ease;
             font-weight: bold;
-            font-size: clamp(1rem, 2.4vw, 1.6rem); /* 20% smaller */
+            font-size: clamp(1.25rem, 3vw, 2rem);
         }
 
         .action-button:hover .arrow-icon,
@@ -225,7 +225,7 @@
         .button-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: clamp(0.7rem, 2.1vw, 1.4rem); /* 30% smaller */
+            gap: clamp(1rem, 3vw, 2rem);
         }
 
         /* Κουμπί που καταλαμβάνει πλήρες πλάτος */
@@ -316,11 +316,11 @@
             display: none;
         }
 
-        /* ΜΕΙΩΜΕΝΑ ΚΕΙΜΕΝΑ ΓΙΑ ΣΕΛΙΔΕΣ 2 ΚΑΙ 3 */
+        /* Βελτιωμένα μεγέθη γραμματοσειράς για σελίδες 2 και 3 */
         .content-text {
             color: #2d3748;
             line-height: 1.7;
-            font-size: clamp(1rem, 2.24vw, 1.32rem); /* 20% smaller */
+            font-size: clamp(1.25rem, 2.8vw, 1.65rem);
             text-align: left;
             margin-bottom: 1.5rem;
             text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.05);
@@ -356,13 +356,13 @@
             margin-left: -1em;
             position: absolute;
             left: 0;
-            font-size: 1.2rem; /* 20% smaller */
+            font-size: 1.5rem;
         }
 
         .content-subtitle {
             color: #1e293b;
             line-height: 1.4;
-            font-size: clamp(1.4rem, 3.2vw, 2rem); /* 20% smaller */
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
             font-weight: 800;
             margin-top: 1rem;
             margin-bottom: 1.5rem;
@@ -390,30 +390,30 @@
             cursor: pointer;
         }
 
-        /* ΜΕΙΩΜΕΝΑ ΚΕΙΜΕΝΑ ΓΙΑ ΚΟΥΜΠΙΑ ΜΑΧΩΝ */
+        /* Battle buttons text size adjustments */
         .battle-main-text {
-            font-size: clamp(0.88rem, 2vw, 1.44rem) !important; /* 20% smaller */
+            font-size: clamp(1.1rem, 2.5vw, 1.8rem) !important;
             font-weight: 700;
             display: block;
             line-height: 1.3;
         }
 
         .battle-sub-text {
-            font-size: clamp(0.6rem, 1.2vw, 0.8rem) !important; /* 20% smaller */
+            font-size: clamp(0.75rem, 1.5vw, 1rem) !important;
             display: block;
             line-height: 1.2;
             opacity: 0.9;
         }
 
-        /* ΜΕΙΩΜΕΝΑ ΚΕΙΜΕΝΑ ΓΙΑ ΤΙΤΛΟΥΣ ΓΕΦΥΡΑΣ */
+        /* Bridge title formatting */
         .bridge-title-main {
-            font-size: clamp(1.2rem, 3.2vw, 1.76rem); /* 20% smaller */
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
             display: block;
             font-weight: 700;
         }
 
         .bridge-title-sub {
-            font-size: clamp(0.88rem, 2.4vw, 1.28rem); /* 20% smaller */
+            font-size: clamp(1.1rem, 3vw, 1.6rem);
             display: block;
             opacity: 0.8;
         }
@@ -491,7 +491,7 @@
             top: -10px;
             left: 0;
             right: 0;
-            font-size: 1.2rem; /* 20% smaller */
+            font-size: 1.5rem;
             opacity: 0.3;
             animation: floatNotes 3s infinite linear;
         }
@@ -533,7 +533,7 @@
             position: absolute;
             bottom: 5px;
             right: 10px;
-            font-size: 0.56rem; /* 20% smaller */
+            font-size: 0.7rem;
             opacity: 0.8;
             font-weight: 600;
         }
@@ -544,7 +544,7 @@
         }
 
         .nav-emphasis-button .arrow-icon {
-            font-size: clamp(1.2rem, 2.8vw, 1.76rem); /* 20% smaller */
+            font-size: clamp(1.5rem, 3.5vw, 2.2rem);
             animation: pulseArrow 1.5s infinite;
         }
 
@@ -587,12 +587,12 @@
         }
 
         .kids-icon {
-            font-size: clamp(1.2rem, 3.2vw, 2rem); /* 20% smaller */
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
             margin-right: 0.5rem;
         }
 
         .music-icon {
-            font-size: clamp(1.2rem, 3.2vw, 2rem); /* 20% smaller */
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
             margin-right: 0.5rem;
         }
 
@@ -643,71 +643,6 @@
             display: none;
         }
 
-        /* ===== LANDSCAPE MODE ADJUSTMENTS - ΜΕΙΩΜΕΝΑ ΑΚΟΜΑ ΠΕΡΙΣΣΟΤΕΡΟ ===== */
-        @media (orientation: landscape) {
-            .title-text {
-                font-size: clamp(1.28rem, 3.84vw, 3.2rem); /* 20% smaller than already reduced */
-            }
-            
-            .section-subtitle {
-                font-size: clamp(0.96rem, 2.56vw, 1.92rem); /* 20% smaller than already reduced */
-            }
-            
-            .highlight-text {
-                font-size: clamp(0.8rem, 2.24vw, 1.92rem); /* 20% smaller than already reduced */
-            }
-            
-            .content-text {
-                font-size: clamp(0.8rem, 1.792vw, 1.056rem); /* 20% smaller than already reduced */
-            }
-            
-            .button-text {
-                font-size: clamp(0.56rem, 1.28vw, 0.96rem); /* 20% smaller than already reduced */
-            }
-            
-            .footer-text {
-                font-size: clamp(0.48rem, 0.96vw, 0.72rem); /* 20% smaller than already reduced */
-            }
-            
-            .small-text {
-                font-size: clamp(0.4rem, 0.8vw, 0.56rem); /* 20% smaller than already reduced */
-            }
-            
-            .action-button {
-                padding: clamp(0.49rem, 1.47vw, 0.98rem) clamp(0.6125rem, 1.96vw, 1.225rem); /* 30% smaller than already reduced */
-                min-height: clamp(34.3px, 5.88vh, 58.8px); /* 30% smaller than already reduced */
-            }
-            
-            .battle-main-text {
-                font-size: clamp(0.704rem, 1.6vw, 1.152rem) !important; /* 20% smaller than already reduced */
-            }
-            
-            .battle-sub-text {
-                font-size: clamp(0.48rem, 0.96vw, 0.64rem) !important; /* 20% smaller than already reduced */
-            }
-            
-            .bridge-title-main {
-                font-size: clamp(0.96rem, 2.56vw, 1.408rem); /* 20% smaller than already reduced */
-            }
-            
-            .bridge-title-sub {
-                font-size: clamp(0.704rem, 1.92vw, 1.024rem); /* 20% smaller than already reduced */
-            }
-            
-            .content-subtitle {
-                font-size: clamp(1.12rem, 2.56vw, 1.6rem); /* 20% smaller than already reduced */
-            }
-            
-            .arrow-icon {
-                font-size: clamp(0.8rem, 1.92vw, 1.28rem); /* 20% smaller than already reduced */
-            }
-            
-            .kids-icon,
-            .music-icon {
-                font-size: clamp(0.96rem, 2.56vw, 1.6rem); /* 20% smaller than already reduced */
-            }
-        }
-
         /* ===== LARGE SCREENS PORTRAIT MODE - SCALE DOWN 35% ===== */
         @media (min-width: 1024px) and (orientation: portrait) {
             body {
@@ -739,13 +674,13 @@
             
             .button-grid {
                 grid-template-columns: 1fr;
-                gap: 0.525rem; /* 30% smaller */
+                gap: 0.75rem;
             }
             
             .action-button {
                 border-radius: 8px;
-                min-height: 42px; /* 30% smaller */
-                padding: 0.525rem 0.7rem; /* 30% smaller */
+                min-height: 60px;
+                padding: 0.75rem 1rem;
             }
             
             .full-width-button {
@@ -753,19 +688,19 @@
             }
             
             .title-text {
-                font-size: 1.4rem; /* 20% smaller */
+                font-size: 1.75rem;
             }
             
             .section-subtitle {
-                font-size: 1rem; /* 20% smaller */
+                font-size: 1.25rem;
             }
             
             .highlight-text {
-                font-size: 0.88rem; /* 20% smaller */
+                font-size: 1.1rem;
             }
 
             .content-text {
-                font-size: 0.8rem; /* 20% smaller */
+                font-size: 1rem;
             }
             
             .image-thumbnail {
@@ -798,15 +733,15 @@
             }
 
             .kids-button {
-                min-height: 49px; /* 30% smaller */
+                min-height: 70px;
             }
 
             .music-button {
-                min-height: 49px; /* 30% smaller */
+                min-height: 70px;
             }
 
             .nav-emphasis-button::after {
-                font-size: 0.48rem; /* 20% smaller */
+                font-size: 0.6rem;
                 bottom: 3px;
                 right: 5px;
             }
@@ -826,7 +761,7 @@
             
             .button-grid {
                 grid-template-columns: 1fr;
-                gap: clamp(0.525rem, 1.4vw, 0.7rem); /* 30% smaller */
+                gap: clamp(0.75rem, 2vw, 1rem);
             }
             
             .action-button {
@@ -838,7 +773,7 @@
             }
 
             .content-text {
-                font-size: 0.88rem; /* 20% smaller */
+                font-size: 1.1rem;
             }
             
             .image-thumbnail {
@@ -871,15 +806,15 @@
             }
 
             .kids-button {
-                min-height: 56px; /* 30% smaller */
+                min-height: 80px;
             }
 
             .music-button {
-                min-height: 56px; /* 30% smaller */
+                min-height: 80px;
             }
 
             .nav-emphasis-button::after {
-                font-size: 0.52rem; /* 20% smaller */
+                font-size: 0.65rem;
             }
         }
 
@@ -899,47 +834,47 @@
             }
             
             .action-button {
-                min-height: clamp(28px, 4.2vh, 42px); /* 30% smaller */
-                padding: clamp(0.35rem, 1.05vh, 0.525rem) clamp(0.525rem, 1.4vh, 0.7rem); /* 30% smaller */
+                min-height: clamp(40px, 6vh, 60px);
+                padding: clamp(0.5rem, 1.5vh, 0.75rem) clamp(0.75rem, 2vh, 1rem);
             }
             
             .title-text {
-                font-size: clamp(1rem, 2.4vw, 1.6rem); /* 20% smaller */
+                font-size: clamp(1.25rem, 3vw, 2rem);
                 margin-bottom: 0.5rem;
             }
             
             .section-subtitle {
-                font-size: clamp(0.88rem, 2vw, 1.4rem); /* 20% smaller */
+                font-size: clamp(1.1rem, 2.5vw, 1.75rem);
                 margin-bottom: 1.5rem;
             }
             
             .highlight-text {
-                font-size: clamp(0.7rem, 1.6vw, 1rem); /* 20% smaller */
+                font-size: clamp(0.875rem, 2vw, 1.25rem);
                 margin-top: 0.5rem;
             }
             
             .button-text {
-                font-size: clamp(0.56rem, 1.2vw, 0.8rem); /* 20% smaller */
+                font-size: clamp(0.7rem, 1.5vw, 1rem);
             }
             
             .arrow-icon {
-                font-size: clamp(0.8rem, 1.6vw, 1.2rem); /* 20% smaller */
+                font-size: clamp(1rem, 2vw, 1.5rem);
             }
             
             .button-grid {
-                gap: clamp(0.35rem, 1.05vw, 0.7rem); /* 30% smaller */
+                gap: clamp(0.5rem, 1.5vw, 1rem);
             }
             
             .footer-text {
-                font-size: clamp(0.52rem, 0.96vw, 0.68rem); /* 20% smaller */
+                font-size: clamp(0.65rem, 1.2vw, 0.85rem);
             }
             
             .small-text {
-                font-size: clamp(0.44rem, 0.8vw, 0.56rem); /* 20% smaller */
+                font-size: clamp(0.55rem, 1vw, 0.7rem);
             }
 
             .content-text {
-                font-size: clamp(0.72rem, 1.44vw, 0.96rem); /* 20% smaller */
+                font-size: clamp(0.9rem, 1.8vw, 1.2rem);
             }
             
             .image-thumbnail {
@@ -966,15 +901,15 @@
             }
 
             .kids-button {
-                min-height: clamp(35px, 4.9vh, 49px); /* 30% smaller */
+                min-height: clamp(50px, 7vh, 70px);
             }
 
             .music-button {
-                min-height: clamp(35px, 4.9vh, 49px); /* 30% smaller */
+                min-height: clamp(50px, 7vh, 70px);
             }
 
             .nav-emphasis-button::after {
-                font-size: 0.48rem; /* 20% smaller */
+                font-size: 0.6rem;
             }
         }
 
@@ -995,7 +930,7 @@
             }
 
             .content-text {
-                font-size: 1rem; /* 20% smaller */
+                font-size: 1.25rem;
             }
             
             .image-thumbnail-small {
@@ -1018,11 +953,11 @@
             }
 
             .kids-button {
-                min-height: 63px; /* 30% smaller */
+                min-height: 90px;
             }
 
             .music-button {
-                min-height: 63px; /* 30% smaller */
+                min-height: 90px;
             }
         }
 
@@ -1038,11 +973,11 @@
             }
             
             .action-button {
-                min-height: clamp(42px, 5.6vh, 56px); /* 30% smaller */
+                min-height: clamp(60px, 8vh, 80px);
             }
 
             .content-text {
-                font-size: 1.04rem; /* 20% smaller */
+                font-size: 1.3rem;
             }
             
             .image-thumbnail-small {
@@ -1065,11 +1000,11 @@
             }
 
             .kids-button {
-                min-height: clamp(49px, 6.3vh, 63px); /* 30% smaller */
+                min-height: clamp(70px, 9vh, 90px);
             }
 
             .music-button {
-                min-height: clamp(49px, 6.3vh, 63px); /* 30% smaller */
+                min-height: clamp(70px, 9vh, 90px);
             }
         }
 
@@ -1086,7 +1021,7 @@
             }
 
             .content-text {
-                font-size: 1.12rem; /* 20% smaller */
+                font-size: 1.4rem;
             }
             
             .image-thumbnail-small {
@@ -1109,11 +1044,11 @@
             }
 
             .kids-button {
-                min-height: 70px; /* 30% smaller */
+                min-height: 100px;
             }
 
             .music-button {
-                min-height: 70px; /* 30% smaller */
+                min-height: 100px;
             }
         }
 
@@ -1130,7 +1065,7 @@
             }
 
             .content-text {
-                font-size: 1.2rem; /* 20% smaller */
+                font-size: 1.5rem;
             }
             
             .image-thumbnail-small {
@@ -1153,11 +1088,11 @@
             }
 
             .kids-button {
-                min-height: 77px; /* 30% smaller */
+                min-height: 110px;
             }
 
             .music-button {
-                min-height: 77px; /* 30% smaller */
+                min-height: 110px;
             }
         }
 
@@ -1174,23 +1109,23 @@
             }
             
             .title-text {
-                font-size: clamp(2.4rem, 6.4vw, 4.8rem); /* 20% smaller */
+                font-size: clamp(3rem, 8vw, 6rem);
             }
             
             .section-subtitle {
-                font-size: clamp(1.4rem, 4vw, 2.8rem); /* 20% smaller */
+                font-size: clamp(1.75rem, 5vw, 3.5rem);
             }
             
             .highlight-text {
-                font-size: clamp(1.4rem, 3.6vw, 2.8rem); /* 20% smaller */
+                font-size: clamp(1.75rem, 4.5vw, 3.5rem);
             }
             
             .action-button {
-                min-height: clamp(56px, 7vh, 98px); /* 30% smaller */
+                min-height: clamp(80px, 10vh, 140px);
             }
 
             .content-text {
-                font-size: 1.36rem; /* 20% smaller */
+                font-size: 1.7rem;
             }
             
             .image-thumbnail-small {
@@ -1213,11 +1148,11 @@
             }
 
             .kids-button {
-                min-height: 91px; /* 30% smaller */
+                min-height: 130px;
             }
 
             .music-button {
-                min-height: 91px; /* 30% smaller */
+                min-height: 130px;
             }
         }
 
@@ -1234,32 +1169,32 @@
             }
             
             .title-text {
-                font-size: clamp(2.4rem, 6.4vw, 4.8rem); /* 20% smaller */
+                font-size: clamp(3rem, 8vw, 6rem);
             }
             
             .section-subtitle {
-                font-size: clamp(1.6rem, 4.4vw, 3.2rem); /* 20% smaller */
+                font-size: clamp(2rem, 5.5vw, 4rem);
             }
             
             .highlight-text {
-                font-size: clamp(1.4rem, 3.6vw, 2.8rem); /* 20% smaller */
+                font-size: clamp(1.75rem, 4.5vw, 3.5rem);
             }
             
             .action-button {
-                min-height: clamp(70px, 8.4vh, 112px); /* 30% smaller */
-                padding: clamp(1.05rem, 2.8vw, 1.75rem) clamp(1.4rem, 3.5vw, 2.1rem); /* 30% smaller */
+                min-height: clamp(100px, 12vh, 160px);
+                padding: clamp(1.5rem, 4vw, 2.5rem) clamp(2rem, 5vw, 3rem);
             }
             
             .button-text {
-                font-size: clamp(1rem, 2.4vw, 1.6rem); /* 20% smaller */
+                font-size: clamp(1.25rem, 3vw, 2rem);
             }
             
             .arrow-icon {
-                font-size: clamp(1.4rem, 3.2vw, 2rem); /* 20% smaller */
+                font-size: clamp(1.75rem, 4vw, 2.5rem);
             }
 
             .content-text {
-                font-size: 1.52rem; /* 20% smaller */
+                font-size: 1.9rem;
             }
             
             .image-thumbnail-small {
@@ -1282,11 +1217,11 @@
             }
 
             .kids-button {
-                min-height: 105px; /* 30% smaller */
+                min-height: 150px;
             }
 
             .music-button {
-                min-height: 105px; /* 30% smaller */
+                min-height: 150px;
             }
         }
 
@@ -1300,7 +1235,7 @@
         /* Better touch targets for mobile */
         @media (hover: none) and (pointer: coarse) {
             .action-button {
-                min-height: clamp(42px, 7vh, 70px); /* 30% smaller */
+                min-height: clamp(60px, 10vh, 100px);
             }
             
             .action-button:hover {
@@ -1362,39 +1297,39 @@
             }
             
             .action-button {
-                min-height: clamp(24.5px, 3.5vh, 31.5px); /* 30% smaller */
-                padding: clamp(0.28rem, 0.7vh, 0.42rem) clamp(0.42rem, 1.05vh, 0.56rem); /* 30% smaller */
+                min-height: clamp(35px, 5vh, 45px);
+                padding: clamp(0.4rem, 1vh, 0.6rem) clamp(0.6rem, 1.5vh, 0.8rem);
             }
             
             .title-text {
-                font-size: clamp(0.8rem, 2vw, 1.2rem); /* 20% smaller */
+                font-size: clamp(1rem, 2.5vw, 1.5rem);
                 margin-bottom: 0.25rem;
             }
             
             .section-subtitle {
-                font-size: clamp(0.72rem, 1.6vw, 1rem); /* 20% smaller */
+                font-size: clamp(0.9rem, 2vw, 1.25rem);
                 margin-bottom: 1rem;
             }
             
             .highlight-text {
-                font-size: clamp(0.6rem, 1.2vw, 0.8rem); /* 20% smaller */
+                font-size: clamp(0.75rem, 1.5vw, 1rem);
                 margin-top: 0.25rem;
             }
             
             .button-text {
-                font-size: clamp(0.48rem, 0.96vw, 0.64rem); /* 20% smaller */
+                font-size: clamp(0.6rem, 1.2vw, 0.8rem);
             }
             
             .arrow-icon {
-                font-size: clamp(0.64rem, 1.2vw, 0.96rem); /* 20% smaller */
+                font-size: clamp(0.8rem, 1.5vw, 1.2rem);
             }
             
             .button-grid {
-                gap: clamp(0.28rem, 0.7vh, 0.42rem); /* 30% smaller */
+                gap: clamp(0.4rem, 1vh, 0.6rem);
             }
 
             .content-text {
-                font-size: clamp(0.64rem, 1.2vw, 0.8rem); /* 20% smaller */
+                font-size: clamp(0.8rem, 1.5vw, 1rem);
             }
 
             .ottoman-karamichos-page .image-thumbnail {
@@ -1413,15 +1348,15 @@
             }
 
             .kids-button {
-                min-height: clamp(28px, 4.2vh, 35px); /* 30% smaller */
+                min-height: clamp(40px, 6vh, 50px);
             }
 
             .music-button {
-                min-height: clamp(28px, 4.2vh, 35px); /* 30% smaller */
+                min-height: clamp(40px, 6vh, 50px);
             }
 
             .nav-emphasis-button::after {
-                font-size: 0.4rem; /* 20% smaller */
+                font-size: 0.5rem;
                 bottom: 2px;
                 right: 3px;
             }
@@ -1437,19 +1372,19 @@
         /* Smart TV optimizations */
         @media (min-width: 1921px) and (min-height: 1080px) and (pointer: coarse) {
             .action-button {
-                min-height: 84px; /* 30% smaller */
+                min-height: 120px;
             }
             
             .button-text {
-                font-size: 1.4rem; /* 20% smaller */
+                font-size: 1.75rem;
             }
             
             .arrow-icon {
-                font-size: 1.6rem; /* 20% smaller */
+                font-size: 2rem;
             }
 
             .content-text {
-                font-size: 1.52rem; /* 20% smaller */
+                font-size: 1.9rem;
             }
 
             .ottoman-karamichos-page .image-thumbnail {
@@ -1468,11 +1403,11 @@
             }
 
             .kids-button {
-                min-height: 98px; /* 30% smaller */
+                min-height: 140px;
             }
 
             .music-button {
-                min-height: 98px; /* 30% smaller */
+                min-height: 140px;
             }
         }
     </style>
@@ -1607,21 +1542,12 @@
                     <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
 
-                <!-- Κουμπί Η Ακρόπολη των Φαρσάλων -->
+                <!-- Κουμπί Η Ακρόπολη των Φαρσάλων (Πλήρες Πλάτος) -->
                 <a href="https://conchr.github.io/Acropolis-Presentation/" 
                    rel="noopener noreferrer"
-                   class="action-button bg-yellow-600 text-white hover:bg-yellow-700 focus:bg-yellow-700 transition-all duration-300"
+                   class="action-button bg-yellow-600 text-white hover:bg-yellow-700 focus:bg-yellow-700 transition-all duration-300 full-width-button"
                    aria-label="Η Ακρόπολη των Φαρσάλων">
                     <span class="flex-1 button-text text-center">Η Ακρόπολη των Φαρσάλων</span>
-                    <span class="arrow-icon" aria-hidden="true">→</span>
-                </a>
-
-                <!-- Νέο Κουμπί: Σπήλαιο των Νυμφών -->
-                <a href="https://conchr.github.io/Karapla-Cave/" 
-                   rel="noopener noreferrer"
-                   class="action-button bg-emerald-600 text-white hover:bg-emerald-700 focus:bg-emerald-700 transition-all duration-300"
-                   aria-label="Σπήλαιο των Νυμφών">
-                    <span class="flex-1 button-text text-center">Σπήλαιο των Νυμφών</span>
                     <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
 
@@ -1780,9 +1706,8 @@
 
             <!-- Κουμπιά Μάχες -->
             <div class="button-grid mt-8 fade-in delay-4 hidden-initially">
-                <!-- Κουμπί 1: Κυνός Κεφαλαί - ΤΡΟΠΟΠΟΙΗΜΕΝΟΣ ΣΥΝΔΕΣΜΟΣ -->
-                <a href="https://conchr.github.io/Kynos-Presentation/" 
-                   rel="noopener noreferrer"
+                <!-- Κουμπί 1: Κυνός Κεφαλαί -->
+                <a href="#" 
                    class="action-button bg-amber-600 text-white hover:bg-amber-700 focus:bg-amber-700 transition-all duration-300"
                    aria-label="Κυνός Κεφαλαί 197 π.χ.">
                     <span class="flex-1 button-text">
@@ -1841,7 +1766,6 @@
         </div>
     </div>
 
-    <!-- Οι υπόλοιπες σελίδες παραμένουν ίδιες, απλά με τα μικρότερα κουμπιά και κείμενα -->
     <!-- Σελίδα 3α: Τουρκοκρατία - Γέφυρα του Ενιπέα -->
     <div class="card ottoman-bridge-page">
         <div class="main-content text-center">
@@ -1887,34 +1811,303 @@
         </div>
     </div>
 
-    <!-- Οι υπόλοιπες σελίδες Τουρκοκρατίας παραμένουν ίδιες -->
+    <!-- Σελίδα 3στ: Τουρκοκρατία - Πύργος Καραμίχου -->
+    <div class="card ottoman-karamichos-page">
+        <div class="main-content text-center">
+            <!-- Κύριος Τίτλος -->
+            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
+                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
+            </h1>
+
+            <!-- Υπότιτλος -->
+            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
+                Κτίσματα και Μνημεία της Τουρκοκρατίας
+            </h2>
+
+            <!-- Περιεχόμενο -->
+            <div class="space-y-4 fade-in delay-4 hidden-initially">
+                <h3 class="content-subtitle">Ο Πύργος του Καραμίχου</h3>
+                
+                <!-- Thumbnail Image -->
+                <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/Karamichos.jpg" 
+                     alt="Ο Πύργος Καραμίχου στα Φάρσαλα"
+                     class="image-thumbnail"
+                     onclick="toggleImage(this)">
+                
+                <p class="content-text">
+                    Ο Πύργος Καραμίχου είναι ένα αξιόλογο πυργόσπιτο της Όψιμης Οθωμανικής περιόδου στα Φάρσαλα.
+                </p>
+                
+                <p class="content-text">
+                    <strong>Χρονολογία:</strong> Χρονολογείται από τον 18ο αιώνα (αρχές), καθιστώντας τον το παλαιότερο σωζόμενο αρχιτεκτόνημα της πόλης.
+                </p>
+                
+                <p class="content-text">
+                    <strong>Αρχιτεκτονική:</strong> Αποτελεί ένα σπάνιο δείγμα της κοσμικής αρχιτεκτονικής της Οθωμανικής περιόδου στην περιοχή.
+                </p>
+                
+                <p class="content-text">
+                    <strong>Τοποθεσία:</strong> Βρίσκεται στην παλιά οθωμανική συνοικία "Μοιροχώρι" ή "Εμιροχώρι".
+                </p>
+            </div>
+
+            <!-- Navigation buttons -->
+            <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
+                <button onclick="showOttomanBridgePage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                    ← Προηγούμενο
+                </button>
+                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                    Κεντρική Σελίδα
+                </button>
+                <button onclick="showOttomanKonakiaPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                    Επόμενο →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Σελίδα 3β: Τουρκοκρατία - Κονάκια -->
+    <div class="card ottoman-konakia-page">
+        <div class="main-content text-center">
+            <!-- Κύριος Τίτλος -->
+            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
+                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
+            </h1>
+
+            <!-- Υπότιτλος -->
+            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
+                Κτίσματα και Μνημεία της Τουρκοκρατίας
+            </h2>
+
+            <!-- Περιεχόμενο -->
+            <div class="space-y-4 fade-in delay-4 hidden-initially">
+                <h3 class="content-subtitle">Κονάκια (Τσιφλικόσπιτα)</h3>
+                
+                <p class="content-text">
+                    Στην ευρύτερη περιοχή των Φαρσάλων σώζονται κονάκια (τα σπίτια των τσιφλικάδων) που μαρτυρούν την κοινωνική δομή της εποχής των τσιφλικιών, η οποία διαμορφώθηκε κατά την Τουρκοκρατία και διατηρήθηκε ως την απελευθέρωση της Θεσσαλίας.
+                    Δύο γνωστά είναι το <span class="content-text-bold">Κονάκι Χαροκόπου</span> (στο Πολυνέρι, σε καλή κατάσταση) και το <span class="content-text-bold">Κονάκι Βασιλείου</span> (στον Παλαιόμυλο).
+                </p>
+                
+                <!-- Two thumbnails side by side -->
+                <div class="image-thumbnail-row">
+                    <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%9A%CE%BF%CE%BD%CE%B1%CE%BA%CE%B9%CE%9A%CF%85%CE%B6%CE%B5%CF%81%CE%B9%CE%B4%CE%B72.jpg" 
+                         alt="Κονάκι Κυζερίδου"
+                         class="image-thumbnail-small"
+                         onclick="toggleImage(this)">
+                    <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%9A%CE%BF%CE%BD%CE%B1%CE%BA%CE%B9%CE%92%CE%B1%CF%83%CE%B9%CE%BB%CE%B5%CE%B9%CE%BF%CF%852.jpg" 
+                         alt="Κονάκι Βασιλείου"
+                         class="image-thumbnail-small"
+                         onclick="toggleImage(this)">
+                </div>
+            </div>
+
+            <!-- Navigation buttons -->
+            <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
+                <button onclick="showOttomanKaramichosPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                    ← Προηγούμενο
+                </button>
+                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                    Κεντρική Σελίδα
+                </button>
+                <button onclick="showOttomanTekesPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                    Επόμενο →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Σελίδα 3γ: Τουρκοκρατία - Τεκές -->
+    <div class="card ottoman-tekes-page">
+        <div class="main-content text-center">
+            <!-- Κύριος Τίτλος -->
+            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
+                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
+            </h1>
+
+            <!-- Υπότιτλος -->
+            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
+                Κτίσματα και Μνημεία της Τουρκοκρατίας
+            </h2>
+
+            <!-- Περιεχόμενο -->
+            <div class="space-y-4 fade-in delay-4 hidden-initially">
+                <h3 class="content-subtitle">Τεκές των Μπεκτασήδων Δερβίσηδων</h3>
+                
+                <p class="content-text">
+                    Στην περιοχή (κοντά στην Ασπρόγεια) σώζεται ο Τεκές (μουσουλμανικό μοναστήρι-ερημητήριο) των Μπεκτασήδων Δερβίσηδων, ένα ιδιαίτερο θρησκευτικό μνημείο που αντικατοπτρίζει την πολυπολιτισμική παρουσία στην περιοχή κατά την Οθωμανική περίοδο.
+                </p>
+                
+                <!-- Three thumbnails in a row -->
+                <div class="image-thumbnail-row">
+                    <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%A4%CE%B5%CE%BA%CE%B5%CF%821.jpg" 
+                         alt="Τεκές 1"
+                         class="image-thumbnail-small"
+                         onclick="toggleImage(this)">
+                    <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%A4%CE%B5%CE%BA%CE%B5%CF%822.jpg" 
+                         alt="Τεκές 2"
+                         class="image-thumbnail-small"
+                         onclick="toggleImage(this)">
+                    <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%A4%CE%B5%CE%BA%CE%B5%CF%823.jpg" 
+                         alt="Τεκές 3"
+                         class="image-thumbnail-small"
+                         onclick="toggleImage(this)">
+                </div>
+            </div>
+
+            <!-- Navigation buttons -->
+            <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
+                <button onclick="showOttomanKonakiaPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                    ← Προηγούμενο
+                </button>
+                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                    Κεντρική Σελίδα
+                </button>
+                <button onclick="showOttomanOldCityPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                    Επόμενο →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Σελίδα 3δ: Τουρκοκρατία - Παλιά Πόλη -->
+    <div class="card ottoman-old-city-page">
+        <div class="main-content text-center">
+            <!-- Κύριος Τίτλος -->
+            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
+                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
+            </h1>
+
+            <!-- Υπότιτλος -->
+            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
+                Κτίσματα και Μνημεία της Τουρκοκρατίας
+            </h2>
+
+            <!-- Περιεχόμενο -->
+            <div class="space-y-4 fade-in delay-4 hidden-initially">
+                <h3 class="content-subtitle">Παλιά Πόλη (Βαρούσι)</h3>
+                
+                <p class="content-text">
+                    Η ρυμοτομία της σημερινής πόλης εξακολουθεί να έχει ίχνη από την παλιά πόλη της Τουρκοκρατίας, ειδικά στη συνοικία Βαρούσι, όπου έχουν βρεθεί και νεότερα αρχαιολογικά ευρήματα (όχι μόνο αρχαία).
+                </p>
+                
+                <!-- Single thumbnail -->
+                <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%94%CE%B5%CE%BE%CE%B1%CE%BC%CE%B5%CE%BD%CE%B7.jpg" 
+                     alt="Δεξαμενη"
+                     class="image-thumbnail"
+                     onclick="toggleImage(this)">
+            </div>
+
+            <!-- Navigation buttons -->
+            <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
+                <button onclick="showOttomanTekesPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                    ← Προηγούμενο
+                </button>
+                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                    Κεντρική Σελίδα
+                </button>
+                <button onclick="showOttomanSummaryPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                    Επόμενο →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Σελίδα 3ε: Τουρκοκρατία - Σύνοψη και Κουμπιά -->
+    <div class="card ottoman-summary-page">
+        <div class="main-content text-center">
+            <!-- Κύριος Τίτλος -->
+            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
+                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
+            </h1>
+
+            <!-- Υπότιτλος -->
+            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
+                Κτίσματα και Μνημεία της Τουρκοκρατίας
+            </h2>
+
+            <!-- Περιεχόμενο -->
+            <div class="space-y-4 fade-in delay-4 hidden-initially">
+                <p class="content-text">
+                    Συνοψίζοντας, τα ευρήματα της Τουρκοκρατίας στα Φάρσαλα αφορούν κυρίως κτηριακά και αρχιτεκτονικά μνημεία (γέφυρες, οικίες, θρησκευτικά κτίσματα) που δείχνουν τη ζωή και την οργάνωση της πόλης κατά τη νεότερη περίοδο.
+                </p>
+            </div>
+
+            <!-- Κουμπιά Τουρκοκρατίας -->
+            <div class="button-grid mt-8 fade-in delay-6 hidden-initially">
+                <!-- Κουμπί 1: Πύργος Καραμίχου -->
+                <a href="https://conchr.github.io/Karamichos-Tower/" 
+                   rel="noopener noreferrer"
+                   class="action-button bg-green-600 text-white hover:bg-green-700 focus:bg-green-700 transition-all duration-300"
+                   aria-label="Ο Πύργος Καραμίχου">
+                    <span class="flex-1 button-text">Ο Πύργος Καραμίχου</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+
+                <!-- Κουμπί 2: Γέφυρα Πασσά -->
+                <a href="https://conchr.github.io/Passa-Presentation/" 
+                   rel="noopener noreferrer"
+                   class="action-button bg-purple-600 text-white hover:bg-purple-700 focus:bg-purple-700 transition-all duration-300"
+                   aria-label="Γέφυρα Πασσά">
+                    <span class="flex-1 button-text">Γέφυρα Πασσά</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+
+                <!-- Κουμπί 3: Ιστορικά Μνημεία Τουρκοκρατίας -->
+                <a href="https://conchr.github.io/Tourkokratia/" 
+                   rel="noopener noreferrer"
+                   class="action-button bg-amber-600 text-white hover:bg-amber-700 focus:bg-amber-700 transition-all duration-300 full-width-button"
+                   aria-label="Ιστορικά Μνημεία Τουρκοκρατίας">
+                    <span class="flex-1 button-text text-center">Ιστορικά Μνημεία Τουρκοκρατίας</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+            </div>
+
+            <!-- Navigation buttons -->
+            <div class="nav-buttons mt-8 fade-in delay-8 hidden-initially">
+                <button onclick="showOttomanOldCityPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                    ← Προηγούμενο
+                </button>
+                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                    Κεντρική Σελίδα
+                </button>
+            </div>
+        </div>
+    </div>
 
     <script>
-        // Ο κώδικας JavaScript παραμένει αμετάβλητος
+        // Αρχικά εμφανίζεται μόνο το background
+        // Τα υπόλοιπα στοιχεία εμφανίζονται σταδιακά με JavaScript
         document.addEventListener('DOMContentLoaded', function() {
             const loadingIndicator = document.getElementById('loadingIndicator');
             
+            // Προσθήκη loading indicator
             loadingIndicator.classList.add('loading');
             
+            // Τίτλος εμφανίζεται αμέσως
             setTimeout(() => {
                 document.querySelector('.delay-0').classList.remove('hidden-initially');
             }, 0);
 
+            // Περιγραφή εμφανίζεται μετά από 0.5 δευτερόλεπτα
             setTimeout(() => {
                 document.querySelector('.delay-2').classList.remove('hidden-initially');
             }, 500);
 
+            // Επικεφαλίδα εμφανίζεται μετά από 1 δευτερόλεπτο
             setTimeout(() => {
                 document.querySelector('.delay-4').classList.remove('hidden-initially');
             }, 1000);
 
+            // Κουμπιά εμφανίζονται μετά από 1.5 δευτερόλεπτα
             setTimeout(() => {
                 document.querySelector('.delay-6').classList.remove('hidden-initially');
                 loadingIndicator.classList.remove('loading');
             }, 1500);
 
+            // Βελτιστοποίηση για touch events
             document.addEventListener('touchstart', function() {}, {passive: true});
             
+            // Βελτιστοποίηση για Smart TVs (remote navigation)
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Enter' || e.key === ' ') {
                     const focusedElement = document.activeElement;
@@ -1923,15 +2116,9 @@
                     }
                 }
             });
-
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'ArrowRight') {
-                    e.preventDefault();
-                    navigateToNextPage();
-                }
-            });
         });
 
+        // Image modal functionality
         function toggleImage(imgElement) {
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImage');
@@ -1940,29 +2127,41 @@
             modalImg.src = imgElement.src;
         }
 
+        // Close modal when clicking on it
         document.getElementById('imageModal').addEventListener('click', function() {
             this.style.display = 'none';
         });
 
+        // File picker functionality
         function openFilePicker() {
             document.getElementById('fileInput').click();
         }
 
+        // Handle file selection
         document.getElementById('fileInput').addEventListener('change', function(event) {
             const file = event.target.files[0];
             if (file) {
+                // Create a blob URL for the selected file
                 const blobUrl = URL.createObjectURL(file);
+                
+                // Create a temporary anchor element to download/open the file
                 const a = document.createElement('a');
                 a.href = blobUrl;
                 a.download = file.name;
                 a.target = '_blank';
+                
+                // Programmatically click the anchor to open the file
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
+                
+                // Clean up the blob URL after some time
                 setTimeout(() => {
                     URL.revokeObjectURL(blobUrl);
                 }, 1000);
             }
+            
+            // Reset the file input
             event.target.value = '';
         });
 
@@ -1971,7 +2170,6 @@
             hideAllPages();
             document.body.className = 'main-page-bg';
             document.querySelector('.main-page').style.display = 'flex';
-            scrollToTop();
         }
 
         function showMainPage2() {
@@ -1979,7 +2177,6 @@
             document.body.className = 'main-page-bg';
             document.querySelector('.main-page-2').style.display = 'flex';
             resetAnimations('.main-page-2');
-            scrollToTop();
         }
 
         function showMainPage3() {
@@ -1987,15 +2184,14 @@
             document.body.className = 'main-page-bg';
             document.querySelector('.main-page-3').style.display = 'flex';
             resetAnimations('.main-page-3');
-            scrollToTop();
         }
 
+        // Συναρτήσεις για Ιστορικές Μάχες
         function showBattlesIntroPage() {
             hideAllPages();
             document.body.className = 'battles-page-bg';
             document.querySelector('.battles-intro-page').style.display = 'flex';
             resetAnimations('.battles-intro-page');
-            scrollToTop();
         }
 
         function showBattlesButtonsPage() {
@@ -2003,15 +2199,14 @@
             document.body.className = 'battles-page-bg';
             document.querySelector('.battles-buttons-page').style.display = 'flex';
             resetAnimations('.battles-buttons-page');
-            scrollToTop();
         }
 
+        // Συναρτήσεις για Τουρκοκρατία
         function showOttomanBridgePage() {
             hideAllPages();
             document.body.className = '';
             document.querySelector('.ottoman-bridge-page').style.display = 'flex';
             resetAnimations('.ottoman-bridge-page');
-            scrollToTop();
         }
 
         function showOttomanKaramichosPage() {
@@ -2019,7 +2214,6 @@
             document.body.className = '';
             document.querySelector('.ottoman-karamichos-page').style.display = 'flex';
             resetAnimations('.ottoman-karamichos-page');
-            scrollToTop();
         }
 
         function showOttomanKonakiaPage() {
@@ -2027,7 +2221,6 @@
             document.body.className = '';
             document.querySelector('.ottoman-konakia-page').style.display = 'flex';
             resetAnimations('.ottoman-konakia-page');
-            scrollToTop();
         }
 
         function showOttomanTekesPage() {
@@ -2035,7 +2228,6 @@
             document.body.className = '';
             document.querySelector('.ottoman-tekes-page').style.display = 'flex';
             resetAnimations('.ottoman-tekes-page');
-            scrollToTop();
         }
 
         function showOttomanOldCityPage() {
@@ -2043,7 +2235,6 @@
             document.body.className = '';
             document.querySelector('.ottoman-old-city-page').style.display = 'flex';
             resetAnimations('.ottoman-old-city-page');
-            scrollToTop();
         }
 
         function showOttomanSummaryPage() {
@@ -2051,9 +2242,9 @@
             document.body.className = '';
             document.querySelector('.ottoman-summary-page').style.display = 'flex';
             resetAnimations('.ottoman-summary-page');
-            scrollToTop();
         }
 
+        // Βοηθητικές συναρτήσεις
         function hideAllPages() {
             const pages = document.querySelectorAll('.card');
             pages.forEach(page => {
@@ -2066,50 +2257,6 @@
             elements.forEach(el => {
                 el.classList.remove('hidden-initially');
             });
-        }
-
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        function navigateToNextPage() {
-            const currentPage = getCurrentPage();
-            const nextPage = getNextPage(currentPage);
-            
-            if (nextPage) {
-                nextPage.showFunction();
-            }
-        }
-
-        const pageNavigation = {
-            'main-page': { showFunction: showMainPage2, next: 'main-page-2' },
-            'main-page-2': { showFunction: showMainPage3, next: 'main-page-3' },
-            'main-page-3': { showFunction: showBattlesIntroPage, next: 'battles-intro-page' },
-            'battles-intro-page': { showFunction: showBattlesButtonsPage, next: 'battles-buttons-page' },
-            'battles-buttons-page': { showFunction: showOttomanBridgePage, next: 'ottoman-bridge-page' },
-            'ottoman-bridge-page': { showFunction: showOttomanKaramichosPage, next: 'ottoman-karamichos-page' },
-            'ottoman-karamichos-page': { showFunction: showOttomanKonakiaPage, next: 'ottoman-konakia-page' },
-            'ottoman-konakia-page': { showFunction: showOttomanTekesPage, next: 'ottoman-tekes-page' },
-            'ottoman-tekes-page': { showFunction: showOttomanOldCityPage, next: 'ottoman-old-city-page' },
-            'ottoman-old-city-page': { showFunction: showOttomanSummaryPage, next: 'ottoman-summary-page' },
-            'ottoman-summary-page': { showFunction: showMainPage, next: 'main-page' }
-        };
-
-        function getCurrentPage() {
-            const pages = document.querySelectorAll('.card');
-            for (let page of pages) {
-                if (page.style.display === 'flex') {
-                    return page.classList[1];
-                }
-            }
-            return 'main-page';
-        }
-
-        function getNextPage(currentPage) {
-            return pageNavigation[currentPage] || null;
         }
     </script>
 
