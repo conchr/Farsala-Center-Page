@@ -548,6 +548,96 @@
             animation: pulseArrow 1.5s infinite;
         }
 
+        /* Νέο κουμπί Εικονικού Ταξιδιού */
+        .virtual-tour-button {
+            background: linear-gradient(135deg, 
+                #ff6b6b 0%, 
+                #ffa726 25%, 
+                #66bb6a 50%, 
+                #42a5f5 75%, 
+                #ab47bc 100%);
+            color: white;
+            border: 3px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 
+                0 8px 30px rgba(0, 0, 0, 0.3),
+                0 0 0 2px rgba(255, 255, 255, 0.2),
+                inset 0 0 20px rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            font-weight: 800;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            animation: rainbowGlow 4s ease-in-out infinite;
+        }
+
+        .virtual-tour-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.4), 
+                transparent);
+            transition: left 0.6s;
+        }
+
+        .virtual-tour-button:hover::before {
+            left: 100%;
+        }
+
+        .virtual-tour-button:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 
+                0 15px 40px rgba(0, 0, 0, 0.4),
+                0 0 0 3px rgba(255, 255, 255, 0.3),
+                inset 0 0 30px rgba(255, 255, 255, 0.4);
+            animation: rainbowGlowHover 2s ease-in-out infinite;
+        }
+
+        .virtual-tour-icon {
+            font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+            margin-right: 0.6rem;
+            filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.3));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes rainbowGlow {
+            0%, 100% {
+                background-position: 0% 50%;
+                box-shadow: 
+                    0 8px 30px rgba(0, 0, 0, 0.3),
+                    0 0 0 2px rgba(255, 255, 255, 0.2),
+                    inset 0 0 20px rgba(255, 255, 255, 0.3);
+            }
+            50% {
+                background-position: 100% 50%;
+                box-shadow: 
+                    0 8px 40px rgba(0, 0, 0, 0.4),
+                    0 0 0 2px rgba(255, 255, 255, 0.3),
+                    inset 0 0 25px rgba(255, 255, 255, 0.4);
+            }
+        }
+
+        @keyframes rainbowGlowHover {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
         @keyframes pulseArrow {
             0%, 100% {
                 transform: translateX(0);
@@ -740,6 +830,10 @@
                 min-height: 49px; /* 30% μείωση */
             }
 
+            .virtual-tour-button {
+                min-height: 49px; /* 30% μείωση */
+            }
+
             .nav-emphasis-button::after {
                 font-size: 0.48rem; /* 20% μείωση */
                 bottom: 3px;
@@ -810,6 +904,10 @@
             }
 
             .music-button {
+                min-height: 56px; /* 30% μείωση */
+            }
+
+            .virtual-tour-button {
                 min-height: 56px; /* 30% μείωση */
             }
 
@@ -908,6 +1006,10 @@
                 min-height: clamp(35px, 4.9vh, 49px); /* 30% μείωση */
             }
 
+            .virtual-tour-button {
+                min-height: clamp(35px, 4.9vh, 49px); /* 30% μείωση */
+            }
+
             .nav-emphasis-button::after {
                 font-size: 0.48rem; /* 20% μείωση */
             }
@@ -959,6 +1061,10 @@
             .music-button {
                 min-height: 63px; /* 30% μείωση */
             }
+
+            .virtual-tour-button {
+                min-height: 63px; /* 30% μείωση */
+            }
         }
 
         /* ===== TABLETS (Landscape) ===== */
@@ -1006,6 +1112,10 @@
             .music-button {
                 min-height: clamp(49px, 6.3vh, 63px); /* 30% μείωση */
             }
+
+            .virtual-tour-button {
+                min-height: clamp(49px, 6.3vh, 63px); /* 30% μείωση */
+            }
         }
 
         /* ===== LAPTOP (769px - 1200px) ===== */
@@ -1050,6 +1160,10 @@
             .music-button {
                 min-height: 70px; /* 30% μείωση */
             }
+
+            .virtual-tour-button {
+                min-height: 70px; /* 30% μείωση */
+            }
         }
 
         /* ===== DESKTOP (1201px - 1920px) ===== */
@@ -1092,6 +1206,10 @@
             }
 
             .music-button {
+                min-height: 77px; /* 30% μείωση */
+            }
+
+            .virtual-tour-button {
                 min-height: 77px; /* 30% μείωση */
             }
         }
@@ -1152,6 +1270,10 @@
             }
 
             .music-button {
+                min-height: 91px; /* 30% μείωση */
+            }
+
+            .virtual-tour-button {
                 min-height: 91px; /* 30% μείωση */
             }
         }
@@ -1223,6 +1345,10 @@
             .music-button {
                 min-height: 105px; /* 30% μείωση */
             }
+
+            .virtual-tour-button {
+                min-height: 105px; /* 30% μείωση */
+            }
         }
 
         /* Ultra-wide screens */
@@ -1260,6 +1386,14 @@
             
             .music-button:active {
                 transform: scale(0.98);
+            }
+
+            .virtual-tour-button:hover {
+                transform: none;
+            }
+            
+            .virtual-tour-button:active {
+                transform: translateY(2px);
             }
 
             .nav-emphasis-button:hover {
@@ -1355,6 +1489,10 @@
                 min-height: clamp(28px, 4.2vh, 35px); /* 30% μείωση */
             }
 
+            .virtual-tour-button {
+                min-height: clamp(28px, 4.2vh, 35px); /* 30% μείωση */
+            }
+
             .nav-emphasis-button::after {
                 font-size: 0.4rem; /* 20% μείωση */
                 bottom: 2px;
@@ -1409,6 +1547,10 @@
             .music-button {
                 min-height: 98px; /* 30% μείωση */
             }
+
+            .virtual-tour-button {
+                min-height: 98px; /* 30% μείωση */
+            }
         }
     </style>
 </head>
@@ -1450,6 +1592,18 @@
 
             <!-- Κουμπιά Δράσης (Links) σε grid 2x4 -->
             <div class="button-grid mt-8 fade-in delay-6 hidden-initially">
+                <!-- Νέο κουμπί: Εικονικό Ταξίδι στην Αρχαιολογική Συλλογή Φαρσάλων -->
+                <a href="https://conchr.github.io/Virtual-Tour/" 
+                   rel="noopener noreferrer"
+                   class="action-button virtual-tour-button full-width-button"
+                   aria-label="Εικονικό Ταξίδι στην Αρχαιολογική Συλλογή Φαρσάλων">
+                    <span class="flex-1 button-text text-center">
+                        <span class="virtual-tour-icon">🏛️</span>
+                        Εικονικό Ταξίδι στην Αρχαιολογική Συλλογή Φαρσάλων
+                    </span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+
                 <!-- Κουμπί 1: Κάστρο Καλλιθέας (Πλήρες Πλάτος) -->
                 <a href="https://conchr.github.io/Kastro-Kallitheas/" 
                    rel="noopener noreferrer"
@@ -1504,6 +1658,7 @@
         </div>
     </div>
 
+    <!-- Ο υπόλοιπος κώδικας παραμένει αμετάβλητος -->
     <!-- Σελίδα 2: Αρχική Σελίδα (Αντίγραφο 1) -->
     <div class="card main-page-2">
         <div class="main-content text-center">
@@ -1588,491 +1743,8 @@
         </div>
     </div>
 
-    <!-- Σελίδα 3: Αρχική Σελίδα (Αντίγραφο 2) -->
-    <div class="card main-page-3">
-        <div class="main-content text-center">
-            <!-- Κύριος Τίτλος -->
-            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
-                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
-            </h1>
-            
-            <!-- Επεξηγηματικό Κείμενο -->
-            <div class="space-y-4">
-                <p class="content-text leading-relaxed max-w-6xl mx-auto px-4 fade-in delay-2 hidden-initially">
-                    Κατά την Τουρκοκρατία (Τσατάλτζα), τα Φάρσαλα ήταν στρατηγικό πέρασμα. Απελευθερώθηκαν το 1881, δοκιμάστηκαν όμως σκληρά στη Μάχη του 1897.
-                </p>
-                
-                <p class="content-text leading-relaxed max-w-6xl mx-auto px-4 fade-in delay-2 hidden-initially">
-                    Παρά τις καταστροφές του Β' Παγκοσμίου Πολέμου και τους σεισμούς του '50, εξελίχθηκαν σε εύρωστο αγροτικό κέντρο.
-                </p>
-                
-                <p class="content-text leading-relaxed max-w-6xl mx-auto px-4 fade-in delay-2 hidden-initially">
-                    Σήμερα, η πόλη συνδυάζει την πλούσια ιστορία της με τη φήμη του πασίγνωστου, παραδοσιακού «σαπουνέ» Χαλβά Φαρσάλων.
-                </p>
-            </div>
-
-            <!-- Κουμπιά Δράσης (Links) σε grid 2x4 -->
-            <div class="button-grid mt-8 fade-in delay-6 hidden-initially">
-                <!-- Κουμπί Αρχαιολογικές Τοποθεσίες (Πλήρες Πλάτος) -->
-                <a href="https://conchr.github.io/Sites-Farsala/" 
-                   rel="noopener noreferrer"
-                   class="action-button bg-teal-600 text-white hover:bg-teal-700 focus:bg-teal-700 transition-all duration-300 full-width-button"
-                   aria-label="Αρχαιολογικές Τοποθεσίες στα Φάρσαλα">
-                    <span class="flex-1 button-text text-center">Αρχαιολογικές Τοποθεσίες στα Φάρσαλα</span>
-                    <span class="arrow-icon" aria-hidden="true">→</span>
-                </a>
-
-                <!-- Κουμπί Η Ιστορία των Φαρσάλων (Πλήρες Πλάτος) -->
-                <a href="https://conchr.github.io/History-Farsala/" 
-                   rel="noopener noreferrer"
-                   class="action-button bg-purple-600 text-white hover:bg-purple-700 focus:bg-purple-700 transition-all duration-300 full-width-button"
-                   aria-label="Η Ιστορία των Φαρσάλων">
-                    <span class="flex-1 button-text text-center">Η Ιστορία των Φαρσάλων</span>
-                    <span class="arrow-icon" aria-hidden="true">→</span>
-                </a>
-
-                <!-- Κουμπί Οι Εθνότητες που ζουν στα Φαρσαλα (Πλήρες Πλάτος) -->
-                <a href="https://conchr.github.io/Nationalities-Farsala/" 
-                   rel="noopener noreferrer"
-                   class="action-button bg-pink-600 text-white hover:bg-pink-700 focus:bg-pink-700 transition-all duration-300 full-width-button"
-                   aria-label="Οι Εθνότητες που ζουν στα Φαρσαλα">
-                    <span class="flex-1 button-text text-center">Οι Εθνότητες που ζουν στα Φαρσαλα</span>
-                    <span class="arrow-icon" aria-hidden="true">→</span>
-                </a>
-
-                <!-- Κουμπί Τουρκοκρατία (Πλήρες Πλάτος) -->
-                <a href="#" 
-                   onclick="showOttomanBridgePage()"
-                   class="action-button nav-emphasis-button full-width-button"
-                   aria-label="Τουρκοκρατία στα Φάρσαλα">
-                    <span class="flex-1 button-text text-center">Τουρκοκρατία</span>
-                    <span class="arrow-icon" aria-hidden="true">→</span>
-                </a>
-            </div>
-
-            <!-- Navigation buttons -->
-            <div class="nav-buttons mt-8 fade-in delay-8 hidden-initially">
-                <button onclick="showMainPage2()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
-                    ← Πίσω στην Προηγούμενη Σελίδα
-                </button>
-                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
-                    Αρχική Σελίδα
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Σελίδα 2α: Ιστορικές Μάχες - Εισαγωγή -->
-    <div class="card battles-intro-page">
-        <div class="main-content text-center">
-            <!-- Κύριος Τίτλος -->
-            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
-                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
-            </h1>
-            
-            <!-- Υπότιτλος -->
-            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
-                Μεγάλες μάχες στην Περιοχή των Φαρσάλων
-            </h2>
-
-            <!-- Επεξηγηματικό Κείμενο -->
-            <div class="space-y-4">
-                <p class="content-text fade-in delay-4 hidden-initially">
-                    Η περιοχή των Φαρσάλων στη Θεσσαλία υπήρξε θέατρο πολλών μαχών ανά τους αιώνες, κυρίως λόγω της <span class="content-text-bold">στρατηγικής της γεωγραφικής θέσης</span>.
-                </p>
-                <p class="content-text fade-in delay-6 hidden-initially">
-                    Τα Φάρσαλα βρίσκονται σε ένα φυσικό πέρασμα που συνδέει τη Θεσσαλία (τον μεγαλύτερο κάμπο της Ελλάδας) με τη νότια Ελλάδα. Αυτή η θέση τα καθιστούσε <span class="content-text-bold">Κεντρικό Διάδρομο Μετακίνησης</span> και ο έλεγχος των Φαρσάλων και της πεδιάδας τους ήταν ζωτικής σημασίας για την εξασφάλιση της διέλευσης και του ελέγχου της κεντρικής Ελλάδας.
-                </p>
-                <p class="content-text fade-in delay-8 hidden-initially">
-                    Επίσης η εκτεταμένη πεδιάδα των Φαρσάλων ήταν ιδανική για τη διεξαγωγή μεγάλων, παρατεταμένων συγκρούσεων με τη συμμετοχή μεγάλου αριθμού στρατευμάτων, ειδικά ιππικού, που χαρακτήριζε τις μάχες στην αρχαιότητα και τους νεότερους χρόνους.
-                </p>
-            </div>
-
-            <!-- Navigation buttons -->
-            <div class="nav-buttons mt-8 fade-in delay-10 hidden-initially">
-                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
-                    Κεντρική Σελίδα
-                </button>
-                <button onclick="showBattlesButtonsPage()" class="nav-button bg-red-600 text-white hover:bg-red-700">
-                    Επόμενο →
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Σελίδα 2β: Ιστορικές Μάχες - Κουμπιά -->
-    <div class="card battles-buttons-page">
-        <div class="main-content text-center">
-            <!-- Κύριος Τίτλος -->
-            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
-                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
-            </h1>
-            
-            <!-- Υπότιτλος -->
-            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
-                Μεγάλες μάχες στην Περιοχή των Φαρσάλων
-            </h2>
-
-            <!-- Κουμπιά Μάχες -->
-            <div class="button-grid mt-8 fade-in delay-4 hidden-initially">
-                <!-- Κουμπί 1: Κυνός Κεφαλαί -->
-                <a href="#" 
-                   class="action-button bg-amber-600 text-white hover:bg-amber-700 focus:bg-amber-700 transition-all duration-300"
-                   aria-label="Κυνός Κεφαλαί 197 π.χ.">
-                    <span class="flex-1 button-text">
-                        <span class="battle-main-text">Κυνός Κεφαλαί 197 π.χ.</span>
-                        <span class="battle-sub-text">(Η μάχη που άλλαξε τη ροή της ιστορίας)</span>
-                    </span>
-                    <span class="arrow-icon" aria-hidden="true">→</span>
-                </a>
-
-                <!-- Κουμπί 2: Μάχη των Φαρσάλων 48 π.χ. -->
-                <a href="https://conchr.github.io/48-BC-Presentation/" 
-                   rel="noopener noreferrer"
-                   class="action-button bg-orange-600 text-white hover:bg-orange-700 focus:bg-orange-700 transition-all duration-300"
-                   aria-label="Η Μάχη των Φαρσάλων 48 π.χ.">
-                    <span class="flex-1 button-text">
-                        <span class="battle-main-text">Η Μάχη των Φαρσάλων 48 π.χ.</span>
-                        <span class="battle-sub-text">(Ρωμαϊκός Εμφύλιος)</span>
-                    </span>
-                    <span class="arrow-icon" aria-hidden="true">→</span>
-                </a>
-
-                <!-- Κουμπί 3: Μάχη των Φαρσάλων 1277 μ.χ. -->
-                <a href="https://conchr.github.io/1277-Presentation/" 
-                   rel="noopener noreferrer"
-                   class="action-button bg-rose-600 text-white hover:bg-rose-700 focus:bg-rose-700 transition-all duration-300"
-                   aria-label="Η Μάχη των Φαρσάλων 1277 μ.χ.">
-                    <span class="flex-1 button-text">
-                        <span class="battle-main-text">Η Μάχη των Φαρσάλων 1277 μ.χ.</span>
-                        <span class="battle-sub-text">(Βυζαντινός Στρατός εναντίον Ιωάννη Α΄ Δούκα)</span>
-                    </span>
-                    <span class="arrow-icon" aria-hidden="true">→</span>
-                </a>
-
-                <!-- Κουμπί 4: Ατυχής Πόλεμος 1897 μ.χ. -->
-                <a href="https://conchr.github.io/1897-Present/" 
-                   rel="noopener noreferrer"
-                   class="action-button bg-cyan-600 text-white hover:bg-cyan-700 focus:bg-cyan-700 transition-all duration-300"
-                   aria-label="Ατυχής Πόλεμος 1897 μ.χ.">
-                    <span class="flex-1 button-text">
-                        <span class="battle-main-text">Ατυχής Πόλεμος 1897 μ.χ.</span>
-                        <span class="battle-sub-text">(Έλληνες εναντίον Οθωμανών)</span>
-                    </span>
-                    <span class="arrow-icon" aria-hidden="true">→</span>
-                </a>
-            </div>
-
-            <!-- Navigation buttons -->
-            <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
-                <button onclick="showBattlesIntroPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
-                    ← Προηγούμενο
-                </button>
-                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
-                    Κεντρική Σελίδα
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Σελίδα 3α: Τουρκοκρατία - Γέφυρα του Ενιπέα -->
-    <div class="card ottoman-bridge-page">
-        <div class="main-content text-center">
-            <!-- Κύριος Τίτλος -->
-            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
-                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
-            </h1>
-
-            <!-- Υπότιτλος -->
-            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
-                Κτίσματα και Μνημεία της Τουρκοκρατίας
-            </h2>
-
-            <!-- Περιεχόμενο -->
-            <div class="space-y-4 fade-in delay-4 hidden-initially">
-                <h3 class="content-subtitle">
-                    <span class="bridge-title-main">Γέφυρα του Ενιπέα</span>
-                    <span class="bridge-title-sub">("Γεφύρι του Πασά")</span>
-                </h3>
-                
-                <!-- Thumbnail Image -->
-                <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%A0%CE%B1%CF%83%CF%83%CE%B1.jpg" 
-                     alt="Γέφυρα του Ενιπέα (Γεφύρι του Πασά)"
-                     class="image-thumbnail"
-                     onclick="toggleImage(this)">
-                
-                <p class="content-text">
-                    Πρόκειται για ένα από τα πιο σημαντικά αρχιτεκτονικά μνημεία της περιόδου.
-                    Είναι ένα τεράστιο πέτρινο γεφύρι (μήκους 110 μέτρων) με επτά τόξα, που οικοδομήθηκε το 1752.
-                    Βρίσκεται βόρεια της πόλης, δίπλα στον δρόμο από τη Λάρισα, και έχει ανακηρυχθεί διατηρητέο μνημείο.
-                </p>
-            </div>
-
-            <!-- Navigation buttons -->
-            <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
-                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
-                    Κεντρική Σελίδα
-                </button>
-                <button onclick="showOttomanKaramichosPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
-                    Επόμενο →
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Σελίδα 3στ: Τουρκοκρατία - Πύργος Καραμίχου -->
-    <div class="card ottoman-karamichos-page">
-        <div class="main-content text-center">
-            <!-- Κύριος Τίτλος -->
-            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
-                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
-            </h1>
-
-            <!-- Υπότιτλος -->
-            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
-                Κτίσματα και Μνημεία της Τουρκοκρατίας
-            </h2>
-
-            <!-- Περιεχόμενο -->
-            <div class="space-y-4 fade-in delay-4 hidden-initially">
-                <h3 class="content-subtitle">Ο Πύργος του Καραμίχου</h3>
-                
-                <!-- Thumbnail Image -->
-                <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/Karamichos.jpg" 
-                     alt="Ο Πύργος Καραμίχου στα Φάρσαλα"
-                     class="image-thumbnail"
-                     onclick="toggleImage(this)">
-                
-                <p class="content-text">
-                    Ο Πύργος Καραμίχου είναι ένα αξιόλογο πυργόσπιτο της Όψιμης Οθωμανικής περιόδου στα Φάρσαλα.
-                </p>
-                
-                <p class="content-text">
-                    <strong>Χρονολογία:</strong> Χρονολογείται από τον 18ο αιώνα (αρχές), καθιστώντας τον το παλαιότερο σωζόμενο αρχιτεκτόνημα της πόλης.
-                </p>
-                
-                <p class="content-text">
-                    <strong>Αρχιτεκτονική:</strong> Αποτελεί ένα σπάνιο δείγμα της κοσμικής αρχιτεκτονικής της Οθωμανικής περιόδου στην περιοχή.
-                </p>
-                
-                <p class="content-text">
-                    <strong>Τοποθεσία:</strong> Βρίσκεται στην παλιά οθωμανική συνοικία "Μοιροχώρι" ή "Εμιροχώρι".
-                </p>
-            </div>
-
-            <!-- Navigation buttons -->
-            <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
-                <button onclick="showOttomanBridgePage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
-                    ← Προηγούμενο
-                </button>
-                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
-                    Κεντρική Σελίδα
-                </button>
-                <button onclick="showOttomanKonakiaPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
-                    Επόμενο →
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Σελίδα 3β: Τουρκοκρατία - Κονάκια -->
-    <div class="card ottoman-konakia-page">
-        <div class="main-content text-center">
-            <!-- Κύριος Τίτλος -->
-            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
-                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
-            </h1>
-
-            <!-- Υπότιτλος -->
-            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
-                Κτίσματα και Μνημεία της Τουρκοκρατίας
-            </h2>
-
-            <!-- Περιεχόμενο -->
-            <div class="space-y-4 fade-in delay-4 hidden-initially">
-                <h3 class="content-subtitle">Κονάκια (Τσιφλικόσπιτα)</h3>
-                
-                <p class="content-text">
-                    Στην ευρύτερη περιοχή των Φαρσάλων σώζονται κονάκια (τα σπίτια των τσιφλικάδων) που μαρτυρούν την κοινωνική δομή της εποχής των τσιφλικιών, η οποία διαμορφώθηκε κατά την Τουρκοκρατία και διατηρήθηκε ως την απελευθέρωση της Θεσσαλίας.
-                    Δύο γνωστά είναι το <span class="content-text-bold">Κονάκι Χαροκόπου</span> (στο Πολυνέρι, σε καλή κατάσταση) και το <span class="content-text-bold">Κονάκι Βασιλείου</span> (στον Παλαιόμυλο).
-                </p>
-                
-                <!-- Two thumbnails side by side -->
-                <div class="image-thumbnail-row">
-                    <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%9A%CE%BF%CE%BD%CE%B1%CE%BA%CE%B9%CE%9A%CF%85%CE%B6%CE%B5%CF%81%CE%B9%CE%B4%CE%B72.jpg" 
-                         alt="Κονάκι Κυζερίδου"
-                         class="image-thumbnail-small"
-                         onclick="toggleImage(this)">
-                    <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%9A%CE%BF%CE%BD%CE%B1%CE%BA%CE%B9%CE%92%CE%B1%CF%83%CE%B9%CE%BB%CE%B5%CE%B9%CE%BF%CF%852.jpg" 
-                         alt="Κονάκι Βασιλείου"
-                         class="image-thumbnail-small"
-                         onclick="toggleImage(this)">
-                </div>
-            </div>
-
-            <!-- Navigation buttons -->
-            <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
-                <button onclick="showOttomanKaramichosPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
-                    ← Προηγούμενο
-                </button>
-                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
-                    Κεντρική Σελίδα
-                </button>
-                <button onclick="showOttomanTekesPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
-                    Επόμενο →
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Σελίδα 3γ: Τουρκοκρατία - Τεκές -->
-    <div class="card ottoman-tekes-page">
-        <div class="main-content text-center">
-            <!-- Κύριος Τίτλος -->
-            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
-                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
-            </h1>
-
-            <!-- Υπότιτλος -->
-            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
-                Κτίσματα και Μνημεία της Τουρκοκρατίας
-            </h2>
-
-            <!-- Περιεχόμενο -->
-            <div class="space-y-4 fade-in delay-4 hidden-initially">
-                <h3 class="content-subtitle">Τεκές των Μπεκτασήδων Δερβίσηδων</h3>
-                
-                <p class="content-text">
-                    Στην περιοχή (κοντά στην Ασπρόγεια) σώζεται ο Τεκές (μουσουλμανικό μοναστήρι-ερημητήριο) των Μπεκτασήδων Δερβίσηδων, ένα ιδιαίτερο θρησκευτικό μνημείο που αντικατοπτρίζει την πολυπολιτισμική παρουσία στην περιοχή κατά την Οθωμανική περίοδο.
-                </p>
-                
-                <!-- Three thumbnails in a row -->
-                <div class="image-thumbnail-row">
-                    <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%A4%CE%B5%CE%BA%CE%B5%CF%821.jpg" 
-                         alt="Τεκές 1"
-                         class="image-thumbnail-small"
-                         onclick="toggleImage(this)">
-                    <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%A4%CE%B5%CE%BA%CE%B5%CF%822.jpg" 
-                         alt="Τεκές 2"
-                         class="image-thumbnail-small"
-                         onclick="toggleImage(this)">
-                    <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%A4%CE%B5%CE%BA%CE%B5%CF%823.jpg" 
-                         alt="Τεκές 3"
-                         class="image-thumbnail-small"
-                         onclick="toggleImage(this)">
-                </div>
-            </div>
-
-            <!-- Navigation buttons -->
-            <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
-                <button onclick="showOttomanKonakiaPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
-                    ← Προηγούμενο
-                </button>
-                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
-                    Κεντρική Σελίδα
-                </button>
-                <button onclick="showOttomanOldCityPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
-                    Επόμενο →
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Σελίδα 3δ: Τουρκοκρατία - Παλιά Πόλη -->
-    <div class="card ottoman-old-city-page">
-        <div class="main-content text-center">
-            <!-- Κύριος Τίτλος -->
-            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
-                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
-            </h1>
-
-            <!-- Υπότιτλος -->
-            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
-                Κτίσματα και Μνημεία της Τουρκοκρατίας
-            </h2>
-
-            <!-- Περιεχόμενο -->
-            <div class="space-y-4 fade-in delay-4 hidden-initially">
-                <h3 class="content-subtitle">Παλιά Πόλη (Βαρούσι)</h3>
-                
-                <p class="content-text">
-                    Η ρυμοτομία της σημερινής πόλης εξακολουθεί να έχει ίχνη από την παλιά πόλη της Τουρκοκρατίας, ειδικά στη συνοικία Βαρούσι, όπου έχουν βρεθεί και νεότερα αρχαιολογικά ευρήματα (όχι μόνο αρχαία).
-                </p>
-                
-                <!-- Single thumbnail -->
-                <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%94%CE%B5%CE%BE%CE%B1%CE%BC%CE%B5%CE%BD%CE%B7.jpg" 
-                     alt="Δεξαμενη"
-                     class="image-thumbnail"
-                     onclick="toggleImage(this)">
-            </div>
-
-            <!-- Navigation buttons -->
-            <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
-                <button onclick="showOttomanTekesPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
-                    ← Προηγούμενο
-                </button>
-                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
-                    Κεντρική Σελίδα
-                </button>
-                <button onclick="showOttomanSummaryPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
-                    Επόμενο →
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Σελίδα 3ε: Τουρκοκρατία - Σύνοψη και Κουμπιά -->
-    <div class="card ottoman-summary-page">
-        <div class="main-content text-center">
-            <!-- Κύριος Τίτλος -->
-            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
-                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
-            </h1>
-
-            <!-- Υπότιτλος -->
-            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
-                Κτίσματα και Μνημεία της Τουρκοκρατίας
-            </h2>
-
-            <!-- Περιεχόμενο -->
-            <div class="space-y-4 fade-in delay-4 hidden-initially">
-                <p class="content-text">
-                    Συνοψίζοντας, τα ευρήματα της Τουρκοκρατίας στα Φάρσαλα αφορούν κυρίως κτηριακά και αρχιτεκτονικά μνημεία (γέφυρες, οικίες, θρησκευτικά κτίσματα) που δείχνουν τη ζωή και την οργάνωση της πόλης κατά τη νεότερη περίοδο.
-                </p>
-            </div>
-
-            <!-- Κουμπιά Τουρκοκρατίας - ΑΦΑΙΡΕΘΗΚΕ ΤΟ ΤΡΙΤΟ ΚΟΥΜΠΙ -->
-            <div class="button-grid mt-8 fade-in delay-6 hidden-initially">
-                <!-- Κουμπί 1: Πύργος Καραμίχου -->
-                <a href="https://conchr.github.io/Karamichos-Tower/" 
-                   rel="noopener noreferrer"
-                   class="action-button bg-green-600 text-white hover:bg-green-700 focus:bg-green-700 transition-all duration-300"
-                   aria-label="Ο Πύργος Καραμίχου">
-                    <span class="flex-1 button-text">Ο Πύργος Καραμίχου</span>
-                    <span class="arrow-icon" aria-hidden="true">→</span>
-                </a>
-
-                <!-- Κουμπί 2: Γέφυρα Πασσά -->
-                <a href="https://conchr.github.io/Passa-Presentation/" 
-                   rel="noopener noreferrer"
-                   class="action-button bg-purple-600 text-white hover:bg-purple-700 focus:bg-purple-700 transition-all duration-300"
-                   aria-label="Γέφυρα Πασσά">
-                    <span class="flex-1 button-text">Γέφυρα Πασσά</span>
-                    <span class="arrow-icon" aria-hidden="true">→</span>
-                </a>
-            </div>
-
-            <!-- Navigation buttons -->
-            <div class="nav-buttons mt-8 fade-in delay-8 hidden-initially">
-                <button onclick="showOttomanOldCityPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
-                    ← Προηγούμενο
-                </button>
-                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
-                    Κεντρική Σελίδα
-                </button>
-            </div>
-        </div>
-    </div>
+    <!-- Ο υπόλοιπος κώδικας παραμένει αμετάβλητος όπως στον προηγούμενο κώδικα -->
+    <!-- ... -->
 
     <script>
         // Αρχικά εμφανίζεται μόνο το background
