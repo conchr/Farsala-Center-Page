@@ -22,7 +22,6 @@
         <img id="modalImage" class="modal-content">
     </div>
 
-
     <!-- Σελίδα 1: Αρχική Σελίδα -->
     <div class="card main-page">
         <div class="main-content text-center">
@@ -42,7 +41,7 @@
                 </p>
 
                 <p class="content-text leading-relaxed max-w-6xl mx-auto px-4 fade-in delay-2 hidden-initially">
-                    Ο Δήμος δίνει έμφαση στην εκπαίδευση, με ενδιαφέροντα προγράμματα για όλες τις ηλικίες. Ξεχωρίζουν τα προγράμματα για τους «μικρούς ιστορικούς», που φέρνουν τα παιδιά κοντά στην ιστορία, και οι δράσεις γνωριμίας με τα μουσικά όργανα, καλλιεργώντας τη δημιουργικότητα και την παράδοση.
+                    Ο Δήμος δίνει έμφαση στην εκπαίδευση, με ενδιαφέροντα προγράμματα για όλες τις ηλικίες. Ξεχωρίζουν τα προγράμματα για τους «μικρούς ιστορικούς», που φέρνουν τα παιδιά κοντά στην ιστορία, καλλιεργώντας τη δημιουργικότητα και την παράδοση.
                 </p>
             </div>
 
@@ -67,24 +66,12 @@
                 </a>
 
                 <!-- Κουμπί 2: Τα Φάρσαλα από τα βάθη των αιώνων -->
-                <a href="#"
-                   onclick="showMainPage2()"
+                <a href="#/history"
                    class="action-button nav-emphasis-button full-width-button"
                    aria-label="Τα Φάρσαλα από τα βάθη των αιώνων">
                     <span class="flex-1 button-text text-center">Τα Φάρσαλα από τα βάθη των αιώνων</span>
                     <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
-
-                <!-- Κουμπί 3: Γνωριμία με τα Μουσικά Οργανα -->
-                <button class="action-button music-button full-width-button"
-                        onclick="openFilePicker()"
-                        aria-label="Γνωριμία με τα Μουσικά Οργανα">
-                    <span class="flex-1 button-text text-center">
-                        <span class="music-icon">🎵</span>
-                        Γνωριμία με τα Μουσικά Οργανα
-                    </span>
-                    <span class="arrow-icon" aria-hidden="true">→</span>
-                </button>
 
                 <!-- Κουμπί για παιδιά -->
                 <a href="https://conchr.github.io/Ancient-Quiz-for-kids/"
@@ -191,8 +178,7 @@
                 </a>
 
                 <!-- Κουμπί Ιστορικές Μάχες (Πλήρες Πλάτος) -->
-                <a href="#"
-                   onclick="showBattlesIntroPage()"
+                <a href="#/battles"
                    class="action-button nav-emphasis-button full-width-button"
                    aria-label="Ιστορικές Μάχες στα Φάρσαλα">
                     <span class="flex-1 button-text text-center">Ιστορικές Μάχες στα Φάρσαλα</span>
@@ -200,8 +186,7 @@
                 </a>
 
                 <!-- Κουμπί Από την Τουρκοκρατία μέχρι σήμερα -->
-                <a href="#"
-                   onclick="showMainPage3()"
+                <a href="#/modern"
                    class="action-button nav-emphasis-button full-width-button"
                    aria-label="Από την Τουρκοκρατία μέχρι σήμερα">
                     <span class="flex-1 button-text text-center">Από την Τουρκοκρατία μέχρι σήμερα</span>
@@ -211,9 +196,9 @@
 
             <!-- Navigation buttons -->
             <div class="nav-buttons mt-8 fade-in delay-8 hidden-initially">
-                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                <a href="#/" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
                     ← Πίσω στην Αρχική
-                </button>
+                </a>
             </div>
         </div>
     </div>
@@ -261,18 +246,17 @@
                     <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
 
-                <!-- Κουμπί Οι Εθνότητες που ζουν στα Φαρσαλα (Πλήρες Πλάτος) -->
+                <!-- Κουμπί Οι Εθνότητες που ζουν στα Φάρσαλα (Πλήρες Πλάτος) -->
                 <a href="https://conchr.github.io/Nationalities-Farsala/"
                    rel="noopener noreferrer"
                    class="action-button bg-pink-600 text-white hover:bg-pink-700 focus:bg-pink-700 transition-all duration-300 full-width-button"
-                   aria-label="Οι Εθνότητες που ζουν στα Φαρσαλα">
-                    <span class="flex-1 button-text text-center">Οι Εθνότητες που ζουν στα Φαρσαλα</span>
+                   aria-label="Οι Εθνότητες που ζουν στα Φάρσαλα">
+                    <span class="flex-1 button-text text-center">Οι Εθνότητες που ζουν στα Φάρσαλα</span>
                     <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
 
                 <!-- Κουμπί Τουρκοκρατία (Πλήρες Πλάτος) -->
-                <a href="#"
-                   onclick="showOttomanBridgePage()"
+                <a href="#/ottoman/bridge"
                    class="action-button nav-emphasis-button full-width-button"
                    aria-label="Τουρκοκρατία στα Φάρσαλα">
                     <span class="flex-1 button-text text-center">Τουρκοκρατία</span>
@@ -282,12 +266,12 @@
 
             <!-- Navigation buttons -->
             <div class="nav-buttons mt-8 fade-in delay-8 hidden-initially">
-                <button onclick="showMainPage2()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                <a href="#/history" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
                     ← Πίσω στην Προηγούμενη Σελίδα
-                </button>
-                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                </a>
+                <a href="#/" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
                     Αρχική Σελίδα
-                </button>
+                </a>
             </div>
         </div>
     </div>
@@ -320,12 +304,12 @@
 
             <!-- Navigation buttons -->
             <div class="nav-buttons mt-8 fade-in delay-10 hidden-initially">
-                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                <a href="#/" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
                     Κεντρική Σελίδα
-                </button>
-                <button onclick="showBattlesButtonsPage()" class="nav-button bg-red-600 text-white hover:bg-red-700">
+                </a>
+                <a href="#/battles/list" class="nav-button bg-red-600 text-white hover:bg-red-700">
                     Επόμενο →
-                </button>
+                </a>
             </div>
         </div>
     </div>
@@ -349,45 +333,45 @@
                 <a href="https://conchr.github.io/Kynos-Presentation/"
                    rel="noopener noreferrer"
                    class="action-button bg-amber-600 text-white hover:bg-amber-700 focus:bg-amber-700 transition-all duration-300"
-                   aria-label="Κυνός Κεφαλαί 197 π.χ.">
+                   aria-label="Κυνός Κεφαλαί 197 π.Χ.">
                     <span class="flex-1 button-text">
-                        <span class="battle-main-text">Κυνός Κεφαλαί 197 π.χ.</span>
+                        <span class="battle-main-text">Κυνός Κεφαλαί 197 π.Χ.</span>
                         <span class="battle-sub-text">(Η μάχη που άλλαξε τη ροή της ιστορίας)</span>
                     </span>
                     <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
 
-                <!-- Κουμπί 2: Μάχη των Φαρσάλων 48 π.χ. -->
+                <!-- Κουμπί 2: Μάχη των Φαρσάλων 48 π.Χ. -->
                 <a href="https://conchr.github.io/48-BC-Presentation/"
                    rel="noopener noreferrer"
                    class="action-button bg-orange-600 text-white hover:bg-orange-700 focus:bg-orange-700 transition-all duration-300"
-                   aria-label="Η Μάχη των Φαρσάλων 48 π.χ.">
+                   aria-label="Η Μάχη των Φαρσάλων 48 π.Χ.">
                     <span class="flex-1 button-text">
-                        <span class="battle-main-text">Η Μάχη των Φαρσάλων 48 π.χ.</span>
+                        <span class="battle-main-text">Η Μάχη των Φαρσάλων 48 π.Χ.</span>
                         <span class="battle-sub-text">(Ρωμαϊκός Εμφύλιος)</span>
                     </span>
                     <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
 
-                <!-- Κουμπί 3: Μάχη των Φαρσάλων 1277 μ.χ. -->
+                <!-- Κουμπί 3: Μάχη των Φαρσάλων 1277 μ.Χ. -->
                 <a href="https://conchr.github.io/1277-Presentation/"
                    rel="noopener noreferrer"
                    class="action-button bg-rose-600 text-white hover:bg-rose-700 focus:bg-rose-700 transition-all duration-300"
-                   aria-label="Η Μάχη των Φαρσάλων 1277 μ.χ.">
+                   aria-label="Η Μάχη των Φαρσάλων 1277 μ.Χ.">
                     <span class="flex-1 button-text">
-                        <span class="battle-main-text">Η Μάχη των Φαρσάλων 1277 μ.χ.</span>
+                        <span class="battle-main-text">Η Μάχη των Φαρσάλων 1277 μ.Χ.</span>
                         <span class="battle-sub-text">(Βυζαντινός Στρατός εναντίον Ιωάννη Α΄ Δούκα)</span>
                     </span>
                     <span class="arrow-icon" aria-hidden="true">→</span>
                 </a>
 
-                <!-- Κουμπί 4: Ατυχής Πόλεμος 1897 μ.χ. -->
+                <!-- Κουμπί 4: Ατυχής Πόλεμος 1897 μ.Χ. -->
                 <a href="https://conchr.github.io/1897-Present/"
                    rel="noopener noreferrer"
                    class="action-button bg-cyan-600 text-white hover:bg-cyan-700 focus:bg-cyan-700 transition-all duration-300"
-                   aria-label="Ατυχής Πόλεμος 1897 μ.χ.">
+                   aria-label="Ατυχής Πόλεμος 1897 μ.Χ.">
                     <span class="flex-1 button-text">
-                        <span class="battle-main-text">Ατυχής Πόλεμος 1897 μ.χ.</span>
+                        <span class="battle-main-text">Ατυχής Πόλεμος 1897 μ.Χ.</span>
                         <span class="battle-sub-text">(Έλληνες εναντίον Οθωμανών)</span>
                     </span>
                     <span class="arrow-icon" aria-hidden="true">→</span>
@@ -396,12 +380,12 @@
 
             <!-- Navigation buttons -->
             <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
-                <button onclick="showBattlesIntroPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                <a href="#/battles" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
                     ← Προηγούμενο
-                </button>
-                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                </a>
+                <a href="#/" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
                     Κεντρική Σελίδα
-                </button>
+                </a>
             </div>
         </div>
     </div>
@@ -441,12 +425,12 @@
 
             <!-- Navigation buttons -->
             <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
-                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                <a href="#/" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
                     Κεντρική Σελίδα
-                </button>
-                <button onclick="showOttomanKaramichosPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                </a>
+                <a href="#/ottoman/karamichos" class="nav-button bg-green-600 text-white hover:bg-green-700">
                     Επόμενο →
-                </button>
+                </a>
             </div>
         </div>
     </div>
@@ -493,15 +477,15 @@
 
             <!-- Navigation buttons -->
             <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
-                <button onclick="showOttomanBridgePage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                <a href="#/ottoman/bridge" class="nav-button bg-green-600 text-white hover:bg-green-700">
                     ← Προηγούμενο
-                </button>
-                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                </a>
+                <a href="#/" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
                     Κεντρική Σελίδα
-                </button>
-                <button onclick="showOttomanKonakiaPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                </a>
+                <a href="#/ottoman/konakia" class="nav-button bg-green-600 text-white hover:bg-green-700">
                     Επόμενο →
-                </button>
+                </a>
             </div>
         </div>
     </div>
@@ -543,15 +527,15 @@
 
             <!-- Navigation buttons -->
             <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
-                <button onclick="showOttomanKaramichosPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                <a href="#/ottoman/karamichos" class="nav-button bg-green-600 text-white hover:bg-green-700">
                     ← Προηγούμενο
-                </button>
-                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                </a>
+                <a href="#/" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
                     Κεντρική Σελίδα
-                </button>
-                <button onclick="showOttomanTekesPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                </a>
+                <a href="#/ottoman/tekes" class="nav-button bg-green-600 text-white hover:bg-green-700">
                     Επόμενο →
-                </button>
+                </a>
             </div>
         </div>
     </div>
@@ -596,15 +580,15 @@
 
             <!-- Navigation buttons -->
             <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
-                <button onclick="showOttomanKonakiaPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                <a href="#/ottoman/konakia" class="nav-button bg-green-600 text-white hover:bg-green-700">
                     ← Προηγούμενο
-                </button>
-                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                </a>
+                <a href="#/" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
                     Κεντρική Σελίδα
-                </button>
-                <button onclick="showOttomanOldCityPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                </a>
+                <a href="#/ottoman/old-city" class="nav-button bg-green-600 text-white hover:bg-green-700">
                     Επόμενο →
-                </button>
+                </a>
             </div>
         </div>
     </div>
@@ -632,22 +616,22 @@
 
                 <!-- Single thumbnail -->
                 <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%94%CE%B5%CE%BE%CE%B1%CE%BC%CE%B5%CE%BD%CE%B7.jpg"
-                     alt="Δεξαμενη"
+                     alt="Δεξαμενή"
                      class="image-thumbnail"
                      onclick="toggleImage(this)">
             </div>
 
             <!-- Navigation buttons -->
             <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
-                <button onclick="showOttomanTekesPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                <a href="#/ottoman/tekes" class="nav-button bg-green-600 text-white hover:bg-green-700">
                     ← Προηγούμενο
-                </button>
-                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                </a>
+                <a href="#/" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
                     Κεντρική Σελίδα
-                </button>
-                <button onclick="showOttomanSummaryPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                </a>
+                <a href="#/ottoman/summary" class="nav-button bg-green-600 text-white hover:bg-green-700">
                     Επόμενο →
-                </button>
+                </a>
             </div>
         </div>
     </div>
@@ -695,12 +679,12 @@
 
             <!-- Navigation buttons -->
             <div class="nav-buttons mt-8 fade-in delay-8 hidden-initially">
-                <button onclick="showOttomanOldCityPage()" class="nav-button bg-green-600 text-white hover:bg-green-700">
+                <a href="#/ottoman/old-city" class="nav-button bg-green-600 text-white hover:bg-green-700">
                     ← Προηγούμενο
-                </button>
-                <button onclick="showMainPage()" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
+                </a>
+                <a href="#/" class="nav-button bg-gray-600 text-white hover:bg-gray-700">
                     Κεντρική Σελίδα
-                </button>
+                </a>
             </div>
         </div>
     </div>
