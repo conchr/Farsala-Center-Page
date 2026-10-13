@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Φάρσαλα: Ταξίδι στην Ιστορία - Αρχική Σελίδα</title>
+    <meta name="description" content="Εξερευνήστε την πλούσια ιστορία των Φαρσάλων, από τον Αχιλλέα έως τη Μάχη των Κυνός Κεφαλών">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="main-page-bg">
+
+    <div class="loading-indicator" id="loadingIndicator"></div>
+
+    <div id="imageModal" class="image-modal">
+        <img id="modalImage" class="modal-content">
+    </div>
+
+    <!-- ============================================ -->
+    <!-- ΣΕΛΙΔΑ 1: ΑΡΧΙΚΗ                              -->
+    <!-- ============================================ -->
+    <div class="card main-page">
+        <div class="main-content text-center">
+
+            <!-- HERO -->
+            <section class="hero-section fade-in delay-0 hidden-initially">
+                <div class="hero-bg"></div>
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <p class="hero-eyebrow">Δήμος Φαρσάλων</p>
+                    <h1 class="hero-title">Φάρσαλα</h1>
+                    <div class="hero-divider" aria-hidden="true">
+                        <span class="hero-divider-line"></span>
+                        <span class="hero-divider-diamond">◆</span>
+                        <span class="hero-divider-line"></span>
+                    </div>
+                    <p class="hero-subtitle">Η Πόλη που Αψηφά τον Χρόνο</p>
+                </div>
+                <div class="hero-scroll-hint" aria-hidden="true">
+                    <span>Ανακαλύψτε</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </section>
+
+            <!-- INTRO TEXT -->
+            <div class="intro-text">
+                <p class="content-text fade-in delay-2 hidden-initially">
+                    <strong>Ο Δήμος Φαρσάλων: Ιστορία και Εκπαίδευση</strong>
+                </p>
+                <p class="content-text fade-in delay-2 hidden-initially">
+                    Ο Δήμος Φαρσάλων αποτελεί κοιτίδα αρχαίου πολιτισμού. Στο επίκεντρο του ενδιαφέροντος βρίσκεται η Αρχαιολογική Συλλογή για το Κάστρο Καλλιθέας, αναδεικνύοντας την ιστορική συνέχεια της περιοχής.
+                </p>
+                <p class="content-text fade-in delay-2 hidden-initially">
+                    Ο Δήμος δίνει έμφαση στην εκπαίδευση, με ενδιαφέροντα προγράμματα για όλες τις ηλικίες. Ξεχωρίζουν τα προγράμματα για τους «μικρούς ιστορικούς», που φέρνουν τα παιδιά κοντά στην ιστορία, καλλιεργώντας τη δημιουργικότητα και την παράδοση.
+                </p>
+            </div>
+
+            <!-- ============ ΚΑΤΗΓΟΡΙΑ 1: ΑΡΧΑΙΟΛΟΓΙΑ ============ -->
+            <section class="category-block fade-in delay-4 hidden-initially">
+                <header class="category-header">
+                    <div class="category-header-text">
+                        <h2 class="category-title">Αρχαιολογία</h2>
+                        <p class="category-subtitle">Τόποι, ευρήματα και μνημεία</p>
+                    </div>
+                </header>
+                <div class="category-grid">
+
+                    <a href="https://conchr.github.io/Virtual-Tour/" rel="noopener noreferrer"
+                       class="category-card"
+                       style="--card-bg: url('assets/01-virtual-tour.jpg')"
+                       aria-label="Εικονικό Ταξίδι στην Αρχαιολογική Συλλογή">
+                        <h3 class="category-card-title">Εικονικό Ταξίδι</h3>
+                        <p class="category-card-desc">Περιηγηθείτε στην Αρχαιολογική Συλλογή Φαρσάλων</p>
+                        <span class="category-card-arrow">→</span>
+                    </a>
+
+                    <a href="https://conchr.github.io/Kastro-Kallitheas/" rel="noopener noreferrer"
+                       class="category-card"
+                       style="--card-bg: url('assets/02-kastro-kallitheas.jpg')"
+                       aria-label="Κάστρο Καλλιθέας">
+                        <h3 class="category-card-title">Κάστρο Καλλιθέας</h3>
+                        <p class="category-card-desc">340 στρέμματα αρχαίας πόλης</p>
+                        <span class="category-card-arrow">→</span>
+                    </a>
+
+                    <a href="https://conchr.github.io/Acropolis-Presentation/" rel="noopener noreferrer"
+                       class="category-card"
+                       style="--card-bg: url('assets/03-acropolis-farsala.jpg')"
+                       aria-label="Η Ακρόπολη των Φαρσάλων">
+                        <h3 class="category-card-title">Ακρόπολη Φαρσάλων</h3>
+                        <p class="category-card-desc">Λόφος Προφήτη Ηλία</p>
+                        <span class="category-card-arrow">→</span>
+                    </a>
+
+                    <a href="https://conchr.github.io/Achilles-Presentation/" rel="noopener noreferrer"
+                       class="category-card"
+                       style="--card-bg: url('assets/04-achilles.jpg')"
+                       aria-label="Τα Φάρσαλα και ο Αχιλλέας">
+                        <h3 class="category-card-title">Αχιλλέας &amp; Μυρμιδόνες</h3>
+                        <p class="category-card-desc">Η πατρίδα του μυθικού ήρωα</p>
+                        <span class="category-card-arrow">→</span>
+                    </a>
+
+                </div>
+            </section>
+
+            <!-- ============ ΚΑΤΗΓΟΡΙΑ 2: ΙΣΤΟΡΙΚΕΣ ΜΑΧΕΣ ============ -->
+            <section class="category-block fade-in delay-6 hidden-initially">
+                <header class="category-header">
+                    <div class="category-header-text">
+                        <h2 class="category-title">Ιστορικές Μάχες</h2>
+                        <p class="category-subtitle">Τέσσερις συγκρούσεις που σημάδεψαν την περιοχή</p>
+                    </div>
+                </header>
+                <div class="category-grid">
+
+                    <a href="https://conchr.github.io/Kynos-Presentation/" rel="noopener noreferrer"
+                       class="category-card"
+                       style="--card-bg: url('assets/05-kynos-kephalai.jpg')"
+                       aria-label="Μάχη Κυνός Κεφαλών 197 π.Χ.">
+                        <h3 class="category-card-title">Κυνός Κεφαλαί</h3>
+                        <p class="category-card-desc">197 π.Χ. — Ρώμη vs Μακεδονία</p>
+                        <span class="category-card-arrow">→</span>
+                    </a>
+
+                    <a href="https://conchr.github.io/48-BC-Presentation/" rel="noopener noreferrer"
+                       class="category-card"
+                       style="--card-bg: url('assets/06-48-bc.jpg')"
+                       aria-label="Μάχη Φαρσάλων 48 π.Χ.">
+                        <h3 class="category-card-title">48 π.Χ.</h3>
+                        <p class="category-card-desc">Καίσαρας vs Πομπήιος — Ρωμαϊκός Εμφύλιος</p>
+                        <span class="category-card-arrow">→</span>
+                    </a>
+
+                    <a href="https://conchr.github.io/1277-Presentation/" rel="noopener noreferrer"
+                       class="category-card"
+                       style="--card-bg: url('assets/07-1277.jpg')"
+                       aria-label="Μάχη Φαρσάλων 1277">
+                        <h3 class="category-card-title">1277 μ.Χ.</h3>
+                        <p class="category-card-desc">Βυζαντινός Στρατός vs Ιωάννης Δούκας</p>
+                        <span class="category-card-arrow">→</span>
+                    </a>
+
+                    <a href="https://conchr.github.io/1897-Present/" rel="noopener noreferrer"
+                       class="category-card"
+                       style="--card-bg: url('assets/08-1897.jpg')"
+                       aria-label="Ατυχής Πόλεμος 1897">
+                        <h3 class="category-card-title">1897 μ.Χ.</h3>
+                        <p class="category-card-desc">Έλληνες vs Οθωμανοί — Ατυχής Πόλεμος</p>
+                        <span class="category-card-arrow">→</span>
+                    </a>
+
+                </div>
+            </section>
+
+            <!-- ============ ΚΑΤΗΓΟΡΙΑ 3: ΙΣΤΟΡΙΑ & ΠΟΛΙΤΙΣΜΟΣ ============ -->
+            <section class="category-block fade-in delay-8 hidden-initially">
+                <header class="category-header">
+                    <div class="category-header-text">
+                        <h2 class="category-title">Ιστορία &amp; Πολιτισμός</h2>
+                        <p class="category-subtitle">Από την αρχαιότητα στη σύγχρονη εποχή</p>
+                    </div>
+                </header>
+                <div class="category-grid">
+
+                    <a href="https://conchr.github.io/History-Farsala/" rel="noopener noreferrer"
+                       class="category-card"
+                       style="--card-bg: url('assets/09-history-7000-years.jpg')"
+                       aria-label="Η Ιστορία των Φαρσάλων">
+                        <h3 class="category-card-title">7.000 Χρόνια Ιστορίας</h3>
+                        <p class="category-card-desc">Από τη Νεολιθική εποχή μέχρι σήμερα</p>
+                        <span class="category-card-arrow">→</span>
+                    </a>
+
+                    <a href="https://conchr.github.io/Nationalities-Farsala/" rel="noopener noreferrer"
+                       class="category-card"
+                       style="--card-bg: url('assets/10-ethnicities.jpg')"
+                       aria-label="Οι Εθνότητες στα Φάρσαλα">
+                        <h3 class="category-card-title">Εθνότητες</h3>
+                        <p class="category-card-desc">Καραγκούνηδες, Σαρακατσάνοι, Βλάχοι</p>
+                        <span class="category-card-arrow">→</span>
+                    </a>
+
+                    <a href="https://conchr.github.io/Karamichos-Tower/" rel="noopener noreferrer"
+                       class="category-card"
+                       style="--card-bg: url('assets/11-karamichos-tower.jpg')"
+                       aria-label="Πύργος Καραμίχου">
+                        <h3 class="category-card-title">Πύργος Καραμίχου</h3>
+                        <p class="category-card-desc">18ος αιώνας — Πυργόσπιτο</p>
+                        <span class="category-card-arrow">→</span>
+                    </a>
+
+                    <a href="https://conchr.github.io/Passa-Presentation/" rel="noopener noreferrer"
+                       class="category-card"
+                       style="--card-bg: url('assets/12-passa-bridge.jpg')"
+                       aria-label="Γέφυρα Πασσά">
+                        <h3 class="category-card-title">Γέφυρα Πασσά</h3>
+                        <p class="category-card-desc">1752 — Τοξωτή λιθόκτιστη γέφυρα</p>
+                        <span class="category-card-arrow">→</span>
+                    </a>
+
+                </div>
+            </section>
+
+            <!-- ============ ΚΑΤΗΓΟΡΙΑ 4: ΜΑΘΗΣΗ & ΠΑΙΧΝΙΔΙΑ ============ -->
+            <section class="category-block fade-in delay-10 hidden-initially">
+                <header class="category-header">
+                    <div class="category-header-text">
+                        <h2 class="category-title">Μάθηση &amp; Παιχνίδια</h2>
+                        <p class="category-subtitle">Για μικρούς και μεγάλους εξερευνητές</p>
+                    </div>
+                </header>
+                <div class="category-grid">
+
+                    <a href="https://conchr.github.io/Dimotiko/" rel="noopener noreferrer"
+                       class="category-card"
+                       style="--card-bg: url('assets/13-dimotiko-school.jpg')"
+                       aria-label="Α' Δημοτικό Φαρσάλων">
+                        <h3 class="category-card-title">Α' Δημοτικό Σχολείο</h3>
+                        <p class="category-card-desc">Το ιστορικό κτίριο του 1928</p>
+                        <span class="category-card-arrow">→</span>
+                    </a>
+
+                    <a href="https://conchr.github.io/Ancient-Quiz-for-kids/" rel="noopener noreferrer"
+                       class="category-card"
+                       style="--card-bg: url('assets/14-young-archaeologists.jpg')"
+                       aria-label="Ιστορίες για μικρούς Αρχαιολόγους">
+                        <h3 class="category-card-title">Μικροί Αρχαιολόγοι</h3>
+                        <p class="category-card-desc">Ιστορίες &amp; quiz για παιδιά</p>
+                        <span class="category-card-arrow">→</span>
+                    </a>
+
+                    <a href="https://conchr.github.io/Games/" rel="noopener noreferrer"
+                       class="category-card"
+                       style="--card-bg: url('assets/15-games.jpg')"
+                       aria-label="Διαδραστικά Παιχνίδια">
+                        <h3 class="category-card-title">Διαδραστικά Παιχνίδια</h3>
+                        <p class="category-card-desc">Κρυπτόλεξα, κρεμάλα, puzzles</p>
+                        <span class="category-card-arrow">→</span>
+                    </a>
+
+                </div>
+            </section>
+
+        </div>
+
+        <!-- FOOTER -->
+        <div class="mt-6 pt-4 border-t border-gray-300">
+            <div class="flex justify-between items-center">
+                <p class="small-text text-gray-500">© 2026 Δήμος Φαρσάλων</p>
+                <p class="small-text text-gray-500">Created by: Κωνσταντίνος Χριστοδούλου</p>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================ -->
+    <!-- ΣΕΛΙΔΑ 2: ΙΣΤΟΡΙΑ                             -->
+    <!-- ============================================ -->
+    <div class="card main-page-2">
+        <div class="main-content text-center">
+            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
+                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
+            </h1>
+
+            <div class="space-y-4">
+                <p class="content-text leading-relaxed max-w-6xl mx-auto px-4 fade-in delay-2 hidden-initially">
+                    ✨ <strong>Φάρσαλα: Η Πόλη του Αχιλλέα και των Μεγάλων Μαχών</strong>
+                </p>
+                <p class="content-text leading-relaxed max-w-6xl mx-auto px-4 fade-in delay-2 hidden-initially">
+                    Τα Φάρσαλα, χτισμένα στη στρατηγική «πύλη» της Θεσσαλίας, έχουν ιστορία χιλιάδων ετών. Θεωρούνται η αρχαία Φθία, πατρίδα του μυθικού Αχιλλέα και των Μυρμιδόνων.
+                </p>
+                <p class="content-text leading-relaxed max-w-6xl mx-auto px-4 fade-in delay-2 hidden-initially">
+                    Στην αρχαιότητα, υπήρξαν σημαντική πόλη-κράτος. Το 48 π.Χ. αποτέλεσαν το πεδίο της περίφημης Μάχης των Φαρσάλων, όπου ο Ιούλιος Καίσαρας νίκησε τον Πομπήιο.
+                </p>
+                <p class="content-text leading-relaxed max-w-6xl mx-auto px-4 fade-in delay-2 hidden-initially">
+                    Μετά τη Ρωμαϊκή και Βυζαντινή εποχή, πέρασαν στην Οθωμανική κυριαρχία και απελευθερώθηκαν το 1881. Σήμερα, είναι γνωστά ως αγροτικό κέντρο και για τον παραδοσιακό Φαρσαλινό Χαλβά.
+                </p>
+            </div>
+
+            <div class="button-grid mt-8 fade-in delay-6 hidden-initially">
+                <a href="https://conchr.github.io/Achilles-Presentation/" rel="noopener noreferrer" class="action-button bg-indigo-500 text-white full-width-button" aria-label="Τα Φάρσαλα κι ο Αχιλλέας">
+                    <span class="flex-1 button-text text-center">Τα Φάρσαλα κι ο Αχιλλέας</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+                <a href="https://conchr.github.io/Acropolis-Presentation/" rel="noopener noreferrer" class="action-button bg-yellow-600 text-white" aria-label="Η Ακρόπολη των Φαρσάλων">
+                    <span class="flex-1 button-text text-center">Η Ακρόπολη των Φαρσάλων</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+                <a href="https://conchr.github.io/Karapla-Cave/" rel="noopener noreferrer" class="action-button bg-emerald-600 text-white" aria-label="Το Σπήλαιο των Νυμφών">
+                    <span class="flex-1 button-text text-center">Το Σπήλαιο των Νυμφών</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+                <a href="#/battles" class="action-button nav-emphasis-button full-width-button" aria-label="Ιστορικές Μάχες στα Φάρσαλα">
+                    <span class="flex-1 button-text text-center">Ιστορικές Μάχες στα Φάρσαλα</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+                <a href="#/modern" class="action-button nav-emphasis-button full-width-button" aria-label="Από την Τουρκοκρατία μέχρι σήμερα">
+                    <span class="flex-1 button-text text-center">Από την Τουρκοκρατία μέχρι σήμερα</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+            </div>
+
+            <div class="nav-buttons mt-8 fade-in delay-8 hidden-initially">
+                <a href="#/" class="nav-button bg-gray-600 text-white">← Πίσω στην Αρχική</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- ΣΕΛΙΔΑ 3: ΣΥΓΧΡΟΝΗ                            -->
+    <!-- ============================================ -->
+    <div class="card main-page-3">
+        <div class="main-content text-center">
+            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
+                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
+            </h1>
+
+            <div class="space-y-4">
+                <p class="content-text leading-relaxed max-w-6xl mx-auto px-4 fade-in delay-2 hidden-initially">
+                    Κατά την Τουρκοκρατία (Τσατάλτζα), τα Φάρσαλα ήταν στρατηγικό πέρασμα. Απελευθερώθηκαν το 1881, δοκιμάστηκαν όμως σκληρά στη Μάχη του 1897.
+                </p>
+                <p class="content-text leading-relaxed max-w-6xl mx-auto px-4 fade-in delay-2 hidden-initially">
+                    Παρά τις καταστροφές του Β' Παγκοσμίου Πολέμου και τους σεισμούς του '50, εξελίχθηκαν σε εύρωστο αγροτικό κέντρο.
+                </p>
+                <p class="content-text leading-relaxed max-w-6xl mx-auto px-4 fade-in delay-2 hidden-initially">
+                    Σήμερα, η πόλη συνδυάζει την πλούσια ιστορία της με τη φήμη του πασίγνωστου, παραδοσιακού «σαπουνέ» Χαλβά Φαρσάλων.
+                </p>
+            </div>
+
+            <div class="button-grid mt-8 fade-in delay-6 hidden-initially">
+                <a href="https://conchr.github.io/Sites-Farsala/" rel="noopener noreferrer" class="action-button bg-teal-600 text-white full-width-button" aria-label="Αρχαιολογικές Τοποθεσίες στα Φάρσαλα">
+                    <span class="flex-1 button-text text-center">Αρχαιολογικές Τοποθεσίες στα Φάρσαλα</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+                <a href="https://conchr.github.io/History-Farsala/" rel="noopener noreferrer" class="action-button bg-purple-600 text-white full-width-button" aria-label="Η Ιστορία των Φαρσάλων">
+                    <span class="flex-1 button-text text-center">Η Ιστορία των Φαρσάλων</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+                <a href="https://conchr.github.io/Nationalities-Farsala/" rel="noopener noreferrer" class="action-button bg-pink-600 text-white full-width-button" aria-label="Οι Εθνότητες που ζουν στα Φάρσαλα">
+                    <span class="flex-1 button-text text-center">Οι Εθνότητες που ζουν στα Φάρσαλα</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+                <a href="#/ottoman/bridge" class="action-button nav-emphasis-button full-width-button" aria-label="Τουρκοκρατία στα Φάρσαλα">
+                    <span class="flex-1 button-text text-center">Τουρκοκρατία</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+            </div>
+
+            <div class="nav-buttons mt-8 fade-in delay-8 hidden-initially">
+                <a href="#/history" class="nav-button bg-gray-600 text-white">← Πίσω στην Προηγούμενη Σελίδα</a>
+                <a href="#/" class="nav-button bg-gray-600 text-white">Αρχική Σελίδα</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- ΣΕΛΙΔΑ: ΜΑΧΕΣ ΕΙΣΑΓΩΓΗ                        -->
+    <!-- ============================================ -->
+    <div class="card battles-intro-page">
+        <div class="main-content text-center">
+            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
+                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
+            </h1>
+            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
+                Μεγάλες μάχες στην Περιοχή των Φαρσάλων
+            </h2>
+
+            <div class="space-y-4">
+                <p class="content-text fade-in delay-4 hidden-initially">
+                    Η περιοχή των Φαρσάλων στη Θεσσαλία υπήρξε θέατρο πολλών μαχών ανά τους αιώνες, κυρίως λόγω της <span class="content-text-bold">στρατηγικής της γεωγραφικής θέσης</span>.
+                </p>
+                <p class="content-text fade-in delay-6 hidden-initially">
+                    Τα Φάρσαλα βρίσκονται σε ένα φυσικό πέρασμα που συνδέει τη Θεσσαλία (τον μεγαλύτερο κάμπο της Ελλάδας) με τη νότια Ελλάδα. Αυτή η θέση τα καθιστούσε <span class="content-text-bold">Κεντρικό Διάδρομο Μετακίνησης</span> και ο έλεγχος των Φαρσάλων και της πεδιάδας τους ήταν ζωτικής σημασίας για την εξασφάλιση της διέλευσης και του ελέγχου της κεντρικής Ελλάδας.
+                </p>
+                <p class="content-text fade-in delay-8 hidden-initially">
+                    Επίσης η εκτεταμένη πεδιάδα των Φαρσάλων ήταν ιδανική για τη διεξαγωγή μεγάλων, παρατεταμένων συγκρούσεων με τη συμμετοχή μεγάλου αριθμού στρατευμάτων, ειδικά ιππικού, που χαρακτήριζε τις μάχες στην αρχαιότητα και τους νεότερους χρόνους.
+                </p>
+            </div>
+
+            <div class="nav-buttons mt-8 fade-in delay-10 hidden-initially">
+                <a href="#/" class="nav-button bg-gray-600 text-white">Κεντρική Σελίδα</a>
+                <a href="#/battles/list" class="nav-button bg-red-600 text-white">Επόμενο →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- ΣΕΛΙΔΑ: ΜΑΧΕΣ - ΚΟΥΜΠΙΑ                       -->
+    <!-- ============================================ -->
+    <div class="card battles-buttons-page">
+        <div class="main-content text-center">
+            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
+                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
+            </h1>
+            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
+                Μεγάλες μάχες στην Περιοχή των Φαρσάλων
+            </h2>
+
+            <div class="button-grid mt-8 fade-in delay-4 hidden-initially">
+                <a href="https://conchr.github.io/Kynos-Presentation/" rel="noopener noreferrer" class="action-button bg-amber-600 text-white" aria-label="Κυνός Κεφαλαί 197 π.Χ.">
+                    <span class="flex-1 button-text">
+                        <span class="battle-main-text">Κυνός Κεφαλαί 197 π.Χ.</span>
+                        <span class="battle-sub-text">(Η μάχη που άλλαξε τη ροή της ιστορίας)</span>
+                    </span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+                <a href="https://conchr.github.io/48-BC-Presentation/" rel="noopener noreferrer" class="action-button bg-orange-600 text-white" aria-label="Η Μάχη των Φαρσάλων 48 π.Χ.">
+                    <span class="flex-1 button-text">
+                        <span class="battle-main-text">Η Μάχη των Φαρσάλων 48 π.Χ.</span>
+                        <span class="battle-sub-text">(Ρωμαϊκός Εμφύλιος)</span>
+                    </span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+                <a href="https://conchr.github.io/1277-Presentation/" rel="noopener noreferrer" class="action-button bg-rose-600 text-white" aria-label="Η Μάχη των Φαρσάλων 1277 μ.Χ.">
+                    <span class="flex-1 button-text">
+                        <span class="battle-main-text">Η Μάχη των Φαρσάλων 1277 μ.Χ.</span>
+                        <span class="battle-sub-text">(Βυζαντινός Στρατός εναντίον Ιωάννη Α΄ Δούκα)</span>
+                    </span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+                <a href="https://conchr.github.io/1897-Present/" rel="noopener noreferrer" class="action-button bg-cyan-600 text-white" aria-label="Ατυχής Πόλεμος 1897 μ.Χ.">
+                    <span class="flex-1 button-text">
+                        <span class="battle-main-text">Ατυχής Πόλεμος 1897 μ.Χ.</span>
+                        <span class="battle-sub-text">(Έλληνες εναντίον Οθωμανών)</span>
+                    </span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+            </div>
+
+            <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
+                <a href="#/battles" class="nav-button bg-gray-600 text-white">← Προηγούμενο</a>
+                <a href="#/" class="nav-button bg-gray-600 text-white">Κεντρική Σελίδα</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- ΣΕΛΙΔΑ: ΤΟΥΡΚΟΚΡΑΤΙΑ - ΓΕΦΥΡΑ                  -->
+    <!-- ============================================ -->
+    <div class="card ottoman-bridge-page">
+        <div class="main-content text-center">
+            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
+                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
+            </h1>
+            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
+                Κτίσματα και Μνημεία της Τουρκοκρατίας
+            </h2>
+
+            <div class="space-y-4 fade-in delay-4 hidden-initially">
+                <h3 class="content-subtitle">
+                    <span class="bridge-title-main">Γέφυρα του Ενιπέα</span>
+                    <span class="bridge-title-sub">("Γεφύρι του Πασά")</span>
+                </h3>
+
+                <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%A0%CE%B1%CF%83%CF%83%CE%B1.jpg"
+                     alt="Γέφυρα του Ενιπέα (Γεφύρι του Πασά)"
+                     class="image-thumbnail"
+                     onclick="toggleImage(this)">
+
+                <p class="content-text">
+                    Πρόκειται για ένα από τα πιο σημαντικά αρχιτεκτονικά μνημεία της περιόδου.
+                    Είναι ένα τεράστιο πέτρινο γεφύρι (μήκους 110 μέτρων) με επτά τόξα, που οικοδομήθηκε το 1752.
+                    Βρίσκεται βόρεια της πόλης, δίπλα στον δρόμο από τη Λάρισα, και έχει ανακηρυχθεί διατηρητέο μνημείο.
+                </p>
+            </div>
+
+            <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
+                <a href="#/" class="nav-button bg-gray-600 text-white">Κεντρική Σελίδα</a>
+                <a href="#/ottoman/karamichos" class="nav-button bg-green-600 text-white">Επόμενο →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- ΣΕΛΙΔΑ: ΤΟΥΡΚΟΚΡΑΤΙΑ - ΚΑΡΑΜΙΧΟΣ              -->
+    <!-- ============================================ -->
+    <div class="card ottoman-karamichos-page">
+        <div class="main-content text-center">
+            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
+                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
+            </h1>
+            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
+                Κτίσματα και Μνημεία της Τουρκοκρατίας
+            </h2>
+
+            <div class="space-y-4 fade-in delay-4 hidden-initially">
+                <h3 class="content-subtitle">Ο Πύργος του Καραμίχου</h3>
+
+                <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/Karamichos.jpg"
+                     alt="Ο Πύργος Καραμίχου στα Φάρσαλα"
+                     class="image-thumbnail"
+                     onclick="toggleImage(this)">
+
+                <p class="content-text">
+                    Ο Πύργος Καραμίχου είναι ένα αξιόλογο πυργόσπιτο της Όψιμης Οθωμανικής περιόδου στα Φάρσαλα.
+                </p>
+                <p class="content-text"><strong>Χρονολογία:</strong> Χρονολογείται από τον 18ο αιώνα (αρχές), καθιστώντας τον το παλαιότερο σωζόμενο αρχιτεκτόνημα της πόλης.</p>
+                <p class="content-text"><strong>Αρχιτεκτονική:</strong> Αποτελεί ένα σπάνιο δείγμα της κοσμικής αρχιτεκτονικής της Οθωμανικής περιόδου στην περιοχή.</p>
+                <p class="content-text"><strong>Τοποθεσία:</strong> Βρίσκεται στην παλιά οθωμανική συνοικία "Μοιροχώρι" ή "Εμιροχώρι".</p>
+            </div>
+
+            <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
+                <a href="#/ottoman/bridge" class="nav-button bg-green-600 text-white">← Προηγούμενο</a>
+                <a href="#/" class="nav-button bg-gray-600 text-white">Κεντρική Σελίδα</a>
+                <a href="#/ottoman/konakia" class="nav-button bg-green-600 text-white">Επόμενο →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- ΣΕΛΙΔΑ: ΤΟΥΡΚΟΚΡΑΤΙΑ - ΚΟΝΑΚΙΑ                -->
+    <!-- ============================================ -->
+    <div class="card ottoman-konakia-page">
+        <div class="main-content text-center">
+            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
+                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
+            </h1>
+            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
+                Κτίσματα και Μνημεία της Τουρκοκρατίας
+            </h2>
+
+            <div class="space-y-4 fade-in delay-4 hidden-initially">
+                <h3 class="content-subtitle">Κονάκια (Τσιφλικόσπιτα)</h3>
+
+                <p class="content-text">
+                    Στην ευρύτερη περιοχή των Φαρσάλων σώζονται κονάκια (τα σπίτια των τσιφλικάδων) που μαρτυρούν την κοινωνική δομή της εποχής των τσιφλικιών, η οποία διαμορφώθηκε κατά την Τουρκοκρατία και διατηρήθηκε ως την απελευθέρωση της Θεσσαλίας.
+                    Δύο γνωστά είναι το <span class="content-text-bold">Κονάκι Χαροκόπου</span> (στο Πολυνέρι, σε καλή κατάσταση) και το <span class="content-text-bold">Κονάκι Βασιλείου</span> (στον Παλαιόμυλο).
+                </p>
+
+                <div class="image-thumbnail-row">
+                    <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%9A%CE%BF%CE%BD%CE%B1%CE%BA%CE%B9%CE%9A%CF%85%CE%B6%CE%B5%CF%81%CE%B9%CE%B4%CE%B72.jpg"
+                         alt="Κονάκι Κυζερίδου"
+                         class="image-thumbnail-small"
+                         onclick="toggleImage(this)">
+                    <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%9A%CE%BF%CE%BD%CE%B1%CE%BA%CE%B9%CE%92%CE%B1%CF%83%CE%B9%CE%BB%CE%B5%CE%B9%CE%BF%CF%852.jpg"
+                         alt="Κονάκι Βασιλείου"
+                         class="image-thumbnail-small"
+                         onclick="toggleImage(this)">
+                </div>
+            </div>
+
+            <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
+                <a href="#/ottoman/karamichos" class="nav-button bg-green-600 text-white">← Προηγούμενο</a>
+                <a href="#/" class="nav-button bg-gray-600 text-white">Κεντρική Σελίδα</a>
+                <a href="#/ottoman/tekes" class="nav-button bg-green-600 text-white">Επόμενο →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- ΣΕΛΙΔΑ: ΤΟΥΡΚΟΚΡΑΤΙΑ - ΤΕΚΕΣ                  -->
+    <!-- ============================================ -->
+    <div class="card ottoman-tekes-page">
+        <div class="main-content text-center">
+            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
+                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
+            </h1>
+            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
+                Κτίσματα και Μνημεία της Τουρκοκρατίας
+            </h2>
+
+            <div class="space-y-4 fade-in delay-4 hidden-initially">
+                <h3 class="content-subtitle">Τεκές των Μπεκτασήδων Δερβίσηδων</h3>
+
+                <p class="content-text">
+                    Στην περιοχή (κοντά στην Ασπρόγεια) σώζεται ο Τεκές (μουσουλμανικό μοναστήρι-ερημητήριο) των Μπεκτασήδων Δερβίσηδων, ένα ιδιαίτερο θρησκευτικό μνημείο που αντικατοπτρίζει την πολυπολιτισμική παρουσία στην περιοχή κατά την Οθωμανική περίοδο.
+                </p>
+
+                <div class="image-thumbnail-row">
+                    <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%A4%CE%B5%CE%BA%CE%B5%CF%821.jpg"
+                         alt="Τεκές 1"
+                         class="image-thumbnail-small"
+                         onclick="toggleImage(this)">
+                    <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%A4%CE%B5%CE%BA%CE%B5%CF%822.jpg"
+                         alt="Τεκές 2"
+                         class="image-thumbnail-small"
+                         onclick="toggleImage(this)">
+                    <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%A4%CE%B5%CE%BA%CE%B5%CF%823.jpg"
+                         alt="Τεκές 3"
+                         class="image-thumbnail-small"
+                         onclick="toggleImage(this)">
+                </div>
+            </div>
+
+            <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
+                <a href="#/ottoman/konakia" class="nav-button bg-green-600 text-white">← Προηγούμενο</a>
+                <a href="#/" class="nav-button bg-gray-600 text-white">Κεντρική Σελίδα</a>
+                <a href="#/ottoman/old-city" class="nav-button bg-green-600 text-white">Επόμενο →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- ΣΕΛΙΔΑ: ΤΟΥΡΚΟΚΡΑΤΙΑ - ΠΑΛΙΑ ΠΟΛΗ             -->
+    <!-- ============================================ -->
+    <div class="card ottoman-old-city-page">
+        <div class="main-content text-center">
+            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
+                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
+            </h1>
+            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
+                Κτίσματα και Μνημεία της Τουρκοκρατίας
+            </h2>
+
+            <div class="space-y-4 fade-in delay-4 hidden-initially">
+                <h3 class="content-subtitle">Παλιά Πόλη (Βαρούσι)</h3>
+
+                <p class="content-text">
+                    Η ρυμοτομία της σημερινής πόλης εξακολουθεί να έχει ίχνη από την παλιά πόλη της Τουρκοκρατίας, ειδικά στη συνοικία Βαρούσι, όπου έχουν βρεθεί και νεότερα αρχαιολογικά ευρήματα (όχι μόνο αρχαία).
+                </p>
+
+                <img src="https://raw.githubusercontent.com/conchr/Farsala-Center-Page/main/%CE%94%CE%B5%CE%BE%CE%B1%CE%BC%CE%B5%CE%BD%CE%B7.jpg"
+                     alt="Δεξαμενή"
+                     class="image-thumbnail"
+                     onclick="toggleImage(this)">
+            </div>
+
+            <div class="nav-buttons mt-8 fade-in delay-6 hidden-initially">
+                <a href="#/ottoman/tekes" class="nav-button bg-green-600 text-white">← Προηγούμενο</a>
+                <a href="#/" class="nav-button bg-gray-600 text-white">Κεντρική Σελίδα</a>
+                <a href="#/ottoman/summary" class="nav-button bg-green-600 text-white">Επόμενο →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- ΣΕΛΙΔΑ: ΤΟΥΡΚΟΚΡΑΤΙΑ - ΣΥΝΟΨΗ                 -->
+    <!-- ============================================ -->
+    <div class="card ottoman-summary-page">
+        <div class="main-content text-center">
+            <h1 class="title-text font-black mb-4 fade-in delay-0 hidden-initially">
+                Φάρσαλα: Η Πόλη που Αψηφά τον Χρόνο
+            </h1>
+            <h2 class="section-subtitle fade-in delay-2 hidden-initially">
+                Κτίσματα και Μνημεία της Τουρκοκρατίας
+            </h2>
+
+            <div class="space-y-4 fade-in delay-4 hidden-initially">
+                <p class="content-text">
+                    Συνοψίζοντας, τα ευρήματα της Τουρκοκρατίας στα Φάρσαλα αφορούν κυρίως κτηριακά και αρχιτεκτονικά μνημεία (γέφυρες, οικίες, θρησκευτικά κτίσματα) που δείχνουν τη ζωή και την οργάνωση της πόλης κατά τη νεότερη περίοδο.
+                </p>
+            </div>
+
+            <div class="button-grid mt-8 fade-in delay-6 hidden-initially">
+                <a href="https://conchr.github.io/Karamichos-Tower/" rel="noopener noreferrer" class="action-button bg-green-600 text-white" aria-label="Ο Πύργος Καραμίχου">
+                    <span class="flex-1 button-text">Ο Πύργος Καραμίχου</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+                <a href="https://conchr.github.io/Passa-Presentation/" rel="noopener noreferrer" class="action-button bg-purple-600 text-white" aria-label="Γέφυρα Πασσά">
+                    <span class="flex-1 button-text">Γέφυρα Πασσά</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
+                </a>
+            </div>
+
+            <div class="nav-buttons mt-8 fade-in delay-8 hidden-initially">
+                <a href="#/ottoman/old-city" class="nav-button bg-green-600 text-white">← Προηγούμενο</a>
+                <a href="#/" class="nav-button bg-gray-600 text-white">Κεντρική Σελίδα</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
